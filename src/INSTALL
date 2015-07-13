@@ -1,0 +1,9 @@
+Building SHROOMS
+
+See doc/readme-qt.rst for instructions on building SHROOMS QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of SHROOMS.
+
+See doc/build-*.txt for instructions on building Testcoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of SHROOMS.
