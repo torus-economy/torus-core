@@ -381,17 +381,17 @@ bool GetMyExternalIP(CNetAddr& ipRet)
         }
         else if (nHost == 2)
         {
-            addrConnect = CService("74.208.43.192", 80); // www.showmyip.com
+            addrConnect = CService("104.255.67.131", 80); // ip.truckcoin.net
 
             if (nLookup == 1)
             {
-                CService addrIP("www.showmyip.com", 80, true);
+                CService addrIP("ip.truckcoin.net", 80, true);
                 if (addrIP.IsValid())
                     addrConnect = addrIP;
             }
 
             pszGet = "GET /simple/ HTTP/1.1\r\n"
-                     "Host: www.showmyip.com\r\n"
+                     "Host: ip.truckcoin.net\r\n"
                      "User-Agent: SHROOMS\r\n"
                      "Connection: close\r\n"
                      "\r\n";
