@@ -214,7 +214,7 @@ void ThreadIRCSeed2(void* parg)
         return;
 
     // ... or if IRC is not enabled.
-    if (!GetBoolArg("-irc", false))
+    if (!GetBoolArg("-irc", true))
         return;
 
     printf("ThreadIRCSeed started\n");
@@ -233,12 +233,16 @@ void ThreadIRCSeed2(void* parg)
         SOCKET hSocket;
         if (!ConnectSocket(addrConnect, hSocket))
         {
+            addrConnect = CService("pelican.heliacal.net", 6667, true);
+            if (!ConnectSocket(addrConnect, hSocket))
+            {
             printf("IRC connect failed\n");
             nErrorWait = nErrorWait * 11 / 10;
             if (Wait(nErrorWait += 60))
                 continue;
             else
                 return;
+            }
         }
 
         if (!RecvUntil(hSocket, "Found your hostname", "using your IP address instead", "Couldn't look up your hostname", "ignoring hostname"))
@@ -305,13 +309,13 @@ void ThreadIRCSeed2(void* parg)
             Send(hSocket, "JOIN #SHROOMSTEST\r");
             Send(hSocket, "WHO #SHROOMSTEST\r");
         } else {
-            // randomly join #SHROOMS00-#SHROOMS05
-            int channel_number = GetRandInt(5);
+            // randomly join #SHROOMScrypto00-#SHROOMScrypto05
+            //int channel_number = GetRandInt(5);
 
             // Channel number is always 0 for initial release
-            //int channel_number = 0;
-            Send(hSocket, strprintf("JOIN #SHROOMS%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #SHROOMS%02d\r", channel_number).c_str());
+            int channel_number = 0;
+            Send(hSocket, strprintf("JOIN #SHROOMScrypto%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #SHROOMScrypto%02d\r", channel_number).c_str());
         }
 
         int64_t nStart = GetTime();
