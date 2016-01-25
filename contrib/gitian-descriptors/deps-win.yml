@@ -98,4 +98,4 @@ script: |
   cd ..
   #
   cd $INSTALLPREFIX
-  zip -r $OUTDIR/clickcoin-deps-win32-gitian-r13.zip include lib
+  zip -r $OUTDIR/shrooms-deps-win32-gitian-r13.zip include lib
