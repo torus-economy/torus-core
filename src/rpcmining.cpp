@@ -43,7 +43,7 @@ Value getmininginfo(const Array& params, bool fHelp)
     diff.push_back(Pair("Search Interval",      (int)nLastCoinStakeSearchInterval));
     obj.push_back(Pair("Difficulty",    diff));
 
-    obj.push_back(Pair("Block Value",    (uint64_t)GetProofOfWorkReward(0)));
+    obj.push_back(Pair("Block Value",    (uint64_t)GetProofOfWorkReward(0) / 100000000));
     obj.push_back(Pair("Net MH/s",     GetPoWMHashPS()));
     obj.push_back(Pair("Net Stake Weight", GetPoSKernelPS()));
     obj.push_back(Pair("Errors",        GetWarnings("statusbar")));
