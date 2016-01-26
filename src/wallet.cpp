@@ -1344,7 +1344,7 @@ bool CWallet::SelectCoinsSimple(int64_t nTargetValue, unsigned int nSpendTime, i
     return true;
 }
 
-bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, const CCoinControl* coinControl)
+bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, int nSplitBlock, const CCoinControl* coinControl)
 {
     int64_t nValue = 0;
     BOOST_FOREACH (const PAIRTYPE(CScript, int64_t)& s, vecSend)
@@ -1364,6 +1364,8 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, 
         CTxDB txdb("r");
         {
             nFeeRet = nTransactionFee;
+			if(fSplitBlock) 
+				nFeeRet = 0.1 * COIN;
             while (true)
             {
                 wtxNew.vin.clear();
@@ -1372,9 +1374,28 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, 
 
                 int64_t nTotalValue = nValue + nFeeRet;
                 double dPriority = 0;
+				if( nSplitBlock < 1 )  
+					nSplitBlock = 1;
                 // vouts to the payees
+				if (!fSplitBlock) 
+				{ 
+				BOOST_FOREACH (const PAIRTYPE(CScript, int64_t)& s, vecSend) 
+					wtxNew.vout.push_back(CTxOut(s.second, s.first)); 
+				} 
+				else
                 BOOST_FOREACH (const PAIRTYPE(CScript, int64_t)& s, vecSend)
-                    wtxNew.vout.push_back(CTxOut(s.second, s.first));
+				{ 
+                    for(int nCount = 0; nCount < nSplitBlock; nCount++) 
+					{ 
+						if(nCount == nSplitBlock -1) 
+						{ 
+							uint64_t nRemainder = s.second % nSplitBlock; 
+							wtxNew.vout.push_back(CTxOut((s.second / nSplitBlock) + nRemainder, s.first)); 
+						} 
+						else 
+							wtxNew.vout.push_back(CTxOut(s.second / nSplitBlock, s.first));
+					}
+				}
 
                 // Choose coins to use
                 set<pair<const CWalletTx*,unsigned int> > setCoins;
@@ -1488,7 +1509,7 @@ bool CWallet::CreateTransaction(CScript scriptPubKey, int64_t nValue, CWalletTx&
 {
     vector< pair<CScript, int64_t> > vecSend;
     vecSend.push_back(make_pair(scriptPubKey, nValue));
-    return CreateTransaction(vecSend, wtxNew, reservekey, nFeeRet, coinControl);
+    return CreateTransaction(vecSend, wtxNew, reservekey, nFeeRet, 1, coinControl);
 }
 
 // NovaCoin: get current stake weight

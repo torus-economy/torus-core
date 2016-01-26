@@ -501,6 +501,11 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
         if (nPayAmount > 0)
         {
             nChange = nAmount - nPayFee - nPayAmount;
+			
+ 		if(pwalletMain->fSplitBlock) 
+		{ 
+			nPayFee = 0.1 * COIN; // make the fee more expensive if using splitblock, this avoids having to calc fee based on multiple vouts 
+		}
             
             // if sub-cent change is required, the fee must be raised to at least CTransaction::nMinTxFee   
             if (nPayFee < CENT && nChange > 0 && nChange < CENT)
