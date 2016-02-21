@@ -31,6 +31,7 @@
 #include "macdockiconhandler.h"
 #endif
 
+#include <QDebug>
 #include <QApplication>
 #include <QMainWindow>
 #include <QMenuBar>
@@ -77,6 +78,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     rpcConsole(0),
     nWeight(0)
 {
+    updateStyle();
     resize(850, 550);
     setWindowTitle(tr("SHROOMS") + " - " + tr("Wallet"));
 #ifndef Q_OS_MAC
@@ -979,4 +981,43 @@ void BitcoinGUI::updateStakingIcon()
         else
             labelStakingIcon->setToolTip(tr("Not staking"));
     }
+}
+
+void BitcoinGUI::updateStyleSlot()
+{
+    updateStyle();
+}
+
+void BitcoinGUI::updateStyle()
+{
+    if (!fUseShroomsTheme)
+        return;
+
+    QString qssPath = QString::fromStdString( GetDataDir().string() ) + "/shrooms.qss";
+
+    QFile f( qssPath );
+
+    if (!f.exists())
+        writeDefaultStyleSheet( qssPath );
+
+    if (!f.open(QFile::ReadOnly))
+    {
+        qDebug() << "failed to open style sheet";
+        return;
+    }
+
+    qDebug() << "loading theme";
+    qApp->setStyleSheet( f.readAll() );
+}
+
+void BitcoinGUI::writeDefaultStyleSheet(const QString &qssPath)
+{
+    qDebug() << "writing default style sheet";
+
+    QFile qss( ":/text/stylesheet" );
+    qss.open( QFile::ReadOnly );
+
+    QFile f( qssPath );
+    f.open( QFile::ReadWrite );
+    f.write( qss.readAll() );
 }

@@ -380,6 +380,13 @@
         </layout>
        </item>
        <item>
+        <widget class="QCheckBox" name="useShroomsTheme">
+         <property name="text">
+          <string>Use SHROOMS visual theme (requires restart)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="displayAddresses">
          <property name="toolTip">
           <string>Whether to show SHROOMS addresses in the transaction list or not.</string>

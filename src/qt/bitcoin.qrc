@@ -92,4 +92,10 @@
         <file alias="zh_CN">locale/bitcoin_zh_CN.ts</file>
         <file alias="zh_TW">locale/bitcoin_zh_TW.ts</file>
     </qresource>
+    <qresource prefix="/text">
+        <file alias="stylesheet">res/text/shrooms.qss</file>
+    </qresource>
+    <qresource prefix="/Background">
+        <file>res/images/mushroom_valley.png</file>
+    </qresource>
 </RCC>
