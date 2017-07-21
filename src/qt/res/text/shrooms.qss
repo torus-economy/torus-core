@@ -8,58 +8,71 @@ background-repeat: no-repeat
 * {
     background: transparent;
     border: transparent;
-     color: #adc0eb;
-     font-family: Verdana, Geneva, sans-serif;
+    color: #99FF99;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+QMenuBar
+{
+    font: bold;
+	text-decoration: underline;
 }
 
 QMenuBar::item
 {
+    padding: 10px;
     background: transparent;
-    color: #a64e4e;
+    font: bold;
+    color: #fff;
+   
 }
 
 QMenuBar::item:selected
 {
-    background-color: #122947;
-    border: 1px solid #000;
+font: bold;
+    background-color: #339966;
+    border: 1px solid #60CA95;
 }
 
 QMenuBar::item:pressed
 {
-    border: 1px solid #183464;
-    background-color: #122947;
+font: bold;
+    border: 1px solid #60CA95;
+    background-color: #60CA95;
     margin-bottom:-1px;
     padding-bottom:1px;
 }
 
 QMenu
 {
-    border: 1px solid #183464;
+    border: 1px solid #60CA95;
+    font: bold;
     color: #a64e4e;
 }
 
 QMenu::item
 {
-    background: #051332;
+    background: #339966;
+    color: #FFFFCC;
     padding: 2px 20px 2px 20px;
 }
 
 QMenu::item:selected
 {
-    color: #000000;
-    background: #234b8f;
+    color: #FFFFCC;
+    background: #60CA95;
 }
 
 QMenu::item:disabled
 {
     color: #999999;
-    background: #051332;
+    background: #339966;
 }
 
 QMenu::separator
 {
     height: 1px;
-    background-color: #6097f6;
+    background-color: #60CA95;
     margin-top: 1px;
     margin-bottom: 1px;
 }
@@ -193,7 +206,8 @@ QToolBar
 
 QToolButton
 {
-        color: #92bc69;
+        color: #FFFFCC;
+        font: bold;
         border: none;
         padding-right: 6px;
         padding-left: 6px;
@@ -204,12 +218,12 @@ QToolButton
 QToolButton:hover
 {
         border: #fff;
-        color: #fff;
+        color: #FF9966;
 }
 
 QToolButton:checked
 {
-        color: #9E0B0F;
+        color: #99FF99;
         border: #1d3b58;
 }
 
@@ -220,7 +234,7 @@ QToolButton:disabled
 
 QPushButton
 {
-    color: #92bc69;
+	color: #FFFFCC;
     font: bold;
     background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2e5064, stop: 0.1 #2e5064, stop: 0.5 #234051, stop: 0.9 #192f3c, stop: 1 #16242d);
     border-width: 1px;
@@ -242,6 +256,27 @@ QPushButton:pressed
 
 QPushButton:hover
 {
-    border: 1px solid #10616e;
+    border: 1px solid #FFFFCC;
 }
 
+QPushButton:disabled
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #383838, stop: 0.1 #383838, stop: 0.5 #282828, stop: 0.9 #535353, stop: 1 #364249);
+    font: normal;
+	color: #7E7E7E;
+    border: 1px solid #535353;
+}
+
+QProgressBar
+{
+    background-color: #339966;
+    text-align: center;
+    color: #FFFFCC;
+}
+
+QProgressBar::chunk
+{
+    background-color: #FF9966;
+    width: 2.15px;
+    margin: 0.5px;
+}
