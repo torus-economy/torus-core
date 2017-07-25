@@ -79,11 +79,11 @@ QMenu::separator
 
 QLineEdit
 {
-    background-color: #12102a;
+    background-color: #8CD9B3;
     padding: 1px;
     border: 1px solid #0c5460;
     border-radius: 2px;
-    color: #2cd5ae;
+    color: #206040;
 }
 
 QLineEdit:disabled
@@ -119,12 +119,14 @@ QTabBar::tab:last
 {
     margin-right: 0; /* the last selected tab has nothing to overlap with on the right */
     border-top-right-radius: 3px;
+        background-color: #020822;
 }
 
 QTabBar::tab:first:!selected
 {
  margin-left: 0px; /* the last selected tab has nothing to overlap with on the right */
     border-top-left-radius: 3px;
+        
 }
 
 QTabBar::tab:!selected
@@ -164,7 +166,7 @@ QComboBox
     background-color: #12102a;
     border: 1px solid #0c5460;
     border-radius: 2px;
-    color: #2cd5ae;
+    color: #FFFFCC;
 
 }
 
@@ -178,14 +180,22 @@ QComboBox::drop-down
      border-left-style: solid; /* just a single line */
      border-top-right-radius: 2px; /* same radius as the QComboBox */
      border-bottom-right-radius: 2px;
-     color: #a64e4e;
+     color: #FFFFCC;
 }
 
 QComboBox:selected
 {
     padding-top: 3px;
     padding-left: 4px;
-    background-color: #234b8f;
+    background-color: #60CA95;
+    color: #fff;
+}
+
+QComboBox:!selected
+{
+    padding-top: 3px;
+    padding-left: 4px;
+    background-color: #226644;
     color: #fff;
 }
 
@@ -194,8 +204,8 @@ QComboBox QAbstractItemView
     width: 35px;
     border: 1px solid #183464;
     border-radius: 2px;
-    background-color: #12102a;
-    color: #a64e4e;
+    background-color: #339966;
+    color: #FFFFCC;
 }
 
 QToolBar
@@ -279,4 +289,23 @@ QProgressBar::chunk
     background-color: #FF9966;
     width: 2.15px;
     margin: 0.5px;
+}
+
+QTableView
+{
+    alternate-background-color: #287B52;
+    background-color: #339966;
+    color: #FFFFCC;
+}
+
+QHeaderView::section
+{
+    background-color: #226644;
+}
+
+QToolTip 
+{ 
+    color: #226644; 
+    background-color: #FFFFCC; 
+    border: 1px solid #226644; 
 }
