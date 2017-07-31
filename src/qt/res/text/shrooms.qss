@@ -305,9 +305,20 @@ QWidget#treeWidget
     color: #FFFFCC;
 }
 
+QDialog#CoinControlDialog
+{
+    background-color: #226644;
+    color: #FFFFCC;
+}
+
 QHeaderView::section
 {
     background-color: #226644;
+}
+
+QTextEdit
+{
+    background-color: #03051c;
 }
 
 QToolTip 
