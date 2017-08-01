@@ -40,6 +40,7 @@ static const int64_t MIN_TX_FEE = 1000000;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64_t MAX_MONEY = 1000000000 * COIN;
 static const int64_t COIN_YEAR_REWARD = 30 * CENT;
+static const unsigned int SWITCH_TIME = 1503530603; // Wednesday, 23 August 2017 23:23:23 GMT
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
@@ -53,8 +54,21 @@ static const int fHaveUPnP = false;
 static const uint256 hashGenesisBlock("0x000009ec0e25043272abfbc248a072b7a61f091c61bb890651588517fbdf023a");
 static const uint256 hashGenesisBlockTestNet("0x000009ec0e25043272abfbc248a072b7a61f091c61bb890651588517fbdf023a");
 
-inline int64_t PastDrift(int64_t nTime)   { return nTime - 10 * 60; } // up to 10 minutes from the past
-inline int64_t FutureDrift(int64_t nTime) { return nTime + 10 * 60; } // up to 10 minutes from the future
+inline int64_t PastDrift(int64_t nTime)
+{
+    if (nTime > SWITCH_TIME)
+        return nTime - 1 * 60; // up to 1 minute from the past
+    else
+        return nTime - 10 * 60; // up to 10 minutes from the past
+}
+
+inline int64_t FutureDrift(int64_t nTime)
+{
+    if (nTime > SWITCH_TIME)
+        return nTime + 1 * 60; // up to 1 minute from the future
+    else
+        return nTime + 10 * 60; // up to 10 minutes from the future
+}
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
@@ -115,7 +129,7 @@ bool LoadExternalBlockFile(FILE* fileIn);
 bool CheckProofOfWork(uint256 hash, unsigned int nBits);
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake);
 int64_t GetProofOfWorkReward(int64_t nFees);
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees);
+int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int64_t nTime);
 unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime);
 unsigned int ComputeMinStake(unsigned int nBase, int64_t nTime, unsigned int nBlockTime);
 int GetNumBlocksOfPeers();
@@ -126,15 +140,6 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan);
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake);
 void StakeMiner(CWallet *pwallet);
 void ResendWalletTransactions(bool fForce = false);
-
-
-
-
-
-
-
-
-
 
 bool GetWalletFile(CWallet* pwallet, std::string &strWalletFileOut);
 
