@@ -21,7 +21,6 @@
 #include <signal.h>
 #endif
 
-
 using namespace std;
 using namespace boost;
 
@@ -295,6 +294,7 @@ std::string HelpMessage()
         "  -upgradewallet         " + _("Upgrade wallet to latest format") + "\n" +
         "  -keypool=<n>           " + _("Set key pool size to <n> (default: 100)") + "\n" +
         "  -rescan                " + _("Rescan the block chain for missing wallet transactions") + "\n" +
+        "  -splitthreshold=<n>    " + _("Set stake split threshold within range (default: 0)") + "\n" +
         "  -salvagewallet         " + _("Attempt to recover private keys from a corrupt wallet.dat") + "\n" +
         "  -checkblocks=<n>       " + _("How many blocks to check at startup (default: 2500, 0 = all)") + "\n" +
         "  -checklevel=<n>        " + _("How thorough the block verification is (0-6, default: 1)") + "\n" +
@@ -558,6 +558,14 @@ bool AppInit2()
             return InitError(_("wallet.dat corrupt, salvage failed"));
     }
 
+        // Split threshold
+	    if (mapArgs.count("-splitthreshold")) 
+    { 
+       if (!ParseMoney(mapArgs["-splitthreshold"], nSplitThreshold)) 
+           return InitError(strprintf(_("Invalid amount for -splitthreshold=<amount>: '%s'"), mapArgs["-splitthreshold"].c_str())); 
+       printf("splitthreshold set to %"PRId64"\n",nSplitThreshold / COIN); 
+    }
+	
     // ********************************************************* Step 6: network initialization
 
     int nSocksVersion = GetArg("-socks", 5);

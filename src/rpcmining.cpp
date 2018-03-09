@@ -55,6 +55,7 @@ Value getmininginfo(const Array& params, bool fHelp)
     obj.push_back(Pair("Stake Weight", weight));
 
     obj.push_back(Pair("Stake Interest",    (uint64_t)COIN_YEAR_REWARD / 1000000));
+    obj.push_back(Pair("splitthreshold",   ValueFromAmount(nSplitThreshold)));
     obj.push_back(Pair("Testnet",       fTestNet));
     return obj;
 }

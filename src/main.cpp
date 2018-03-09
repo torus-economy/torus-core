@@ -79,6 +79,7 @@ const string strMessageMagic = "SHROOMS Signed Message:\n";
 int64_t nTransactionFee = MIN_TX_FEE;
 int64_t nReserveBalance = 0;
 int64_t nMinimumInputValue = 0;
+int64_t nSplitThreshold = 0;
 
 extern enum Checkpoints::CPMode CheckpointsMode;
 
@@ -185,12 +186,6 @@ void ResendWalletTransactions(bool fForce)
         pwallet->ResendWalletTransactions(fForce);
 }
 
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////
 //
 // mapOrphanTransactions
@@ -256,12 +251,6 @@ unsigned int LimitOrphanTxSize(unsigned int nMaxOrphans)
     }
     return nEvicted;
 }
-
-
-
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -469,12 +458,6 @@ int CMerkleTx::SetMerkleBranch(const CBlock* pblock)
     return pindexBest->nHeight - pindex->nHeight + 1;
 }
 
-
-
-
-
-
-
 bool CTransaction::CheckTransaction() const
 {
     // Basic checks that don't depend on any context
@@ -554,7 +537,6 @@ int64_t CTransaction::GetMinFee(unsigned int nBlockSize, enum GetMinFee_mode mod
         nMinFee = MAX_MONEY;
     return nMinFee;
 }
-
 
 bool CTxMemPool::accept(CTxDB& txdb, CTransaction &tx, bool fCheckInputs,
                         bool* pfMissingInputs)
@@ -725,7 +707,6 @@ bool CTxMemPool::addUnchecked(const uint256& hash, CTransaction &tx)
     return true;
 }
 
-
 bool CTxMemPool::remove(const CTransaction &tx, bool fRecursive)
 {
     // Remove transaction from memory pool
@@ -782,9 +763,6 @@ void CTxMemPool::queryHashes(std::vector<uint256>& vtxid)
     for (map<uint256, CTransaction>::iterator mi = mapTx.begin(); mi != mapTx.end(); ++mi)
         vtxid.push_back((*mi).first);
 }
-
-
-
 
 int CMerkleTx::GetDepthInMainChainINTERNAL(CBlockIndex* &pindexRet) const
 {
@@ -847,8 +825,6 @@ bool CMerkleTx::AcceptToMemoryPool()
     CTxDB txdb("r");
     return AcceptToMemoryPool(txdb);
 }
-
-
 
 bool CWalletTx::AcceptWalletTransaction(CTxDB& txdb, bool fCheckInputs)
 {
@@ -917,13 +893,6 @@ bool GetTransaction(const uint256 &hash, CTransaction &tx, uint256 &hashBlock)
     }
     return false;
 }
-
-
-
-
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -1088,7 +1057,6 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     return bnNew.GetCompact();
 }
 
-
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)
 {
     CBigNum bnTarget;
@@ -1155,16 +1123,6 @@ void CBlock::UpdateTime(const CBlockIndex* pindexPrev)
     nTime = max(GetBlockTime(), GetAdjustedTime());
 }
 
-
-
-
-
-
-
-
-
-
-
 bool CTransaction::DisconnectInputs(CTxDB& txdb)
 {
     // Relinquish previous transactions' spent pointers
@@ -1199,7 +1157,6 @@ bool CTransaction::DisconnectInputs(CTxDB& txdb)
 
     return true;
 }
-
 
 bool CTransaction::FetchInputs(CTxDB& txdb, const map<uint256, CTxIndex>& mapTestPool,
                                bool fBlock, bool fMiner, MapPrevTx& inputsRet, bool& fInvalid)
@@ -1416,7 +1373,6 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs, map<uint256, CTx
     return true;
 }
 
-
 bool CTransaction::ClientConnectInputs()
 {
     if (IsCoinBase())
@@ -1462,9 +1418,6 @@ bool CTransaction::ClientConnectInputs()
 
     return true;
 }
-
-
-
 
 bool CBlock::DisconnectBlock(CTxDB& txdb, CBlockIndex* pindex)
 {
@@ -1726,7 +1679,6 @@ bool static Reorganize(CTxDB& txdb, CBlockIndex* pindexNew)
 
     return true;
 }
-
 
 // Called from inside SetBestChain: attaches a block to the new best chain being built
 bool CBlock::SetBestChainInner(CTxDB& txdb, CBlockIndex *pindexNew)
@@ -2010,9 +1962,6 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos, const u
     return true;
 }
 
-
-
-
 bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) const
 {
     // These are checks that are independent of context
@@ -2095,7 +2044,6 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) c
     // Check merkle root
     if (fCheckMerkleRoot && hashMerkleRoot != BuildMerkleTree())
         return DoS(100, error("CheckBlock() : hashMerkleRoot mismatch"));
-
 
     return true;
 }
@@ -2565,8 +2513,6 @@ bool LoadBlockIndex(bool fAllowNew)
     return true;
 }
 
-
-
 void PrintBlockTree()
 {
     // pre-compute tree structure
@@ -2756,13 +2702,6 @@ string GetWarnings(string strFor)
     return "error";
 }
 
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////
 //
 // Messages
@@ -2943,12 +2882,10 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         return false;
     }
 
-
     else if (strCommand == "verack")
     {
         pfrom->SetRecvVersion(min(pfrom->nVersion, PROTOCOL_VERSION));
     }
-
 
     else if (strCommand == "addr")
     {
@@ -3065,7 +3002,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         }
     }
 
-
     else if (strCommand == "getdata")
     {
         vector<CInv> vInv;
@@ -3137,7 +3073,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
             Inventory(inv.hash);
         }
     }
-
 
     else if (strCommand == "getblocks")
     {
@@ -3225,7 +3160,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         pfrom->PushMessage("headers", vHeaders);
     }
 
-
     else if (strCommand == "tx")
     {
         vector<uint256> vWorkQueue;
@@ -3310,7 +3244,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         if (block.nDoS) pfrom->Misbehaving(block.nDoS);
     }
 
-
     else if (strCommand == "getaddr")
     {
         // Don't return addresses older than nCutOff timestamp
@@ -3338,7 +3271,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
             pfrom->PushMessage("inv", vInv);
     }
 
-
     else if (strCommand == "checkorder")
     {
         uint256 hashReply;
@@ -3365,7 +3297,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         pfrom->PushMessage("reply", hashReply, (int)0, scriptPubKey);
     }
 
-
     else if (strCommand == "reply")
     {
         uint256 hashReply;
@@ -3384,7 +3315,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         if (!tracker.IsNull())
             tracker.fn(tracker.param1, vRecv);
     }
-
 
     else if (strCommand == "ping")
     {
@@ -3406,7 +3336,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
             pfrom->PushMessage("pong", nonce);
         }
     }
-
 
     else if (strCommand == "alert")
     {
@@ -3438,12 +3367,10 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         }
     }
 
-
     else
     {
         // Ignore unknown commands for extensibility
     }
-
 
     // Update the last seen time for this node's address
     if (pfrom->fNetworkNode)
@@ -3567,7 +3494,6 @@ bool ProcessMessages(CNode* pfrom)
     return fOk;
 }
 
-
 bool SendMessages(CNode* pto, bool fSendTrickle)
 {
     TRY_LOCK(cs_main, lockMain);
@@ -3639,7 +3565,6 @@ bool SendMessages(CNode* pto, bool fSendTrickle)
                 pto->PushMessage("addr", vAddr);
         }
 
-
         //
         // Message: inventory
         //
@@ -3696,7 +3621,6 @@ bool SendMessages(CNode* pto, bool fSendTrickle)
         }
         if (!vInv.empty())
             pto->PushMessage("inv", vInv);
-
 
         //
         // Message: getdata
