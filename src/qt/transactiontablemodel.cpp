@@ -395,6 +395,7 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord *wtx, b
     case TransactionRecord::SendToOther:
         return QString::fromStdString(wtx->address);
     case TransactionRecord::SendToSelf:
+        return lookupAddress(wtx->address, tooltip);
     default:
         return tr("(n/a)");
     }
