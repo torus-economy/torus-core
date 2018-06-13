@@ -366,11 +366,15 @@ bool CKey::Sign(uint256 hash, std::vector<unsigned char>& vchSig)
     BN_rshift1(halforder, order);
     if (BN_cmp(sig_s, halforder) > 0) {
         // enforce low S values, by negating the value (modulo the order) if above order/2.
+    #if OPENSSL_VERSION_NUMBER > 0x1000ffffL
         BIGNUM *new_r = BN_dup(sig_r);
         BIGNUM *new_s = BN_new();
         
         BN_sub(new_s, order, sig_s);
         ECDSA_SIG_set0(sig, new_r, new_s);
+    #else
+        BN_sub(sig->s, order, sig->s);
+    #endif
     }
     BN_CTX_end(ctx);
     BN_CTX_free(ctx);
