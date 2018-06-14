@@ -144,7 +144,7 @@ bool AppInit(int argc, char* argv[])
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
             // First part of help message is specific to bitcoind / RPC client
-            std::string strUsage = _("SHROOMS version") + " " + FormatFullVersion() + "\n\n" +
+            std::string strUsage = _("SHROOMS ") + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
                   "  SHROOMSd [options]                     " + "\n" +
                   "  SHROOMSd [options] <command> [params]  " + _("Send command to -server or SHROOMSd") + "\n" +

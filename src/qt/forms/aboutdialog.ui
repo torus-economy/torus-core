@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>About SHROOMS</string>
+   <string>We Are SHROOMS</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
@@ -50,7 +50,7 @@
           <cursorShape>IBeamCursor</cursorShape>
          </property>
          <property name="text">
-          <string>&lt;b&gt;SHROOMS&lt;/b&gt; version</string>
+          <string>&lt;b&gt;SHROOMS&lt;/b&gt; </string>
          </property>
          <property name="textInteractionFlags">
           <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -95,7 +95,7 @@
 Copyright © 2012-2014 The NovaCoin developers&lt;br/&gt;
 Copyright © 2015-2042 The SHROOMS developers&lt;br/&gt;&lt;br/&gt;
 *********************************************&lt;br/&gt;
-OFFICIAL WEBSITE: &lt;a href=&quot;http://shrooms.pw&quot;&gt;HTTP://SHROOMS.PW&lt;/a&gt;&lt;/a&gt;&lt;br/&gt;
+SHROOMS Website: &lt;a href=&quot;http://shrooms.pw&quot;&gt;http://SHROOMS.PW&lt;/a&gt;&lt;/a&gt;&lt;br/&gt;
 *********************************************&lt;br/&gt;
         </string>
        </property>

@@ -2,6 +2,9 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include <string>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 #include "version.h"
 
@@ -41,10 +44,10 @@ const std::string CLIENT_NAME("SHROOMS");
 #endif
 
 #define BUILD_DESC_FROM_COMMIT(maj,min,rev,build,commit) \
-    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-" commit
+    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build)
 
 #define BUILD_DESC_FROM_UNKNOWN(maj,min,rev,build) \
-    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-fungi"
+    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build)
 
 #ifndef BUILD_DESC
 #    ifdef GIT_COMMIT_ID
@@ -61,6 +64,17 @@ const std::string CLIENT_NAME("SHROOMS");
 #        define BUILD_DATE __DATE__ ", " __TIME__
 #    endif
 #endif
+
+std::string Species()
+{
+    srand(time(0));
+
+    std::string speciesList[180] = { "Agrocybe farinacea", "Conocybe cyanopus", "Conocybe kuehneriana", "Conocybe siligineoides", "Conocybe smithii", "Copelandia affinis", "Copelandia anomala", "Copelandia bispora", "Copelandia cambodginiensis", "Copelandia chlorocystis", "Copelandia cyanescens", "Copelandia lentisporus", "Copelandia mexicana", "Copelandia tirunelveliensis", "Copelandia tropica", "Copelandia tropicalis", "Copelandia westii", "Panaeolina foenisecii", "Panaeolina rhombisperma", "Panaeolina sagarae", "Panaeolina microsperma", "Panaeolus africanus", "Panaeolus ater", "Panaeolus castaneifolius", "Panaeolus fimicola", "Panaeolus microsporus", "Panaeolus moellerianus", "Panaeolus olivaceus", "Panaeolus papilionaceus", "Panaeolus retirugis", "Panaeolus rubricaulis", "Panaeolus sphinctrinus", "Panaeolus subbalteatus", "Panaeolus venezolanus", "Gymnopilus aeruginosus", "Gymnopilus braendlei", "Gymnopilus intermedius", "Gymnopilus lateritius", "Gymnopilus liquiritiae", "Gymnopilus luteofolius", "Gymnopilus luteoviridis", "Gymnopilus luteus", "Gymnopilus purpuratus", "Gymnopilus sapineus", "Gymnopilus spectabilis", "Gymnopilus subpurpuratus", "Gymnopilus validipes", "Gymnopilus viridans", "Inocybe aeruginascens", "Inocybe coelestium", "Inocybe corydalina", "Inocybe corydalina", "Inocybe haemacta", "Inocybe tricolor", "Pluteus atricapillus", "Pluteus cyanopus", "Pluteus glaucus", "Pluteus nigriviridis", "Pluteus salicinus", "Pluteus villosus", "Hypholoma gigaspora", "Hypholoma guzmanii", "Hypholoma naematoliformis", "Hypholoma neocaledonica", "Hypholoma popperianum", "Hypholoma rhombispora", "Psilocybe acutipilea", "Psilocybe angustipleurocystidiata", "Psilocybe antioquensis", "Psilocybe aquamarina", "Psilocybe argentipes", "Psilocybe armandii", "Psilocybe aucklandii", "Psilocybe australiana", "Psilocybe aztecorum", "Psilocybe aztecorum", "Psilocybe azurescens", "Psilocybe baeocystis", "Psilocybe banderiliensis", "Psilocybe barrerae", "Psilocybe bohemica", "Psilocybe brasiliensis", "Psilocybe brunneocystidiata", "Psilocybe caeruleoannulata", "Psilocybe caerulescens", "Psilocybe caerulipes", "Psilocybe carbonaria", "Psilocybe chiapanensis", "Psilocybe collybioides", "Psilocybe columbiana", "Psilocybe coprinifacies", "Psilocybe cordispora", "Psilocybe cubensis", "Psilocybe cyanescens", "Psilocybe cyanofibrillosa", "Psilocybe dumontii", "Psilocybe eucalypta", "Psilocybe fagicola", "Psilocybe farinacea", "Psilocybe fimetaria", "Psilocybe fuliginosa", "Psilocybe furtadoana", "Psilocybe galindoi", "Psilocybe goniospora", "Psilocybe graveolens", "Psilocybe guatapensis", "Psilocybe guilartensis", "Psilocybe heimii", "Psilocybe heliconiae", "Psilocybe herrerae", "Psilocybe hispanica", "Psilocybe hoogshagenii", "Psilocybe inconspicua", "Psilocybe indica", "Psilocybe isabelae", "Psilocybe jacobsii", "Psilocybe jaliscana", "Psilocybe kumaenorum", "Psilocybe laurae", "Psilocybe lazoi", "Psilocybe liniformans", "Psilocybe mairei", "Psilocybe makarorae", "Psilocybe mammillata", "Psilocybe meridensis", "Psilocybe mexicana", "Psilocybe moseri", "Psilocybe muliercula", "Psilocybe natalensis", "Psilocybe natarajanii", "Psilocybe ochreata", "Psilocybe papuana", "Psilocybe paulensis", "Psilocybe pelliculosa", "Psilocybe pericystis", "Psilocybe pintonii", "Psilocybe pleurocystidiosa", "Psilocybe plutonia", "Psilocybe portoricensis", "Psilocybe pseudoaztecorum", "Psilocybe puberula", "Psilocybe quebecensis", "Psilocybe ramulosa", "Psilocybe rostrata", "Psilocybe rzedowskii", "Psilocybe samuiensis", "Psilocybe sanctorum", "Psilocybe schultesii", "Psilocybe semilanceata", "Psilocybe septentrionalis", "Psilocybe serbica", "Psilocybe sierrae", "Psilocybe silvatica", "Psilocybe singerii", "Psilocybe strictipes", "Psilocybe stuntzii", "Psilocybe subacutipilea", "Psilocybe subaeruginosa", "Psilocybe subcaerulipes", "Psilocybe subcubensis", "Psilocybe subtropicalis", "Psilocybe subyungensis", "Psilocybe subzapotecorum", "Psilocybe tampanensis", "Psilocybe tasmaniana", "Psilocybe uruguayensis", "Psilocybe uxpanapensis", "Psilocybe venenata", "Psilocybe veraecrucis", "Psilocybe villarrealiae", "Psilocybe wassoniorum", "Psilocybe weilii", "Psilocybe weldenii", "Psilocybe wrightii", "Psilocybe xalapensis", "Psilocybe yungensis", "Psilocybe zapotecorum", "Gerronema fibula", "Gerronema solidipes", "Mycena cyanorhiza" };
+
+    std::string Species = speciesList[rand() % 180];
+
+    return Species;
+}
 
 const std::string CLIENT_BUILD(BUILD_DESC CLIENT_VERSION_SUFFIX);
 const std::string CLIENT_DATE(BUILD_DATE);
