@@ -80,7 +80,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 {
     updateStyle();
     resize(850, 550);
-    setWindowTitle(tr("SHROOMS") + " - " + tr("Wallet"));
+    setWindowTitle(tr("SHROOMS ") + QString::fromStdString(FormatFullVersion()));
 #ifndef Q_OS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
