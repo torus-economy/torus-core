@@ -14,7 +14,7 @@ packages:
 reference_datetime: "2011-01-30 00:00:00"
 remotes: []
 files:
-- "openssl-1.0.1p.tar.gz"
+- "openssl-1.0.2o.tar.gz"
 - "db-4.8.30.NC.tar.gz"
 - "miniupnpc-1.9.20140401.tar.gz"
 - "zlib-1.2.8.tar.gz"
@@ -28,7 +28,7 @@ script: |
   export INSTALLPREFIX=$OUTDIR/staging/deps
   export HOST=i686-w64-mingw32
   # Integrity Check
-  echo "bd5ee6803165c0fb60bbecbacacf244f1f90d2aa0d71353af610c29121e9b2f1  openssl-1.0.1p.tar.gz"  | sha256sum -c
+  echo "ec3f5c9714ba0fd45cb4e087301eb1336c317e0d20b575a125050470e8089e4d  openssl-1.0.2o.tar.gz"  | sha256sum -c
   echo "12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef  db-4.8.30.NC.tar.gz"    | sha256sum -c
   echo "d02670112125300f7a3d61421714d99105edd90190bf12542d16785f16f017aa  miniupnpc-1.9.20140401.tar.gz"   | sha256sum -c
   echo "36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d  zlib-1.2.8.tar.gz"      | sha256sum -c
@@ -38,8 +38,8 @@ script: |
   #
   mkdir -p $INSTALLPREFIX
 
-  tar xzf openssl-1.0.1p.tar.gz
-  cd openssl-1.0.1p
+  tar xzf openssl-1.0.2o.tar.gz
+  cd openssl-1.0.2o
   ./Configure --cross-compile-prefix=$HOST- mingw --openssldir=$INSTALLPREFIX
   make
   make install_sw
@@ -52,11 +52,11 @@ script: |
   make install_lib install_include
   cd ../..
   #
-  tar xzf miniupnpc-1.9.20151026.tar.gz
-  cd miniupnpc-1.9.20151026
+  tar xzf miniupnpc-1.9.20140401.tar.gz
+  cd miniupnpc-1.9.20140401
   echo "
-  --- miniupnpc-1.6/Makefile.mingw.orig   2013-09-29 18:52:51.014087958 -1000
-  +++ miniupnpc-1.6/Makefile.mingw        2013-09-29 19:09:29.663318691 -1000
+  --- miniupnpc-1.9/Makefile.mingw.orig   2013-09-29 18:52:51.014087958 -1000
+  +++ miniupnpc-1.9/Makefile.mingw        2013-09-29 19:09:29.663318691 -1000
   @@ -67,8 +67,8 @@
    
    wingenminiupnpcstrings.o:	wingenminiupnpcstrings.c
@@ -98,4 +98,4 @@ script: |
   cd ..
   #
   cd $INSTALLPREFIX
-  zip -r $OUTDIR/shrooms-deps-win32-gitian-r13.zip include lib
+  zip -r $OUTDIR/shrooms-deps-win32-gitian-r14.zip include lib

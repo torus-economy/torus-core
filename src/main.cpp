@@ -966,11 +966,29 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 // miner's coin stake reward
 int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int64_t nTime)
 {
-    int64_t nSubsidyLimit = 4 * COIN;
+    int64_t nSubsidyLimit = 0;
     int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 25 / (365 * 25 + 8); 
 	
-	if ( nTime > SWITCH_TIME )
+    if ( nTime > SWITCH_TIME13 )
+    {
+    nSubsidyLimit = 0.13 * COIN;
     nSubsidy = min(nSubsidy, nSubsidyLimit);
+    }
+    else if ( nTime > SWITCH_TIME23 )
+    {
+    nSubsidyLimit = 0.23 * COIN;
+    nSubsidy = min(nSubsidy, nSubsidyLimit);
+    }
+    else if ( nTime > SWITCH_TIME42 )
+    {
+    nSubsidyLimit = 0.42 * COIN;
+    nSubsidy = min(nSubsidy, nSubsidyLimit);
+    }
+    else if ( nTime > SWITCH_TIME )
+    {
+    nSubsidyLimit = 4 * COIN;
+    nSubsidy = min(nSubsidy, nSubsidyLimit);
+    }
     
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%" PRId64 "\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
