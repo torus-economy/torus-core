@@ -138,7 +138,11 @@ public:
         nWalletDBUpdated++;
         return Write(std::string("orderposnext"), nOrderPosNext);
     }
-
+    bool WriteCombineDust(bool fCombineDust)
+    {
+        nWalletDBUpdated++;
+        return Write(std::string("combinedust"), fCombineDust, true);
+    }
     bool WriteDefaultKey(const CPubKey& vchPubKey)
     {
         nWalletDBUpdated++;

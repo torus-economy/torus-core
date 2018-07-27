@@ -359,7 +359,7 @@ void CWallet::WalletUpdateSpent(const CTransaction &tx, bool fBlock)
                     printf("WalletUpdateSpent: bad wtx %s\n", wtx.GetHash().ToString().c_str());
                 else if (!wtx.IsSpent(txin.prevout.n) && IsMine(wtx.vout[txin.prevout.n]))
                 {
-                    printf("WalletUpdateSpent found spent coin %s TC %s\n", FormatMoney(wtx.GetCredit()).c_str(), wtx.GetHash().ToString().c_str());
+                    printf("WalletUpdateSpent found spent coin %s SHRM %s\n", FormatMoney(wtx.GetCredit()).c_str(), wtx.GetHash().ToString().c_str());
                     wtx.MarkSpent(txin.prevout.n);
                     wtx.WriteToDisk();
                     NotifyTransactionChanged(this, txin.prevout.hash, CT_UPDATED);
@@ -1708,37 +1708,40 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     if (nCredit == 0 || nCredit > nBalance - nReserveBalance)
         return false;
 
-    BOOST_FOREACH(PAIRTYPE(const CWalletTx*, unsigned int) pcoin, setCoins)
-    {
-        // Attempt to add more inputs
-        // Only add coins of the same key/address as kernel
-        if (txNew.vout.size() == 2 && ((pcoin.first->vout[pcoin.second].scriptPubKey == scriptPubKeyKernel || pcoin.first->vout[pcoin.second].scriptPubKey == txNew.vout[1].scriptPubKey))
-            && pcoin.first->GetHash() != txNew.vin[0].prevout.hash)
-        {
-            int64_t nTimeWeight = GetWeight((int64_t)pcoin.first->nTime, (int64_t)txNew.nTime);
+	if(fCombineDust) //presstab HyperStake - this combination code iterates through all of your outputs on successful coinstake, so its useful to have user be able to choose whether this is necessary
+	{
+	    BOOST_FOREACH(PAIRTYPE(const CWalletTx*, unsigned int) pcoin, setCoins)
+	    {
+	        // Attempt to add more inputs
+	        // Only add coins of the same key/address as kernel
+	        if (txNew.vout.size() == 2 && ((pcoin.first->vout[pcoin.second].scriptPubKey == scriptPubKeyKernel || pcoin.first->vout[pcoin.second].scriptPubKey == txNew.vout[1].scriptPubKey))
+	            && pcoin.first->GetHash() != txNew.vin[0].prevout.hash)
+	        {
+	            int64_t nTimeWeight = GetWeight((int64_t)pcoin.first->nTime, (int64_t)txNew.nTime);
 
-            // Stop adding more inputs if already too many inputs
-            if (txNew.vin.size() >= 100)
-                break;
-            // Stop adding more inputs if value is already pretty significant
-            if (nCredit >= nStakeCombineThreshold)
-                break;
-            // Stop adding inputs if reached reserve limit
-            if (nCredit + pcoin.first->vout[pcoin.second].nValue > nBalance - nReserveBalance)
-                break;
-            // Do not add additional significant input
-            if (pcoin.first->vout[pcoin.second].nValue >= nStakeCombineThreshold)
-                continue;
-            // Do not add input that is still too young
-            if (nTimeWeight < nStakeMinAge)
-                continue;
+	            // Stop adding more inputs if already too many inputs
+	            if (txNew.vin.size() >= 100)
+	                break;
+	            // Stop adding more inputs if value is already pretty significant
+	            if (nCredit >= nStakeCombineThreshold)
+	                break;
+	            // Stop adding inputs if reached reserve limit
+	            if (nCredit + pcoin.first->vout[pcoin.second].nValue > nBalance - nReserveBalance)
+	                break;
+	            // Do not add additional significant input
+	            if (pcoin.first->vout[pcoin.second].nValue >= nStakeCombineThreshold)
+	                continue;
+	            // Do not add input that is still too young
+	            if (nTimeWeight < nStakeMinAge)
+	                continue;
 
-            txNew.vin.push_back(CTxIn(pcoin.first->GetHash(), pcoin.second));
-            nCredit += pcoin.first->vout[pcoin.second].nValue;
-            vwtxPrev.push_back(pcoin.first);
-        }
-    }
-
+	            txNew.vin.push_back(CTxIn(pcoin.first->GetHash(), pcoin.second));
+	            nCredit += pcoin.first->vout[pcoin.second].nValue;
+	            vwtxPrev.push_back(pcoin.first);
+	        }
+	    }
+	}
+	
     // Calculate coin age reward
     {
         uint64_t nCoinAge;

@@ -1791,3 +1791,33 @@ Value makekeypair(const Array& params, bool fHelp)
     result.push_back(Pair("PublicKey", HexStr(key.GetPubKey().Raw())));
     return result;
 }
+
+Value combinedust(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() > 1)
+        throw runtime_error(
+			"combinedust <true/false>\n"
+			"Combine dust is a setting in the staking parameters that will iterate through your entire wallet contents to looks for small coins that it can combine into your coinstake transaction." 
+			"set this to false to prevent any combination from occurring \n");
+    if(params.size() < 1)
+        return pwalletMain->fCombineDust;
+	
+	CWalletDB walletdb(pwalletMain->strWalletFile);
+
+		bool fCombineDust;
+		string strCombineDust = params[0].get_str();
+		if(strCombineDust == "true")
+			fCombineDust = true;
+		else if(strCombineDust == "false")
+			fCombineDust = false;
+		else
+        return "Failed to understand true/false parameter. Please use combinedust true/false.\n"
+		"Combine dust is a setting in the staking parameters that will iterate through your entire wallet contents to looks for small coins that it can combine into your coinstake transaction." 
+		"set this to false to prevent any combination from occurring \n";
+		
+		pwalletMain->fCombineDust = fCombineDust;
+		if(walletdb.WriteCombineDust(fCombineDust))
+			return "Combine dust setting saved and written to DB";
+		else
+			return "ERROR: Combine dust setting failed to write to DB";
+}
