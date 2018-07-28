@@ -964,7 +964,7 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 }
 
 // miner's coin stake reward
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int64_t nTime)
+int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int64_t nTime, bool bStakeCapOnly)
 {
     int64_t nSubsidyLimit = 0;
     int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 25 / (365 * 25 + 8); 
@@ -989,6 +989,9 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int64_t nTime)
     nSubsidyLimit = 4 * COIN;
     nSubsidy = min(nSubsidy, nSubsidyLimit);
     }
+	
+    if(bStakeCapOnly)
+    return nSubsidyLimit;
     
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%" PRId64 "\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
@@ -1561,7 +1564,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
         if (!vtx[1].GetCoinAge(txdb, nCoinAge))
             return error("ConnectBlock() : %s unable to get coin age for coinstake", vtx[1].GetHash().ToString().substr(0,10).c_str());
 
-        int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, nTime);
+        int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, nTime, false);
 
         if (nStakeReward > nCalculatedStakeReward)
             return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%" PRId64 " vs calculated=%" PRId64 ")", nStakeReward, nCalculatedStakeReward));

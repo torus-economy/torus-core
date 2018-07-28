@@ -417,6 +417,12 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
         {
             ssValue >> pwallet->nOrderPosNext;
         }
+        else if(strType == "combinedust")//presstab HyperStake
+        {
+           bool fCombineDust;
+           ssValue >> fCombineDust;
+           pwallet->fCombineDust = fCombineDust;
+        }
     } catch (...)
     {
         return false;

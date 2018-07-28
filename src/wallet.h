@@ -96,6 +96,9 @@ public:
     MasterKeyMap mapMasterKeys;
     unsigned int nMasterKeyMaxID;
 
+    // Stake Settings
+    bool fCombineDust;
+
     CWallet()
     {
         SetNull();
@@ -117,6 +120,9 @@ public:
         nOrderPosNext = 0;
         nTimeFirstKey = 0;
         fSplitBlock = false;
+
+        // Stake Settings
+        fCombineDust = true;
     }
 
     std::map<uint256, CWalletTx> mapWallet;
