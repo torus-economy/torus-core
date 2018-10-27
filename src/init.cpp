@@ -396,8 +396,6 @@ bool AppInit2()
     if (mapArgs.count("-proxy")) {
         // to protect privacy, do not listen by default if a proxy server is specified
         SoftSetBoolArg("-listen", false);
-        // to protect privacy, do not discover addresses by default
-        SoftSetBoolArg("-discover", false);
     }
 
     if (!GetBoolArg("-listen", true)) {
