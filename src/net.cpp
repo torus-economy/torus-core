@@ -48,6 +48,7 @@ struct LocalServiceInfo {
 //
 bool fClient = false;
 bool fDiscover = true;
+bool fListen = true;
 bool fUseUPnP = false;
 uint64_t nLocalServices = (fClient ? 0 : NODE_NETWORK);
 static CCriticalSection cs_mapLocalHost;
@@ -101,7 +102,7 @@ void CNode::PushGetBlocks(CBlockIndex* pindexBegin, uint256 hashEnd)
 // find 'best' local address for a particular peer
 bool GetLocal(CService& addr, const CNetAddr *paddrPeer)
 {
-    if (fNoListen)
+    if (!fListen)
         return false;
 
     int nBestScore = -1;
@@ -381,7 +382,7 @@ bool GetMyExternalIP(CNetAddr& ipRet)
         }
         else if (nHost == 2)
         {
-            addrConnect = CService("104.255.67.131", 80); // ip.truckcoin.net
+            addrConnect = CService("108.61.29.222", 80); // ip.truckcoin.net
 
             if (nLookup == 1)
             {
@@ -1855,7 +1856,7 @@ void static Discover()
 
 #ifdef WIN32
     // Get local host IP
-    char pszHostName[1000] = "";
+    char pszHostName[256] = "";
     if (gethostname(pszHostName, sizeof(pszHostName)) != SOCKET_ERROR)
     {
         vector<CNetAddr> vaddr;
