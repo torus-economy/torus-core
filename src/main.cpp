@@ -3253,16 +3253,25 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         CBlock block;
         vRecv >> block;
         uint256 hashBlock = block.GetHash();
+        int nBlockHeight = block.GetBlockHeight();
 
-        printf("received block %s\n", hashBlock.ToString().substr(0,20).c_str());
-        // block.print();
+        if (nBlockHeight > (nBestHeight + 5000)) {
+            /* Discard this block because cannot verify it any time soon */
+            printf("received and discarded distant block %s height %d\n",
+              hashBlock.ToString().substr(0,20).c_str(), nBlockHeight);
+        } else {
+            printf("received block %s height %d\n",
+              hashBlock.ToString().substr(0,20).c_str(), nBlockHeight);
 
         CInv inv(MSG_BLOCK, hashBlock);
         pfrom->AddInventoryKnown(inv);
 
-        if (ProcessBlock(pfrom, &block))
-            mapAlreadyAskedFor.erase(inv);
-        if (block.nDoS) pfrom->Misbehaving(block.nDoS);
+            if (ProcessBlock(pfrom, &block))
+              mapAlreadyAskedFor.erase(inv);
+
+            if (block.nDoS) 
+              pfrom->Misbehaving(block.nDoS);
+        }
     }
 
     else if (strCommand == "getaddr")

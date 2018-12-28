@@ -927,6 +927,30 @@ public:
 
     }
 
+    /* Extracts block height from v2+ coin base;
+     * ignores nVersion because it's unreliable */
+    int GetBlockHeight() const {
+        /* Prevents a crash if called on a block header alone */
+        if(vtx.size()) {
+            /* Serialised CScript */
+            std::vector<uchar>::const_iterator scriptsig = vtx[0].vin[0].scriptSig.begin();
+            uchar i, scount = scriptsig[0];
+            /* Optimise: nTime is 4 bytes always,
+             * nHeight must be less for a long time;
+             * check against a threshold when the time comes */
+            if(scount < 4) {
+                int height = 0;
+                uchar *pheight = (uchar *) &height;
+                for(i = 0; i < scount; i++)
+                  pheight[i] = scriptsig[i + 1];
+                /* v2+ block with nHeight in coin base */
+                return(height);
+            }
+        }
+        /* Not found */
+        return(-1);
+    }
+
     int64_t GetBlockTime() const
     {
         return (int64_t)nTime;
