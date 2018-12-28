@@ -2890,9 +2890,15 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
 
         cPeerBlockCounts.input(pfrom->nStartingHeight);
 
+        if(IsInitialBlockDownload()) {
+            /* Aggressive synchronisation:
+             * ask this peer for inventory if nothing received in the last 5 seconds */
+            if((pfrom->nStartingHeight > nBestHeight) && ((GetTime() - nTimeBestReceived) > 5LL))
+              pfrom->PushGetBlocks(pindexBest, uint256(0));
+        } else {
         // ppcoin: ask for pending sync-checkpoint if any
-        if (!IsInitialBlockDownload())
             Checkpoints::AskForPendingSyncCheckpoint(pfrom);
+        }
     }
 
 
@@ -3101,13 +3107,21 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         uint256 hashStop;
         vRecv >> locator >> hashStop;
 
+        /* Time limit for responding to a particular peer */
+        uint nCurrentTime = (uint)GetTime();
+        if((nCurrentTime - 5U) < pfrom->nLastGetblocksReceived) {
+            return(error("message getblocks spam"));
+        } else {
+            pfrom->nLastGetblocksReceived = nCurrentTime;
+        }
+
         // Find the last block the caller has in the main chain
         CBlockIndex* pindex = locator.GetBlockIndex();
 
         // Send the rest of the chain
         if (pindex)
             pindex = pindex->pnext;
-        int nLimit = 500;
+        int nLimit = 1000;
         printf("getblocks %d to %s limit %d\n", (pindex ? pindex->nHeight : -1), hashStop.ToString().substr(0,20).c_str(), nLimit);
         for (; pindex; pindex = pindex->pnext)
         {
@@ -3259,6 +3273,11 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
             /* Discard this block because cannot verify it any time soon */
             printf("received and discarded distant block %s height %d\n",
               hashBlock.ToString().substr(0,20).c_str(), nBlockHeight);
+
+            /* Aggressive synchronisation:
+             * ask this peer for inventory if nothing received in the last 5 seconds */
+            if ((pfrom->nStartingHeight > nBestHeight) && ((GetTime() - nTimeBestReceived) > 5LL))
+              pfrom->PushGetBlocks(pindexBest, uint256(0));
         } else {
             printf("received block %s height %d\n",
               hashBlock.ToString().substr(0,20).c_str(), nBlockHeight);
