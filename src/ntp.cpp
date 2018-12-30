@@ -13,7 +13,7 @@
 
 #include "netbase.h"
 #include "net.h"
-//#include "util.h"
+#include "util.h"
 #include "ui_interface.h"
 
 extern int GetRandInt(int nMax);
