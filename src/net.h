@@ -234,8 +234,8 @@ public:
     std::map<uint256, CRequestTracker> mapRequests;
     CCriticalSection cs_mapRequests;
     uint256 hashContinue;
-    uint nLastGetblocksAsked;
-    uint nLastGetblocksReceived;
+    CBlockIndex* pindexLastGetBlocksBegin;
+    uint256 hashLastGetBlocksEnd;
     int nStartingHeight;
 
     // flood relay
@@ -274,8 +274,8 @@ public:
         nSendSize = 0;
         nSendOffset = 0;
         hashContinue = 0;
-        nLastGetblocksAsked = 0;
-        nLastGetblocksReceived = 0;
+        pindexLastGetBlocksBegin = 0;
+        hashLastGetBlocksEnd = 0;
         nStartingHeight = -1;
         fGetAddr = false;
         nMisbehavior = 0;
