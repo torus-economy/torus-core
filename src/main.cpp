@@ -2890,9 +2890,18 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
 
         cPeerBlockCounts.input(pfrom->nStartingHeight);
 
+        if (IsInitialBlockDownload()) {
+	 // Be more aggressive with blockchain download. Send new getblocks() message after connection 
+	 // to new node if waited longer than MAX_TIME_SINCE_BEST_BLOCK. 
+	 int64_t TimeSinceBestBlock = GetTime() - nTimeBestReceived; 
+	 if (TimeSinceBestBlock > MAX_TIME_SINCE_BEST_BLOCK) { 
+	  	printf("INFO: Waiting %" PRId64 " sec which is too long. Sending GetBlocks(0)\n", TimeSinceBestBlock); 
+		pfrom->PushGetBlocks(pindexBest, uint256(0)); 
+  	 } 
+        } else {
         // ppcoin: ask for pending sync-checkpoint if any
-        if (!IsInitialBlockDownload())
             Checkpoints::AskForPendingSyncCheckpoint(pfrom);
+        }
     }
 
 
@@ -3056,11 +3065,9 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                     // Trigger them to send a getblocks request for the next batch of inventory
                     if (inv.hash == pfrom->hashContinue)
                     {
-                        // ppcoin: send latest proof-of-work block to allow the
-                        // download node to accept as orphan (proof-of-stake
-                        // block might be rejected by stake connection check)
                         vector<CInv> vInv;
-                        vInv.push_back(CInv(MSG_BLOCK, GetLastBlockIndex(pindexBest, false)->GetBlockHash()));
+                        vInv.push_back(CInv(MSG_BLOCK, hashBestChain));
+
                         pfrom->PushMessage("inv", vInv);
                         pfrom->hashContinue = 0;
                     }
@@ -3107,17 +3114,13 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         // Send the rest of the chain
         if (pindex)
             pindex = pindex->pnext;
-        int nLimit = 500;
-        printf("getblocks %d to %s limit %d\n", (pindex ? pindex->nHeight : -1), hashStop.ToString().substr(0,20).c_str(), nLimit);
+        int nLimit = 1251;
+        printf("getblocks %d to %s, limit %d\n", (pindex ? pindex->nHeight : -1), hashStop==uint256(0) ? "end" : hashStop.ToString().substr(0,20).c_str(), nLimit);
         for (; pindex; pindex = pindex->pnext)
         {
             if (pindex->GetBlockHash() == hashStop)
             {
                 printf("  getblocks stopping at %d %s\n", pindex->nHeight, pindex->GetBlockHash().ToString().substr(0,20).c_str());
-                // ppcoin: tell downloading node about the latest block if it's
-                // without risk being rejected due to stake connection check
-                if (hashStop != hashBestChain && pindex->GetBlockTime() + nStakeMinAge > pindexBest->GetBlockTime())
-                    pfrom->PushInventory(CInv(MSG_BLOCK, hashBestChain));
                 break;
             }
             pfrom->PushInventory(CInv(MSG_BLOCK, pindex->GetBlockHash()));
@@ -3253,16 +3256,32 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         CBlock block;
         vRecv >> block;
         uint256 hashBlock = block.GetHash();
+        int nBlockHeight = block.GetBlockHeight();
 
-        printf("received block %s\n", hashBlock.ToString().substr(0,20).c_str());
-        // block.print();
+        if (nBlockHeight > (nBestHeight + 5000)) {
+            /* Discard this block because cannot verify it any time soon */
+            printf("received and discarded distant block %s height %d\n",
+              hashBlock.ToString().substr(0,20).c_str(), nBlockHeight);
+        } else {
+            printf("received block %s height %d\n",
+              hashBlock.ToString().substr(0,20).c_str(), nBlockHeight);
 
         CInv inv(MSG_BLOCK, hashBlock);
         pfrom->AddInventoryKnown(inv);
 
-        if (ProcessBlock(pfrom, &block))
-            mapAlreadyAskedFor.erase(inv);
-        if (block.nDoS) pfrom->Misbehaving(block.nDoS);
+            if (ProcessBlock(pfrom, &block)) { 
+              mapAlreadyAskedFor.erase(inv);
+        } else { 
+        // Be more aggressive with blockchain download. Send getblocks() message after 
+        // an error related to new block download. 
+            int64_t TimeSinceBestBlock = GetTime() - nTimeBestReceived; 
+        if (TimeSinceBestBlock > MAX_TIME_SINCE_BEST_BLOCK) { 
+		     printf("INFO: Waiting %" PRId64 " sec which is too long. Sending GetBlocks(0)\n", TimeSinceBestBlock); 
+                pfrom->PushGetBlocks(pindexBest, uint256(0)); 
+            } 
+        } 
+            if (block.nDoS) pfrom->Misbehaving(block.nDoS);
+        }
     }
 
     else if (strCommand == "getaddr")

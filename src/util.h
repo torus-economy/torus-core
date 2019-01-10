@@ -35,6 +35,8 @@
 #include <stdint.h>
 #include <inttypes.h>
 
+typedef unsigned char uchar;
+
 static const int64_t COIN = 100000000;
 static const int64_t CENT = 1000000;
 
@@ -108,15 +110,6 @@ T* alignup(T* p)
 #define MAX_PATH            1024
 #endif
 
-inline void MilliSleep(int64_t n)
-{
-#if BOOST_VERSION >= 105000
-    boost::this_thread::sleep_for(boost::chrono::milliseconds(n));
-#else
-    boost::this_thread::sleep(boost::posix_time::milliseconds(n));
-#endif
-}
-
 /* This GNU C extension enables the compiler to check the format string against the parameters provided.
  * X is the number of the "format string" parameter, and Y is the number of the first variadic parameter.
  * Parameters count from 1.
@@ -142,6 +135,8 @@ extern std::string strMiscWarning;
 extern bool fTestNet;
 extern bool fLogTimestamps;
 extern bool fReopenDebugLog;
+
+void MilliSleep(int64_t nMilliSecs);
 
 void RandAddSeed();
 void RandAddSeedPerfmon();
