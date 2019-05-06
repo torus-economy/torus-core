@@ -316,23 +316,31 @@ inline void PrintHex(const std::vector<unsigned char>& vch, const char* pszForma
     printf(pszFormat, HexStr(vch, fSpaces).c_str());
 }
 
-inline int64_t GetPerformanceCounter()
-{
-    int64_t nCounter = 0;
+/* Returns system time in microseconds since the Epoch */
+inline int64_t GetTimeMicros() {
+    uint64_t nTime = 0;
 #ifdef WIN32
-    QueryPerformanceCounter((LARGE_INTEGER*)&nCounter);
+    /* Number of 100ns intervals from 12:00 01-Jan-1601 to 00:00 01-Jan-1970 */
+    const uint64_t EPOCH = 116444736000000000ULL;
+
+    FILETIME nFileTime;
+
+    GetSystemTimeAsFileTime(&nFileTime);
+    nTime |= (uint64_t)nFileTime.dwHighDateTime;
+    nTime <<= 32;
+    nTime |= (uint64_t)nFileTime.dwLowDateTime;
+    nTime -= EPOCH;
+    nTime /= 10;
 #else
     timeval t;
     gettimeofday(&t, NULL);
-    nCounter = (int64_t) t.tv_sec * 1000000 + t.tv_usec;
+    nTime = (((uint64_t)t.tv_sec) * 1000000) + (uint64_t)t.tv_usec;
 #endif
-    return nCounter;
+    return((int64_t)nTime);
 }
 
-inline int64_t GetTimeMillis()
-{
-    return (boost::posix_time::ptime(boost::posix_time::microsec_clock::universal_time()) -
-            boost::posix_time::ptime(boost::gregorian::date(1970,1,1))).total_milliseconds();
+inline int64_t GetTimeMillis() {
+    return(GetTimeMicros() / 1000);
 }
 
 inline std::string DateTimeStrFormat(const char* pszFormat, int64_t nTime)
