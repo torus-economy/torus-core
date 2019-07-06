@@ -38,6 +38,7 @@ public:
     //! Return warnings to be displayed in status bar
     QString getStatusBarWarnings() const;
 
+    QString berkeleyDBVersion() const;
     QString formatFullVersion() const;
     QString formatBuildDate() const;
     QString clientName() const;

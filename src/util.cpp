@@ -4,6 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "util.h"
+#include "db.h"
 #include "sync.h"
 #include "strlcpy.h"
 #include "version.h"
@@ -1269,6 +1270,11 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
         if (nNodesOffset != INT64_MAX)
             printf("nNodesOffset = %+" PRId64 "  (%+" PRId64 " minutes)\n", nNodesOffset, nNodesOffset/60);
     }
+}
+
+string BerkeleyDBVersion()
+{
+        return strprintf("%s", DbEnv::version(0, 0, 0));
 }
 
 string FormatVersion(int nVersion)
