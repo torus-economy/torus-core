@@ -45,8 +45,6 @@ static const int64_t nTargetTimespan = 5 * 60;  // SHROOMS - 5 mins
 unsigned int nTargetSpacing = 60; // SHROOMS - 60 seconds
 static const int64_t nInterval = nTargetTimespan / nTargetSpacing;
 
-static const int64_t nDiffChangeTarget = 1;
-
 unsigned int nStakeMinAge = 8 * 60 * 60; // SHROOMS - 8 hours
 unsigned int nStakeMaxAge = 90 * 24 * 60 * 60; // SHROOMS - 90 days
 unsigned int nModifierInterval = 10 * 60; // SHROOMS - time to elapse before new modifier is computed
