@@ -11,9 +11,6 @@
 #include "main.h"
 #include "uint256.h"
 
-
-static const int nCheckpointSpan = 10;
-
 namespace Checkpoints
 {
     typedef std::map<int, uint256> MapCheckpoints;
@@ -202,14 +199,14 @@ namespace Checkpoints
         return false;
     }
 
-    // Automatically select a suitable sync-checkpoint 
-    uint256 AutoSelectSyncCheckpoint()
-    {
+    /* Checkpoint master: selects a block for checkpointing according to the policy */
+    uint256 AutoSelectSyncCheckpoint() {
+        /* No immediate checkpointing on either PoW or PoS blocks,
+         * select by depth in the main chain rather than block time */
         const CBlockIndex *pindex = pindexBest;
-        // Search backward for a block within max span and maturity window
-        while (pindex->pprev && (pindex->GetBlockTime() + nCheckpointSpan * nTargetSpacing > pindexBest->GetBlockTime() || pindex->nHeight + nCheckpointSpan > pindexBest->nHeight))
-            pindex = pindex->pprev;
-        return pindex->GetBlockHash();
+        while(pindex->pprev && (pindex->nHeight + (int)GetArg("-checkpointdepth", CHECKPOINT_DEFAULT_DEPTH))
+          > pindexBest->nHeight) pindex = pindex->pprev;
+        return(pindex->GetBlockHash());
     }
 
     // Check against synchronized checkpoint
