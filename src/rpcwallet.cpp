@@ -1802,7 +1802,7 @@ Value combinedust(const Array& params, bool fHelp)
     if(params.size() < 1)
         return pwalletMain->fCombineDust;
 	
-	CWalletDB walletdb(pwalletMain->strWalletFile);
+    CWalletDB walletdb(pwalletMain->strWalletFile);
 
 		bool fCombineDust;
 		string strCombineDust = params[0].get_str();
@@ -1869,7 +1869,7 @@ Value getmoneysupply(const Array& params, bool fHelp)
             "getmoneysupply [height]\n"
             "Returns SHROOMS supply at certain block, current SHROOMS supply as default");
 	
-	GetLastBlockIndex(pindexBest, false);
+    GetLastBlockIndex(pindexBest, false);
 	int nHeight = 0;
 	double nMoneySupply = 0;
 	
