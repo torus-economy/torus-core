@@ -81,6 +81,7 @@ extern std::map<uint256, CBlockIndex*> mapBlockIndex;
 extern std::set<std::pair<COutPoint, unsigned int> > setStakeSeen;
 extern CBlockIndex* pindexGenesisBlock;
 extern unsigned int nTargetSpacing;
+extern unsigned int nTargetSpacing2;
 extern unsigned int nStakeMinAge;
 extern unsigned int nStakeMaxAge;
 extern unsigned int nNodeLifespan;

@@ -45,6 +45,7 @@ static const int64_t nTargetTimespan = 5 * 60;
 static const int64_t nTargetTimespan2 = 60 * 60;
 
 unsigned int nTargetSpacing = 60; // SHROOMS - 60 seconds
+unsigned int nTargetSpacing2 = 2 * 60; // New SHROOMS - 120 seconds
 
 unsigned int nStakeMinAge = 8 * 60 * 60; // SHROOMS - 8 hours
 unsigned int nStakeMaxAge = 90 * 24 * 60 * 60; // SHROOMS - 90 days
@@ -1047,8 +1048,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime)
 }
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake)
 {
-
-	CBigNum bnTargetLimit = fProofOfStake ? bnProofOfStakeLimit : bnProofOfWorkLimit;
+    CBigNum bnTargetLimit = fProofOfStake ? bnProofOfStakeLimit : bnProofOfWorkLimit;
 
     if (pindexLast == NULL)
         return bnTargetLimit.GetCompact(); // genesis block
@@ -1060,17 +1060,19 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     if (pindexPrevPrev->pprev == NULL)
         return bnTargetLimit.GetCompact(); // second block
 
+    unsigned int nSpacing = pindexBest->nTime > FORK_TIME ? nTargetSpacing2 : nTargetSpacing;
+
     int64_t nActualSpacing = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
     if (nActualSpacing < 0)
-        nActualSpacing = nTargetSpacing;
+        nActualSpacing = nSpacing;
 
     // ppcoin: target change every block
     // ppcoin: retarget with exponential moving toward target spacing
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
-    int64_t nInterval = (pindexBest->nTime > FORK_TIME ? nTargetTimespan2 : nTargetTimespan) / nTargetSpacing;
-    bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
-    bnNew /= ((nInterval + 1) * nTargetSpacing);
+    int64_t nInterval = (pindexBest->nTime > FORK_TIME ? nTargetTimespan2 : nTargetTimespan) / nSpacing;
+    bnNew *= ((nInterval - 1) * nSpacing + nActualSpacing + nActualSpacing);
+    bnNew /= ((nInterval + 1) * nSpacing);
 
     if (bnNew <= 0 || bnNew > bnTargetLimit)
         bnNew = bnTargetLimit;
