@@ -38,7 +38,8 @@ map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Starting Difficulty: results with 0,000244140625 proof-of-work difficulty
-CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
+CBigNum bnProofOfStakeLegacyLimit(~uint256(0) >> 20); // old proof of stake target limit, results with 0,000244140625 proof of stake difficulty
+CBigNum bnProofOfStakeLimit(~uint256(0) >> 24); // new proof of stake target limit, results with 0,00390625 proof of stake difficulty
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
 static const int64_t nTargetTimespan = 5 * 60;
@@ -949,6 +950,15 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
     return pblockOrphan->hashPrevBlock;
 }
 
+// select stake target limit according to hard-coded conditions
+CBigNum inline GetProofOfStakeLimit(unsigned int nTime)
+{
+    if(nTime > FORK_TIME)
+        return bnProofOfStakeLimit; // 24 bits
+    else
+        return bnProofOfStakeLegacyLimit; // 20 bits
+}
+
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
@@ -1024,7 +1034,7 @@ unsigned int ComputeMaxBits(CBigNum bnTargetLimit, unsigned int nBase, int64_t n
 //
 unsigned int ComputeMinStake(unsigned int nBase, int64_t nTime, unsigned int nBlockTime)
 {
-    return ComputeMaxBits(bnProofOfStakeLimit, nBase, nTime);
+    return ComputeMaxBits(GetProofOfStakeLimit(nBlockTime), nBase, nTime);
 }
 
 
@@ -1048,7 +1058,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime)
 }
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake)
 {
-    CBigNum bnTargetLimit = fProofOfStake ? bnProofOfStakeLimit : bnProofOfWorkLimit;
+    CBigNum bnTargetLimit = fProofOfStake ? GetProofOfStakeLimit(pindexLast->nTime) : bnProofOfWorkLimit;
 
     if (pindexLast == NULL)
         return bnTargetLimit.GetCompact(); // genesis block
