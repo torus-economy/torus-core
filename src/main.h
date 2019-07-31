@@ -45,6 +45,7 @@ static const unsigned int SWITCH_TIME = 1503530603; // Wednesday, 23 August 2017
 static const unsigned int SWITCH_TIME42 = 1540214603; // Monday, 22 October 2018 13:23:23 GMT
 static const unsigned int SWITCH_TIME23 = 1555680203; // Friday, 19 April 2019 13:23:23 GMT
 static const unsigned int SWITCH_TIME13 = 1578749003; // Saturday, 11 January 2020 13:23:23 GMT
+static const unsigned int FORK_TIME = 1565443403; // Saturday, 10 August 2019 13:23:23 GMT
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.

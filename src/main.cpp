@@ -41,9 +41,10 @@ CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Starting Difficulty: results w
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
-static const int64_t nTargetTimespan = 5 * 60;  // SHROOMS - 5 mins
+static const int64_t nTargetTimespan = 5 * 60;
+static const int64_t nTargetTimespan2 = 60 * 60;
+
 unsigned int nTargetSpacing = 60; // SHROOMS - 60 seconds
-static const int64_t nInterval = nTargetTimespan / nTargetSpacing;
 
 unsigned int nStakeMinAge = 8 * 60 * 60; // SHROOMS - 8 hours
 unsigned int nStakeMaxAge = 90 * 24 * 60 * 60; // SHROOMS - 90 days
@@ -1067,7 +1068,7 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     // ppcoin: retarget with exponential moving toward target spacing
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
-    int64_t nInterval = nTargetTimespan / nTargetSpacing;
+    int64_t nInterval = (pindexBest->nTime > FORK_TIME ? nTargetTimespan2 : nTargetTimespan) / nTargetSpacing;
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * nTargetSpacing);
 
