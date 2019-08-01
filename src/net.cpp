@@ -355,7 +355,7 @@ bool GetMyExternalIP(CNetAddr& ipRet) {
     const char* pszGet = NULL;
     const char* pszKeyword = NULL;
 
-    for(uint nLookup = 0; nLookup < 4; nLookup++) {
+    for(uint32_t nLookup = 0; nLookup < 4; nLookup++) {
 
         /* Public IP detectors with their IPs in case DNS isn't available */
 
