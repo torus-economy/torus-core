@@ -11,9 +11,6 @@
 #include "main.h"
 #include "uint256.h"
 
-
-static const int nCheckpointSpan = 10;
-
 namespace Checkpoints
 {
     typedef std::map<int, uint256> MapCheckpoints;
@@ -42,6 +39,7 @@ namespace Checkpoints
         (675571, uint256("0x254a0ada510d8771d8a287107eb32f006825cd5c40948763ea6e0fa1d14b98a1"))
         (811949, uint256("0x882e216231b6e8f7f3bb2d44f4660388e7a582f51f7e62c1e6be62ae0cae059b"))
         (911637, uint256("0xa0a1d3c9ef72d0cd65e67282cae68f99c64b711d19c4567489f0c6bef7905196"))
+        (1178123, uint256("0x4ca1032c0bf20529dd63278a064dc67b7261a38e4fae440f83285aa3167aa40f"))
 		
     ;
 
@@ -194,7 +192,7 @@ namespace Checkpoints
             // relay the checkpoint
             if (!checkpointMessage.IsNull())
             {
-                BOOST_FOREACH(CNode* pnode, vNodes)
+                for (CNode* pnode : vNodes)
                     checkpointMessage.RelayTo(pnode);
             }
             return true;
@@ -202,14 +200,14 @@ namespace Checkpoints
         return false;
     }
 
-    // Automatically select a suitable sync-checkpoint 
-    uint256 AutoSelectSyncCheckpoint()
-    {
+    /* Checkpoint master: selects a block for checkpointing according to the policy */
+    uint256 AutoSelectSyncCheckpoint() {
+        /* No immediate checkpointing on either PoW or PoS blocks,
+         * select by depth in the main chain rather than block time */
         const CBlockIndex *pindex = pindexBest;
-        // Search backward for a block within max span and maturity window
-        while (pindex->pprev && (pindex->GetBlockTime() + nCheckpointSpan * nTargetSpacing > pindexBest->GetBlockTime() || pindex->nHeight + nCheckpointSpan > pindexBest->nHeight))
-            pindex = pindex->pprev;
-        return pindex->GetBlockHash();
+        while(pindex->pprev && (pindex->nHeight + (int)GetArg("-checkpointdepth", CHECKPOINT_DEFAULT_DEPTH))
+          > pindexBest->nHeight) pindex = pindex->pprev;
+        return(pindex->GetBlockHash());
     }
 
     // Check against synchronized checkpoint
@@ -346,7 +344,7 @@ namespace Checkpoints
         // Relay checkpoint
         {
             LOCK(cs_vNodes);
-            BOOST_FOREACH(CNode* pnode, vNodes)
+            for (CNode* pnode : vNodes)
                 checkpoint.RelayTo(pnode);
         }
         return true;

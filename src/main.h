@@ -45,6 +45,7 @@ static const unsigned int SWITCH_TIME = 1503530603; // Wednesday, 23 August 2017
 static const unsigned int SWITCH_TIME42 = 1540214603; // Monday, 22 October 2018 13:23:23 GMT
 static const unsigned int SWITCH_TIME23 = 1555680203; // Friday, 19 April 2019 13:23:23 GMT
 static const unsigned int SWITCH_TIME13 = 1578749003; // Saturday, 11 January 2020 13:23:23 GMT
+static const unsigned int FORK_TIME = 1565443403; // Saturday, 10 August 2019 13:23:23 GMT
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
@@ -80,6 +81,7 @@ extern std::map<uint256, CBlockIndex*> mapBlockIndex;
 extern std::set<std::pair<COutPoint, unsigned int> > setStakeSeen;
 extern CBlockIndex* pindexGenesisBlock;
 extern unsigned int nTargetSpacing;
+extern unsigned int nTargetSpacing2;
 extern unsigned int nStakeMinAge;
 extern unsigned int nStakeMaxAge;
 extern unsigned int nNodeLifespan;
@@ -497,7 +499,7 @@ public:
             nBlockTime = GetAdjustedTime();
         if ((int64_t)nLockTime < ((int64_t)nLockTime < LOCKTIME_THRESHOLD ? (int64_t)nBlockHeight : nBlockTime))
             return true;
-        BOOST_FOREACH(const CTxIn& txin, vin)
+        for (const CTxIn& txin : vin)
             if (!txin.IsFinal())
                 return false;
         return true;
@@ -576,7 +578,7 @@ public:
     int64_t GetValueOut() const
     {
         int64_t nValueOut = 0;
-        BOOST_FOREACH(const CTxOut& txout, vout)
+        for (const CTxOut& txout : vout)
         {
             nValueOut += txout.nValue;
             if (!MoneyRange(txout.nValue) || !MoneyRange(nValueOut))
@@ -989,7 +991,7 @@ public:
     int64_t GetMaxTransactionTime() const
     {
         int64_t maxTransactionTime = 0;
-        BOOST_FOREACH(const CTransaction& tx, vtx)
+        for (const CTransaction& tx : vtx)
             maxTransactionTime = std::max(maxTransactionTime, (int64_t)tx.nTime);
         return maxTransactionTime;
     }
@@ -997,7 +999,7 @@ public:
     uint256 BuildMerkleTree() const
     {
         vMerkleTree.clear();
-        BOOST_FOREACH(const CTransaction& tx, vtx)
+        for (const CTransaction& tx : vtx)
             vMerkleTree.push_back(tx.GetHash());
         int j = 0;
         for (int nSize = vtx.size(); nSize > 1; nSize = (nSize + 1) / 2)
@@ -1033,7 +1035,7 @@ public:
     {
         if (nIndex == -1)
             return 0;
-        BOOST_FOREACH(const uint256& otherside, vMerkleBranch)
+        for (const uint256& otherside : vMerkleBranch)
         {
             if (nIndex & 1)
                 hash = Hash(BEGIN(otherside), END(otherside), BEGIN(hash), END(hash));
@@ -1540,7 +1542,7 @@ public:
         // Retrace how far back it was in the sender's branch
         int nDistance = 0;
         int nStep = 1;
-        BOOST_FOREACH(const uint256& hash, vHave)
+        for (const uint256& hash : vHave)
         {
             std::map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hash);
             if (mi != mapBlockIndex.end())
@@ -1559,7 +1561,7 @@ public:
     CBlockIndex* GetBlockIndex()
     {
         // Find the first block the caller has in the main chain
-        BOOST_FOREACH(const uint256& hash, vHave)
+        for (const uint256& hash : vHave)
         {
             std::map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hash);
             if (mi != mapBlockIndex.end())
@@ -1575,7 +1577,7 @@ public:
     uint256 GetBlockHash()
     {
         // Find the first block the caller has in the main chain
-        BOOST_FOREACH(const uint256& hash, vHave)
+        for (const uint256& hash : vHave)
         {
             std::map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hash);
             if (mi != mapBlockIndex.end())

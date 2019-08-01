@@ -60,26 +60,13 @@ static const int64_t CENT = 1000000;
 void LogStackTrace();
 #endif
 
-
-/* Format characters for (s)size_t and ptrdiff_t */
-#if defined(_MSC_VER) || defined(__MSVCRT__)
-  /* (s)size_t and ptrdiff_t have the same size specifier in MSVC:
-     http://msdn.microsoft.com/en-us/library/tcxf1dw6%28v=vs.100%29.aspx
-   */
-  #define PRIszx    "Ix"
-  #define PRIszu    "Iu"
-  #define PRIszd    "Id"
-  #define PRIpdx    "Ix"
-  #define PRIpdu    "Iu"
-  #define PRIpdd    "Id"
-#else /* C99 standard */
-  #define PRIszx    "zx"
-  #define PRIszu    "zu"
-  #define PRIszd    "zd"
-  #define PRIpdx    "tx"
-  #define PRIpdu    "tu"
-  #define PRIpdd    "td"
-#endif
+/* Format characters for (s)size_t and ptrdiff_t (C99 standard) */
+#define PRIszx    "zx"
+#define PRIszu    "zu"
+#define PRIszd    "zd"
+#define PRIpdx    "tx"
+#define PRIpdu    "tu"
+#define PRIpdd    "td"
 
 // This is needed because the foreach macro can't get over the comma in pair<t1, t2>
 #define PAIRTYPE(t1, t2)    std::pair<t1, t2>
@@ -115,7 +102,7 @@ T* alignup(T* p)
  * Parameters count from 1.
  */
 #ifdef __GNUC__
-#define ATTR_WARN_PRINTF(X,Y) __attribute__((format(printf,X,Y)))
+#define ATTR_WARN_PRINTF(X,Y) __attribute__((format(gnu_printf,X,Y)))
 #else
 #define ATTR_WARN_PRINTF(X,Y)
 #endif
@@ -210,6 +197,7 @@ void SetMockTime(int64_t nMockTimeIn);
 int64_t GetAdjustedTime();
 int64_t GetTimeOffset();
 int64_t GetNodesOffset();
+std::string BerkeleyDBVersion();
 std::string FormatFullVersion();
 std::string FormatSubVersion(const std::string& name, int nClientVersion, const std::vector<std::string>& comments);
 void AddTimeData(const CNetAddr& ip, int64_t nTime);
@@ -316,23 +304,31 @@ inline void PrintHex(const std::vector<unsigned char>& vch, const char* pszForma
     printf(pszFormat, HexStr(vch, fSpaces).c_str());
 }
 
-inline int64_t GetPerformanceCounter()
-{
-    int64_t nCounter = 0;
+/* Returns system time in microseconds since the Epoch */
+inline int64_t GetTimeMicros() {
+    uint64_t nTime = 0;
 #ifdef WIN32
-    QueryPerformanceCounter((LARGE_INTEGER*)&nCounter);
+    /* Number of 100ns intervals from 12:00 01-Jan-1601 to 00:00 01-Jan-1970 */
+    const uint64_t EPOCH = 116444736000000000ULL;
+
+    FILETIME nFileTime;
+
+    GetSystemTimeAsFileTime(&nFileTime);
+    nTime |= (uint64_t)nFileTime.dwHighDateTime;
+    nTime <<= 32;
+    nTime |= (uint64_t)nFileTime.dwLowDateTime;
+    nTime -= EPOCH;
+    nTime /= 10;
 #else
     timeval t;
     gettimeofday(&t, NULL);
-    nCounter = (int64_t) t.tv_sec * 1000000 + t.tv_usec;
+    nTime = (((uint64_t)t.tv_sec) * 1000000) + (uint64_t)t.tv_usec;
 #endif
-    return nCounter;
+    return((int64_t)nTime);
 }
 
-inline int64_t GetTimeMillis()
-{
-    return (boost::posix_time::ptime(boost::posix_time::microsec_clock::universal_time()) -
-            boost::posix_time::ptime(boost::gregorian::date(1970,1,1))).total_milliseconds();
+inline int64_t GetTimeMillis() {
+    return(GetTimeMicros() / 1000);
 }
 
 inline std::string DateTimeStrFormat(const char* pszFormat, int64_t nTime)

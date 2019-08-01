@@ -120,6 +120,11 @@ OptionsModel *ClientModel::getOptionsModel()
     return optionsModel;
 }
 
+QString ClientModel::berkeleyDBVersion() const
+{
+    return QString::fromStdString(BerkeleyDBVersion());
+}
+
 QString ClientModel::formatFullVersion() const
 {
     return QString::fromStdString(FormatFullVersion());
