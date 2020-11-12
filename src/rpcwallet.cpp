@@ -1905,29 +1905,29 @@ Value shroomssupply(const Array& params, bool fHelp)
 	
 	//height of blocks
 	int64_t nHeight = pindexBest->nHeight; //present
-	int64_t n1Height = nHeight - 1440; // day -- 1440 blocks should be about 1 day if blocks have 60 sec spacing
-	int64_t n7Height = nHeight - 1440 * 7; // week
-	int64_t n30Height = nHeight - 1440 * 30; // month
+	int64_t n1Height = nHeight - 720; // day -- 720 blocks should be about 1 day if blocks have 120 sec spacing
+	int64_t n7Height = nHeight - 720 * 7; // week
+	int64_t n30Height = nHeight - 720 * 30; // month
 	
 	//print to console
 	Object obj;
 	obj.push_back(Pair("SHROOMS supply - present", GetMoneySupply(nHeight)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
-	obj.push_back(Pair("SHROOMS supply - 1440 blocks ago", GetMoneySupply(n1Height)));
-	obj.push_back(Pair("SHROOMS supply - 10080 blocks ago", GetMoneySupply(n7Height)));
-	obj.push_back(Pair("SHROOMS supply - 43200 blocks ago", GetMoneySupply(n30Height)));
+	obj.push_back(Pair("SHROOMS supply - 720 blocks ago", GetMoneySupply(n1Height)));
+	obj.push_back(Pair("SHROOMS supply - 5040 blocks ago", GetMoneySupply(n7Height)));
+	obj.push_back(Pair("SHROOMS supply - 21600 blocks ago", GetMoneySupply(n30Height)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
-	obj.push_back(Pair("SHROOMS germinated(last 1440 blocks)", GetSupplyChange(nHeight, n1Height)));
-	obj.push_back(Pair("SHROOMS germinated(last 10080 blocks)", GetSupplyChange(nHeight, n7Height)));
-	obj.push_back(Pair("SHROOMS germinated(last 43200 blocks)", GetSupplyChange(nHeight, n30Height)));
+	obj.push_back(Pair("SHROOMS germinated(last 720 blocks)", GetSupplyChange(nHeight, n1Height)));
+	obj.push_back(Pair("SHROOMS germinated(last 5040 blocks)", GetSupplyChange(nHeight, n7Height)));
+	obj.push_back(Pair("SHROOMS germinated(last 21600 blocks)", GetSupplyChange(nHeight, n30Height)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
-	obj.push_back(Pair("time change over 1440 blocks, days", GetBlockSpeed(nHeight, n1Height)));
-	obj.push_back(Pair("time change over 10080 blocks, days", GetBlockSpeed(nHeight, n7Height)));
-	obj.push_back(Pair("time change over 43200 blocks, days", GetBlockSpeed(nHeight, n30Height)));
+	obj.push_back(Pair("time change over 720 blocks, days", GetBlockSpeed(nHeight, n1Height)));
+	obj.push_back(Pair("time change over 5040 blocks, days", GetBlockSpeed(nHeight, n7Height)));
+	obj.push_back(Pair("time change over 21600 blocks, days", GetBlockSpeed(nHeight, n30Height)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
-	obj.push_back(Pair("avg daily growth rate (last 1440 blocks)", GetRate(nHeight, n1Height)));
-	obj.push_back(Pair("avg daily growth rate (last 10080 blocks)", GetRate(nHeight, n7Height)));
-	obj.push_back(Pair("avg daily growth rate (last 43200 blocks)", GetRate(nHeight, n30Height)));
+	obj.push_back(Pair("avg daily growth rate (last 720 blocks)", GetRate(nHeight, n1Height)));
+	obj.push_back(Pair("avg daily growth rate (last 5040 blocks)", GetRate(nHeight, n7Height)));
+	obj.push_back(Pair("avg daily growth rate (last 21600 blocks)", GetRate(nHeight, n30Height)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
 	obj.push_back(Pair("projected SHROOMS supply 1 day from now (daily compound)", PredictFutureSupply(nHeight, n1Height, 1)));
 	obj.push_back(Pair("projected SHROOMS supply 7 days from now (daily compound)", PredictFutureSupply(nHeight, n7Height, 7)));
