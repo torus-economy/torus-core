@@ -27,13 +27,19 @@ RUN apt-get install \
     -y
 
 # BerkeleyDB v4.8
-WORKDIR /
-RUN wget "http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz"
-RUN tar -xvzf db-4.8.30.NC.tar.gz
-WORKDIR /db-4.8.30.NC/build_unix
-RUN ../dist/configure --with-static --enable-cxx --prefix=/usr/local && \
-    make && \
-    make install
+# WORKDIR /
+# RUN wget "http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz"
+# RUN tar -xvzf db-4.8.30.NC.tar.gz
+# WORKDIR /db-4.8.30.NC/build_unix
+# RUN ../dist/configure --with-static --enable-cxx --prefix=/usr/local && \
+#     make && \
+#     make install
+
+# BerkeleyDB v5.3
+RUN apt-get install \
+    libdb-dev \
+    libdb++-dev \
+    -y
 
 # Build daemon
 WORKDIR /shrooms
