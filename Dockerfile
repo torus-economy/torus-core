@@ -1,4 +1,4 @@
-FROM ubuntu:16.04 as build
+FROM ubuntu:16.04 as builder
 
 RUN apt-get update -y
 
@@ -46,4 +46,5 @@ WORKDIR /shrooms
 COPY . .
 RUN cd src/ && \
     make -f makefile.unix
+RUN strip src/SHROOMSd
 
