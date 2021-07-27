@@ -24,29 +24,31 @@ namespace Checkpoints
     //
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        ( 0,      hashGenesisBlock )
-        (1, uint256("0x00000000261c24cb0d023429033337b942aa8174df1c3f1ab757ec2c79afc3d8"))
-        (8763, uint256("0x0176125d3d91821c3beb8cf6be6e01ca5a4e845dd1a970dc6b36e0b28c0ca7fd"))
-        (19999, uint256("0x7976b7b7812f1f77a20a982df6f0a8c8da57fc0383e0f3b2797b08a27b18bf7b"))
-        (159999, uint256("0x95e6bedff4cb86b71a2ce9c39b1627612e5c2b731571a945f1adf4175fe634b4"))
-        (259999, uint256("0xd612babd1aa023cd575b4f06130c63ca2e5eb1b6e89ba401d1fe7718aa99465c"))
-        (359999, uint256("0xe995d4bfa4458039da78fc3580a1b31ccd1646edfccfda0794e1b152cb67caad"))
-        (423065, uint256("0x9aa7c8932acca6c5615bc7d02aa4e58c5b3436b926088401b648b0ee37d03286"))
-        (460713, uint256("0x6cc5eb4cf5fa0f0978327cba6122ad6b1ff436130873eae7eb9dda4a6ed16ed1"))
-        (515001, uint256("0xdf9eab7af646e90b6c8e6c5d24db0c8af8845c2876a2c7a1c8cce23186069074"))
-        (565001, uint256("0x6d81f3f6893a5a5433174920e9a927dec8f906de3445e38409e33f3f418a165e"))
-        (621439, uint256("0x82e2fe84900f8379410a68e9a486679fd707fcdabfc9440119bceaf1bf4da966"))
-        (675571, uint256("0x254a0ada510d8771d8a287107eb32f006825cd5c40948763ea6e0fa1d14b98a1"))
-        (811949, uint256("0x882e216231b6e8f7f3bb2d44f4660388e7a582f51f7e62c1e6be62ae0cae059b"))
-        (911637, uint256("0xa0a1d3c9ef72d0cd65e67282cae68f99c64b711d19c4567489f0c6bef7905196"))
-        (1178123, uint256("0x4ca1032c0bf20529dd63278a064dc67b7261a38e4fae440f83285aa3167aa40f"))
+        (0, uint256("0x"))
+        /* ( 0,      hashGenesisBlock ) */
+        /* (1, uint256("0x00000000261c24cb0d023429033337b942aa8174df1c3f1ab757ec2c79afc3d8")) */
+        /* (8763, uint256("0x0176125d3d91821c3beb8cf6be6e01ca5a4e845dd1a970dc6b36e0b28c0ca7fd")) */
+        /* (19999, uint256("0x7976b7b7812f1f77a20a982df6f0a8c8da57fc0383e0f3b2797b08a27b18bf7b")) */
+        /* (159999, uint256("0x95e6bedff4cb86b71a2ce9c39b1627612e5c2b731571a945f1adf4175fe634b4")) */
+        /* (259999, uint256("0xd612babd1aa023cd575b4f06130c63ca2e5eb1b6e89ba401d1fe7718aa99465c")) */
+        /* (359999, uint256("0xe995d4bfa4458039da78fc3580a1b31ccd1646edfccfda0794e1b152cb67caad")) */
+        /* (423065, uint256("0x9aa7c8932acca6c5615bc7d02aa4e58c5b3436b926088401b648b0ee37d03286")) */
+        /* (460713, uint256("0x6cc5eb4cf5fa0f0978327cba6122ad6b1ff436130873eae7eb9dda4a6ed16ed1")) */
+        /* (515001, uint256("0xdf9eab7af646e90b6c8e6c5d24db0c8af8845c2876a2c7a1c8cce23186069074")) */
+        /* (565001, uint256("0x6d81f3f6893a5a5433174920e9a927dec8f906de3445e38409e33f3f418a165e")) */
+        /* (621439, uint256("0x82e2fe84900f8379410a68e9a486679fd707fcdabfc9440119bceaf1bf4da966")) */
+        /* (675571, uint256("0x254a0ada510d8771d8a287107eb32f006825cd5c40948763ea6e0fa1d14b98a1")) */
+        /* (811949, uint256("0x882e216231b6e8f7f3bb2d44f4660388e7a582f51f7e62c1e6be62ae0cae059b")) */
+        /* (911637, uint256("0xa0a1d3c9ef72d0cd65e67282cae68f99c64b711d19c4567489f0c6bef7905196")) */
+        /* (1178123, uint256("0x4ca1032c0bf20529dd63278a064dc67b7261a38e4fae440f83285aa3167aa40f")) */
 		
     ;
 
     // TestNet has no checkpoints
     static MapCheckpoints mapCheckpointsTestnet =
         boost::assign::map_list_of
-        ( 0, hashGenesisBlockTestNet )
+        (0, uint256("0x"))
+        /* ( 0, hashGenesisBlockTestNet ) */
         ;
 
     bool CheckHardened(int nHeight, const uint256& hash)

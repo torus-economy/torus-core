@@ -2508,7 +2508,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 // <- GEN
 
-        assert(block.hashMerkleRoot == uint256("0xc18404b003fb8a9644fb68c73207d19ad250dc054314798ca91c52bb355f2c3f"));
+        assert(block.hashMerkleRoot == uint256("0x"));
 
 
 	    block.print();
