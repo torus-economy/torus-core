@@ -2509,10 +2509,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 // <- GEN
 
-        assert(block.hashMerkleRoot == uint256("0x"));
-
-
-	    block.print();
+        assert(block.hashMerkleRoot == uint256("0xda1c1110637ddfdb8fe5822424b5e4cc8724d92bc15e6aa5a8725e8f807010ea"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
 
