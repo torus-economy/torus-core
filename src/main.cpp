@@ -2466,9 +2466,9 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!fAllowNew)
             return false;
 
-        const char* pszTimestamp = "00000000000000000c150b5dd083a943957da93207d8d7b43b3c9588187e0bf2";
+        const char* pszTimestamp = "The Guardian 09/Jun/2021 El Salvador becomes first country to adopt bitcoin as legal tender";
         CTransaction txNew;
-        txNew.nTime = 1436776945;
+        txNew.nTime = 1627475269;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2478,9 +2478,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1436776945;
+        block.nTime    = 1627475269;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = !fTestNet ? 322828 : 322828;
+        block.nNonce   = !fTestNet ? 0 : 0;
 
 
 // GEN ->
@@ -2489,6 +2489,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
+	    printf("Mining genesis started ...\n");
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
             while (block.GetHash() > hashTarget)
                {
