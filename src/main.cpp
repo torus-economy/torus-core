@@ -38,15 +38,12 @@ map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Starting Difficulty: results with 0,000244140625 proof-of-work difficulty
-CBigNum bnProofOfStakeLegacyLimit(~uint256(0) >> 20); // old proof of stake target limit, results with 0,000244140625 proof of stake difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 24); // new proof of stake target limit, results with 0,00390625 proof of stake difficulty
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
 static const int64_t nTargetTimespan = 5 * 60;
-static const int64_t nTargetTimespan2 = 60 * 60;
 
 unsigned int nTargetSpacing = 60; // SHROOMS - 60 seconds
-unsigned int nTargetSpacing2 = 2 * 60; // New SHROOMS - 120 seconds
 
 unsigned int nStakeMinAge = 8 * 60 * 60; // SHROOMS - 8 hours
 unsigned int nStakeMaxAge = 90 * 24 * 60 * 60; // SHROOMS - 90 days
@@ -953,10 +950,7 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 // select stake target limit according to hard-coded conditions
 CBigNum inline GetProofOfStakeLimit(unsigned int nTime)
 {
-    if(nTime > FORK_TIME)
-        return bnProofOfStakeLimit; // 24 bits
-    else
-        return bnProofOfStakeLegacyLimit; // 20 bits
+    return bnProofOfStakeLimit;
 }
 
 // miner's coin base reward
@@ -975,35 +969,10 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 }
 
 // miner's coin stake reward
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int64_t nTime, bool bStakeCapOnly)
+int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidyLimit = 0;
     int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 25 / (365 * 25 + 8); 
-	
-    if ( nTime > SWITCH_TIME13 )
-    {
-    nSubsidyLimit = 0.13 * COIN;
-    nSubsidy = min(nSubsidy, nSubsidyLimit);
-    }
-    else if ( nTime > SWITCH_TIME23 )
-    {
-    nSubsidyLimit = 0.23 * COIN;
-    nSubsidy = min(nSubsidy, nSubsidyLimit);
-    }
-    else if ( nTime > SWITCH_TIME42 )
-    {
-    nSubsidyLimit = 0.42 * COIN;
-    nSubsidy = min(nSubsidy, nSubsidyLimit);
-    }
-    else if ( nTime > SWITCH_TIME )
-    {
-    nSubsidyLimit = 4 * COIN;
-    nSubsidy = min(nSubsidy, nSubsidyLimit);
-    }
-	
-    if(bStakeCapOnly)
-    return nSubsidyLimit;
-    
+   
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%" PRId64 "\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
     
@@ -1070,7 +1039,7 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     if (pindexPrevPrev->pprev == NULL)
         return bnTargetLimit.GetCompact(); // second block
 
-    unsigned int nSpacing = pindexBest->nTime > FORK_TIME ? nTargetSpacing2 : nTargetSpacing;
+    unsigned int nSpacing = nTargetSpacing;
 
     int64_t nActualSpacing = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
     if (nActualSpacing < 0)
@@ -1080,7 +1049,7 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     // ppcoin: retarget with exponential moving toward target spacing
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
-    int64_t nInterval = (pindexBest->nTime > FORK_TIME ? nTargetTimespan2 : nTargetTimespan) / nSpacing;
+    int64_t nInterval = (nTargetTimespan) / nSpacing;
     bnNew *= ((nInterval - 1) * nSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * nSpacing);
 
@@ -1576,7 +1545,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
         if (!vtx[1].GetCoinAge(txdb, nCoinAge))
             return error("ConnectBlock() : %s unable to get coin age for coinstake", vtx[1].GetHash().ToString().substr(0,10).c_str());
 
-        int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, nTime, false);
+        int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
 
         if (nStakeReward > nCalculatedStakeReward)
             return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%" PRId64 " vs calculated=%" PRId64 ")", nStakeReward, nCalculatedStakeReward));

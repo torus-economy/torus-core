@@ -41,11 +41,6 @@ static const int64_t MIN_TX_FEE = 1000000;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64_t MAX_MONEY = 1000000000 * COIN;
 static const int64_t COIN_YEAR_REWARD = 30 * CENT;
-static const unsigned int SWITCH_TIME = 1503530603; // Wednesday, 23 August 2017 23:23:23 GMT
-static const unsigned int SWITCH_TIME42 = 1540214603; // Monday, 22 October 2018 13:23:23 GMT
-static const unsigned int SWITCH_TIME23 = 1555680203; // Friday, 19 April 2019 13:23:23 GMT
-static const unsigned int SWITCH_TIME13 = 1578749003; // Saturday, 11 January 2020 13:23:23 GMT
-static const unsigned int FORK_TIME = 1565443403; // Saturday, 10 August 2019 13:23:23 GMT
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
@@ -61,18 +56,12 @@ static const uint256 hashGenesisBlockTestNet("0x0000000b50e8788a64fbd7e687724ec6
 
 inline int64_t PastDrift(int64_t nTime)
 {
-    if (nTime > SWITCH_TIME)
-        return nTime - 1 * 60; // up to 1 minute from the past
-    else
-        return nTime - 10 * 60; // up to 10 minutes from the past
+    return nTime - 100 * 24 * 60 * 60; // up to 100 days
 }
 
 inline int64_t FutureDrift(int64_t nTime)
 {
-    if (nTime > SWITCH_TIME)
-        return nTime + 1 * 60; // up to 1 minute from the future
-    else
-        return nTime + 10 * 60; // up to 10 minutes from the future
+    return nTime + 100 * 24 * 60 * 60; // up to 100 days
 }
 
 extern CScript COINBASE_FLAGS;
@@ -136,7 +125,7 @@ bool LoadExternalBlockFile(FILE* fileIn);
 bool CheckProofOfWork(uint256 hash, unsigned int nBits);
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake);
 int64_t GetProofOfWorkReward(int64_t nFees);
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int64_t nTime, bool bStakeCapOnly);
+int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees);
 unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime);
 unsigned int ComputeMinStake(unsigned int nBase, int64_t nTime, unsigned int nBlockTime);
 int GetNumBlocksOfPeers();

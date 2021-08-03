@@ -55,7 +55,6 @@ Value getmininginfo(const Array& params, bool fHelp)
     obj.push_back(Pair("stakeweight", weight));
 
     obj.push_back(Pair("stakeinterest",    (uint64_t)COIN_YEAR_REWARD / 1000000));
-    obj.push_back(Pair("stakecaplimit", (double)GetProofOfStakeReward(0, 0, GetTime(), true) / 100000000));
     obj.push_back(Pair("splitthreshold",   ValueFromAmount(nSplitThreshold)));
     obj.push_back(Pair("testnet",       fTestNet));
     return obj;
@@ -74,11 +73,7 @@ Value getstakinginfo(const Array& params, bool fHelp)
     uint64_t nNetworkWeight = GetPoSKernelPS();
     bool staking = nLastCoinStakeSearchInterval && nWeight;
 
-    int nExpectedTime = 0;
-    if(GetAdjustedTime() > FORK_TIME)
-        nExpectedTime = staking ? (nTargetSpacing2 * nNetworkWeight / nWeight) : -1;
-    else
-        nExpectedTime = staking ? (nTargetSpacing * nNetworkWeight / nWeight) : -1;
+    int nExpectedTime = staking ? (nTargetSpacing * nNetworkWeight / nWeight) : -1;
 
     Object obj;
 
@@ -87,7 +82,6 @@ Value getstakinginfo(const Array& params, bool fHelp)
     obj.push_back(Pair("errors", GetWarnings("statusbar")));
 	
     obj.push_back(Pair("stakeinterest",    (uint64_t)COIN_YEAR_REWARD / 1000000));
-    obj.push_back(Pair("stakecaplimit", (double)GetProofOfStakeReward(0, 0, GetTime(), true) / 100000000));
     obj.push_back(Pair("splitthreshold",   ValueFromAmount(nSplitThreshold)));
 
     obj.push_back(Pair("currentblocksize", (uint64_t)nLastBlockSize));
