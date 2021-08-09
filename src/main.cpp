@@ -956,7 +956,11 @@ CBigNum inline GetProofOfStakeLimit(unsigned int nTime)
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
-    int64_t nSubsidy = 200 * COIN;
+    int64_t nSubsidy = 0;
+
+    // premine coins
+    if (pindexBest->nHeight == 0)
+        nSubsidy = MAX_MONEY;
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nSubsidy=%" PRId64 "\n", FormatMoney(nSubsidy).c_str(), nSubsidy);
