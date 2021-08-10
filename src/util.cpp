@@ -1285,7 +1285,7 @@ string FormatVersion(int nVersion)
 
 string FormatFullVersion()
 {
-    return CLIENT_BUILD + " " + Species();
+    return CLIENT_BUILD;
 }
 
 // Format the subversion field according to BIP 14 spec (https://en.bitcoin.it/wiki/BIP_0014)
