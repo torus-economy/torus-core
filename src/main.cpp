@@ -38,7 +38,7 @@ map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Starting Difficulty: results with 0,000244140625 proof-of-work difficulty
-CBigNum bnProofOfStakeLimit(~uint256(0) >> 24); // new proof of stake target limit, results with 0,00390625 proof of stake difficulty
+CBigNum bnProofOfStakeLimit(~uint256(0) >> 24); // Proof of stake target limit, results with 0,00390625 proof of stake difficulty
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
 static const int64_t nTargetTimespan = 5 * 60;
