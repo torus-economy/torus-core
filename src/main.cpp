@@ -41,13 +41,13 @@ CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Starting Difficulty: results w
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 24); // Proof of stake target limit, results with 0,00390625 proof of stake difficulty
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
-static const int64_t nTargetTimespan = 5 * 60;
+static const int64_t nTargetTimespan = 60 * 60;
 
-unsigned int nTargetSpacing = 60; // SHROOMS - 60 seconds
+unsigned int nTargetSpacing = 2 * 60; // 120 seconds
 
-unsigned int nStakeMinAge = 8 * 60 * 60; // SHROOMS - 8 hours
-unsigned int nStakeMaxAge = 90 * 24 * 60 * 60; // SHROOMS - 90 days
-unsigned int nModifierInterval = 10 * 60; // SHROOMS - time to elapse before new modifier is computed
+unsigned int nStakeMinAge = 8 * 60 * 60; // 8 hours
+unsigned int nStakeMaxAge = 90 * 24 * 60 * 60; // 90 days
+unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 50;
 CBlockIndex* pindexGenesisBlock = NULL;
