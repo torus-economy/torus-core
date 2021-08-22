@@ -7,7 +7,7 @@
 #include "guiutil.h"
 
 // shared UI settings in guiutil.h
-bool fUseShroomsTheme;
+bool fUseCustomTheme;
 
 OptionsModel::OptionsModel(QObject *parent) :
     QAbstractListModel(parent)
@@ -47,7 +47,7 @@ void OptionsModel::Init()
     fMinimizeToTray = settings.value("fMinimizeToTray", false).toBool();
     fMinimizeOnClose = settings.value("fMinimizeOnClose", false).toBool();
     fCoinControlFeatures = settings.value("fCoinControlFeatures", true).toBool();
-    fUseShroomsTheme = settings.value("fUseShroomsTheme", true).toBool();
+    fUseCustomTheme = settings.value("fUseCustomTheme", false).toBool();
     nTransactionFee = settings.value("nTransactionFee").toLongLong();
     nReserveBalance = settings.value("nReserveBalance").toLongLong();
     language = settings.value("language", "").toString();
@@ -118,8 +118,8 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return settings.value("language", "");
         case CoinControlFeatures:
             return QVariant(fCoinControlFeatures);
-        case UseShroomsTheme:
-            return QVariant(fUseShroomsTheme);
+        case UseCustomTheme:
+            return QVariant(fUseCustomTheme);
         default:
             return QVariant();
         }
@@ -220,9 +220,9 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
             emit coinControlFeaturesChanged(fCoinControlFeatures);
             }
             break;
-        case UseShroomsTheme:
-            fUseShroomsTheme = value.toBool();
-            settings.setValue("fUseShroomsTheme", fUseShroomsTheme);
+        case UseCustomTheme:
+            fUseCustomTheme = value.toBool();
+            settings.setValue("fUseCustomTheme", fUseCustomTheme);
             break;
         default:
             break;

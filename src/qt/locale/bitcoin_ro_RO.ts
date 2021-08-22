@@ -3,13 +3,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About SHROOMS</source>
-        <translation>Despre SHROOMS</translation>
+        <source>About TORUS</source>
+        <translation>Despre TORUS</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;SHROOMS&lt;/b&gt; version</source>
-        <translation>Versiune &lt;b&gt;SHROOMS&lt;/b&gt;</translation>
+        <source>&lt;b&gt;TORUS&lt;/b&gt; version</source>
+        <translation>Versiune &lt;b&gt;TORUS&lt;/b&gt;</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -65,8 +65,8 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your SHROOMS addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Acestea sunt adresele SHROOMS pentru a primi plăți. Poate doriți sa dați o adresa noua fiecarui expeditor pentru a putea ține evidența la cine efectuează plăti.</translation>
+        <source>These are your TORUS addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Acestea sunt adresele TORUS pentru a primi plăți. Poate doriți sa dați o adresa noua fiecarui expeditor pentru a putea ține evidența la cine efectuează plăti.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -80,8 +80,8 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a SHROOMS address</source>
-        <translation>Semnează un mesaj pentru a dovedi că dețineti o adresă SHROOMS</translation>
+        <source>Sign a message to prove you own a TORUS address</source>
+        <translation>Semnează un mesaj pentru a dovedi că dețineti o adresă TORUS</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -95,8 +95,8 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified SHROOMS address</source>
-        <translation>Verifică un mesaj pentru a vă asigura că a fost semnat cu o anumită adresă SHROOMS</translation>
+        <source>Verify a message to ensure it was signed with a specified TORUS address</source>
+        <translation>Verifică un mesaj pentru a vă asigura că a fost semnat cu o anumită adresă TORUS</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -263,8 +263,8 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="-58"/>
-        <source>SHROOMS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>SHROOMS se va inchide pentru a termina procesul de encriptie. Amintiți-vă, criptarea portofelul dumneavoastră nu poate proteja pe deplin monedele dvs. de a fi furate de  infectarea cu malware a computerului.</translation>
+        <source>TORUS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>TORUS se va inchide pentru a termina procesul de encriptie. Amintiți-vă, criptarea portofelul dumneavoastră nu poate proteja pe deplin monedele dvs. de a fi furate de  infectarea cu malware a computerului.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -377,8 +377,8 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about SHROOMS</source>
-        <translation>Arată informații despre SHROOMS</translation>
+        <source>Show information about TORUS</source>
+        <translation>Arată informații despre TORUS</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -427,13 +427,13 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="-62"/>
-        <source>Send coins to a SHROOMS address</source>
-        <translation>Trimite monede către o adresă SHROOMS</translation>
+        <source>Send coins to a TORUS address</source>
+        <translation>Trimite monede către o adresă TORUS</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for SHROOMS</source>
-        <translation>Modifică opțiuni de configurare pentru SHROOMS</translation>
+        <source>Modify configuration options for TORUS</source>
+        <translation>Modifică opțiuni de configurare pentru TORUS</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -472,8 +472,8 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="-200"/>
-        <source>SHROOMS</source>
-        <translation>SHROOMS</translation>
+        <source>TORUS</source>
+        <translation>TORUS</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -482,8 +482,8 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+178"/>
-        <source>&amp;About SHROOMS</source>
-        <translation>Despre SHROOMS</translation>
+        <source>&amp;About TORUS</source>
+        <translation>Despre TORUS</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -539,13 +539,13 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>SHROOMS client</source>
-        <translation>Clientul SHROOMS</translation>
+        <source>TORUS client</source>
+        <translation>Clientul TORUS</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to SHROOMS network</source>
-        <translation><numerusform>%n conexiune activă la reteaua SHROOMS</numerusform><numerusform>%n conexiuni active la reteaua SHROOMS</numerusform><numerusform>%n conexiuni active la reteaua SHROOMS</numerusform></translation>
+        <source>%n active connection(s) to TORUS network</source>
+        <translation><numerusform>%n conexiune activă la reteaua TORUS</numerusform><numerusform>%n conexiuni active la reteaua TORUS</numerusform><numerusform>%n conexiuni active la reteaua TORUS</numerusform></translation>
     </message>
     <message>
         <location line="+40"/>
@@ -659,8 +659,8 @@ Adresa: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid SHROOMS address or malformed URI parameters.</source>
-        <translation>URI nu poate fi parsatt! Cauza poate fi o adresa SHROOMS invalidă sau parametrii URI malformați.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid TORUS address or malformed URI parameters.</source>
+        <translation>URI nu poate fi parsatt! Cauza poate fi o adresa TORUS invalidă sau parametrii URI malformați.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -719,8 +719,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. SHROOMS can no longer continue safely and will quit.</source>
-        <translation>A apărut o eroare fatală. SHROOMS nu mai poate continua în condiții de siguranță și va iesi.</translation>
+        <source>A fatal error occurred. TORUS can no longer continue safely and will quit.</source>
+        <translation>A apărut o eroare fatală. TORUS nu mai poate continua în condiții de siguranță și va iesi.</translation>
     </message>
 </context>
 <context>
@@ -1053,8 +1053,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid SHROOMS address.</source>
-        <translation>Adresa introdusă &quot;%1&quot; nu este o adresă SHROOMS validă</translation>
+        <source>The entered address &quot;%1&quot; is not a valid TORUS address.</source>
+        <translation>Adresa introdusă &quot;%1&quot; nu este o adresă TORUS validă</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1072,8 +1072,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>SHROOMS-Qt</source>
-        <translation>SHROOMS-Qt</translation>
+        <source>TORUS-Qt</source>
+        <translation>TORUS-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1145,13 +1145,13 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start SHROOMS after logging in to the system.</source>
-        <translation>Pornește SHROOMS imdiat după logarea în sistem</translation>
+        <source>Automatically start TORUS after logging in to the system.</source>
+        <translation>Pornește TORUS imdiat după logarea în sistem</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start SHROOMS on system login</source>
-        <translation>$Pornește SHROOMS la logarea în sistem</translation>
+        <source>&amp;Start TORUS on system login</source>
+        <translation>$Pornește TORUS la logarea în sistem</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1170,8 +1170,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the SHROOMS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat portul pentru cientul SHROOMS pe router. Aces lucru este posibil doara daca routerul suporta UPnP si este activat</translation>
+        <source>Automatically open the TORUS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Deschide automat portul pentru cientul TORUS pe router. Aces lucru este posibil doara daca routerul suporta UPnP si este activat</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1180,8 +1180,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the SHROOMS network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Conecteaza la reteaua SHROOMS prinr-un proxy SOCKS(ex. cand te conectezi prin Tor)</translation>
+        <source>Connect to the TORUS network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Conecteaza la reteaua TORUS prinr-un proxy SOCKS(ex. cand te conectezi prin Tor)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1255,8 +1255,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting SHROOMS.</source>
-        <translation>Limba interfeței utilizator poate fi setat aici. Această setare va avea efect după repornirea SHROOMS.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting TORUS.</source>
+        <translation>Limba interfeței utilizator poate fi setat aici. Această setare va avea efect după repornirea TORUS.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1270,8 +1270,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show SHROOMS addresses in the transaction list or not.</source>
-        <translation>Dacă să arate adrese SHROOMS din lista de tranzacție sau nu.</translation>
+        <source>Whether to show TORUS addresses in the transaction list or not.</source>
+        <translation>Dacă să arate adrese TORUS din lista de tranzacție sau nu.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1317,8 +1317,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting SHROOMS.</source>
-        <translation>Aceasta setare va avea efect dupa repornirea SHROOMS.</translation>
+        <source>This setting will take effect after restarting TORUS.</source>
+        <translation>Aceasta setare va avea efect dupa repornirea TORUS.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1336,8 +1336,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     <message>
         <location line="+33"/>
         <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SHROOMS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informatia afisata poate fi depasita.  Portofel se sincronizează automat cu rețeaua SHROOMS după ce se stabilește o conexiune, dar acest proces nu s-a finalizat încă.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TORUS network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informatia afisata poate fi depasita.  Portofel se sincronizează automat cu rețeaua TORUS după ce se stabilește o conexiune, dar acest proces nu s-a finalizat încă.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -1552,8 +1552,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the SHROOMS-Qt help message to get a list with possible SHROOMS command-line options.</source>
-        <translation>Afișa mesajul de ajutor SHROOMS-Qt pentru a obține o listă cu posibile opțiuni de linie de comandă SHROOMS.</translation>
+        <source>Show the TORUS-Qt help message to get a list with possible TORUS command-line options.</source>
+        <translation>Afișa mesajul de ajutor TORUS-Qt pentru a obține o listă cu posibile opțiuni de linie de comandă TORUS.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1572,13 +1572,13 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>SHROOMS - Debug window</source>
-        <translation>SHROOMS - fereastră depanare</translation>
+        <source>TORUS - Debug window</source>
+        <translation>TORUS - fereastră depanare</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>SHROOMS Core</source>
-        <translation>SHROOMS Core</translation>
+        <source>TORUS Core</source>
+        <translation>TORUS Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1587,8 +1587,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the SHROOMS debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Deschideti fisierul de depanare SHROOMS din folderul curent. Acest lucru poate dura cateva secunde pentru fisiere de log mari.</translation>
+        <source>Open the TORUS debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Deschideti fisierul de depanare TORUS din folderul curent. Acest lucru poate dura cateva secunde pentru fisiere de log mari.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1597,8 +1597,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the SHROOMS RPC console.</source>
-        <translation>Bine ati venit la consola SHROOMS RPC.</translation>
+        <source>Welcome to the TORUS RPC console.</source>
+        <translation>Bine ati venit la consola TORUS RPC.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1756,8 +1756,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Introduceți o adresă SHROOMS(ex:XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Introduceți o adresă TORUS(ex:TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1856,8 +1856,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid SHROOMS address</source>
-        <translation>Atenție: Adresă SHROOMS invalidă</translation>
+        <source>WARNING: Invalid TORUS address</source>
+        <translation>Atenție: Adresă TORUS invalidă</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1900,8 +1900,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Adresa catre care trimiteti plata(ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address to send the payment to  (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Adresa catre care trimiteti plata(ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1930,8 +1930,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Introduceți o adresă SHROOMS(ex:XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Introduceți o adresă TORUS(ex:TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
 </context>
 <context>
@@ -1954,8 +1954,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Adresa cu care semnati mesajul(ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address to sign the message with (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Adresa cu care semnati mesajul(ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1991,8 +1991,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this SHROOMS address</source>
-        <translation>Semnează un mesaj pentru a dovedi că dețineti o adresă SHROOMS</translation>
+        <source>Sign the message to prove you own this TORUS address</source>
+        <translation>Semnează un mesaj pentru a dovedi că dețineti o adresă TORUS</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2018,13 +2018,13 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Adresa cu care a fost semnat mesajul(ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address the message was signed with (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Adresa cu care a fost semnat mesajul(ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified SHROOMS address</source>
-        <translation>Verifică un mesaj pentru a vă asigura că a fost semnat cu o anumită adresă SHROOMS</translation>
+        <source>Verify the message to ensure it was signed with the specified TORUS address</source>
+        <translation>Verifică un mesaj pentru a vă asigura că a fost semnat cu o anumită adresă TORUS</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2034,8 +2034,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Introduceți o adresă SHROOMS(ex:XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Introduceți o adresă TORUS(ex:TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2044,8 +2044,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter SHROOMS signature</source>
-        <translation>Introduceti semnatura SHROOMS</translation>
+        <source>Enter TORUS signature</source>
+        <translation>Introduceti semnatura TORUS</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2615,8 +2615,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>SHROOMS version</source>
-        <translation>Versiune SHROOMS</translation>
+        <source>TORUS version</source>
+        <translation>Versiune TORUS</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2625,8 +2625,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or SHROOMSd</source>
-        <translation>Trimite comanda catre server sau SHROOMSd</translation>
+        <source>Send command to -server or TORUSd</source>
+        <translation>Trimite comanda catre server sau TORUSd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2645,13 +2645,13 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: SHROOMS.conf)</source>
-        <translation>Specifica fisier de configurare(implicit: SHROOMS.conf)</translation>
+        <source>Specify configuration file (default: TORUS.conf)</source>
+        <translation>Specifica fisier de configurare(implicit: TORUS.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: SHROOMSd.pid)</source>
-        <translation>Speficica fisier pid(implicit: SHROOMS.pid)</translation>
+        <source>Specify pid file (default: TORUSd.pid)</source>
+        <translation>Speficica fisier pid(implicit: TORUS.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2800,8 +2800,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SHROOMS will not work properly.</source>
-        <translation>Atentie: Va rugam verificati ca timpul si data calculatorului sunt corete. Daca timpul este gresit SHROOMS nu va functiona corect.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong TORUS will not work properly.</source>
+        <translation>Atentie: Va rugam verificati ca timpul si data calculatorului sunt corete. Daca timpul este gresit TORUS nu va functiona corect.</translation>
     </message>
     <message>
         <location line="-31"/>
@@ -2990,22 +2990,22 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=SHROOMSrpc
+rpcuser=TORUSrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;TORUS Alert&quot; admin@foo.com
 </source>
         <translation>%s, trebuie să configurați o parolă rpc în fișierul de configurare: %s
-Este recomandat să folosiți următoarea parolă generată aleator: rpcuser=SHROOMSrpc
+Este recomandat să folosiți următoarea parolă generată aleator: rpcuser=TORUSrpc
 rpcpassword=%s
 (nu trebuie să țineți minte această parolă)
 Username-ul și parola NU TREBUIE să fie aceleași.
 Dacă fișierul nu există, creați-l cu drepturi de citire doar de către deținător.
 Este deasemenea recomandat să setați alertnotify pentru a fi notificat de probleme;
-de exemplu: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.com
+de exemplu: alertnotify=echo %%s | mail -s &quot;TORUS Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -3130,13 +3130,13 @@ de exemplu: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  SHROOMS is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s.  TORUS is probably already running.</source>
         <translation>Nu se poate obtine un lock pe directorul de date &amp;s. Testoin probabil ruleaza deja.</translation>
     </message>
     <message>
         <location line="-98"/>
-        <source>SHROOMS</source>
-        <translation>SHROOMS</translation>
+        <source>TORUS</source>
+        <translation>TORUS</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -3170,13 +3170,13 @@ de exemplu: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of SHROOMS</source>
-        <translation>Eroare la încărcarea wallet.dat: Portofelul necesita o versiune mai noua de SHROOMS</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of TORUS</source>
+        <translation>Eroare la încărcarea wallet.dat: Portofelul necesita o versiune mai noua de TORUS</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart SHROOMS to complete</source>
-        <translation>A fost nevoie de rescrierea portofelului: restartați SHROOMS pentru a finaliza</translation>
+        <source>Wallet needed to be rewritten: restart TORUS to complete</source>
+        <translation>A fost nevoie de rescrierea portofelului: restartați TORUS pentru a finaliza</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3245,8 +3245,8 @@ de exemplu: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. SHROOMS is probably already running.</source>
-        <translation>Imposibil de conectat %s pe acest computer. Cel mai probabil SHROOMS ruleaza</translation>
+        <source>Unable to bind to %s on this computer. TORUS is probably already running.</source>
+        <translation>Imposibil de conectat %s pe acest computer. Cel mai probabil TORUS ruleaza</translation>
     </message>
     <message>
         <location line="-97"/>

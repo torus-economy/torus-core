@@ -3,13 +3,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About SHROOMS</source>
+        <source>About TORUS</source>
         <translation>Vad du behöver veta om BTestcoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;SHROOMS&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;SHROOMS&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;TORUS&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;TORUS&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -66,8 +66,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your SHROOMS addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Dessa är dina SHROOMS adesser för att mottaga betalningsförsändelser. Du kan även använda olika adresser för varje avsändare för att enkelt hålla koll på vem som har skickat en betalning.</translation>
+        <source>These are your TORUS addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Dessa är dina TORUS adesser för att mottaga betalningsförsändelser. Du kan även använda olika adresser för varje avsändare för att enkelt hålla koll på vem som har skickat en betalning.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -81,8 +81,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a SHROOMS address</source>
-        <translation>Signera ett meddelande för att bevisa att du äger SHROOMS adressen</translation>
+        <source>Sign a message to prove you own a TORUS address</source>
+        <translation>Signera ett meddelande för att bevisa att du äger TORUS adressen</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -96,8 +96,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified SHROOMS address</source>
-        <translation>Verifiera ett meddelande för att försäkra dig över att det var signerat av en specifik SHROOMS adress</translation>
+        <source>Verify a message to ensure it was signed with a specified TORUS address</source>
+        <translation>Verifiera ett meddelande för att försäkra dig över att det var signerat av en specifik TORUS adress</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -264,7 +264,7 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-58"/>
-        <source>SHROOMS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <source>TORUS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation>BTestcoin plånboken kommer nu att stängas för att slutföra krypteringen: Kom ihåg att även en krypterad plånboks säkerhet kan äventyras genom keyloggers eller dylika malwares.</translation>
     </message>
     <message>
@@ -378,8 +378,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about SHROOMS</source>
-        <translation>Visa information om SHROOMS</translation>
+        <source>Show information about TORUS</source>
+        <translation>Visa information om TORUS</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -428,13 +428,13 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-62"/>
-        <source>Send coins to a SHROOMS address</source>
-        <translation>Skicka coins till en SHROOMS adress</translation>
+        <source>Send coins to a TORUS address</source>
+        <translation>Skicka coins till en TORUS adress</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for SHROOMS</source>
-        <translation>Modifiera konfigurations-alternativ för SHROOMS</translation>
+        <source>Modify configuration options for TORUS</source>
+        <translation>Modifiera konfigurations-alternativ för TORUS</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -473,8 +473,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-200"/>
-        <source>SHROOMS</source>
-        <translation>SHROOMS</translation>
+        <source>TORUS</source>
+        <translation>TORUS</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -483,8 +483,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+178"/>
-        <source>&amp;About SHROOMS</source>
-        <translation>&amp;Om SHROOMS</translation>
+        <source>&amp;About TORUS</source>
+        <translation>&amp;Om TORUS</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -540,13 +540,13 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>SHROOMS client</source>
-        <translation>SHROOMS klient</translation>
+        <source>TORUS client</source>
+        <translation>TORUS klient</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to SHROOMS network</source>
-        <translation><numerusform>%n aktiv anslutning till SHROOMS nätverket</numerusform><numerusform>%n aktiva anslutning till SHROOMS nätverket</numerusform></translation>
+        <source>%n active connection(s) to TORUS network</source>
+        <translation><numerusform>%n aktiv anslutning till TORUS nätverket</numerusform><numerusform>%n aktiva anslutning till TORUS nätverket</numerusform></translation>
     </message>
     <message>
         <location line="+40"/>
@@ -660,8 +660,8 @@ Adress: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid SHROOMS address or malformed URI parameters.</source>
-        <translation>URI:n kan inte tolkas! Detta kan bero på en ogiltig SHROOMS adress eller felaktiga URI parametrar.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid TORUS address or malformed URI parameters.</source>
+        <translation>URI:n kan inte tolkas! Detta kan bero på en ogiltig TORUS adress eller felaktiga URI parametrar.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -720,7 +720,7 @@ Adress: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. SHROOMS can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. TORUS can no longer continue safely and will quit.</source>
         <translation>Ett fatalt fel uppstod. BTestcoin kan inte fortsätta och stänger programmet.</translation>
     </message>
 </context>
@@ -1054,7 +1054,7 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid SHROOMS address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid TORUS address.</source>
         <translation>Den inslagna adressen &quot;%1&quot; är inte en giltig BTestcoin adress.</translation>
     </message>
     <message>
@@ -1073,8 +1073,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>SHROOMS-Qt</source>
-        <translation>SHROOMS-Qt</translation>
+        <source>TORUS-Qt</source>
+        <translation>TORUS-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1146,12 +1146,12 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start SHROOMS after logging in to the system.</source>
+        <source>Automatically start TORUS after logging in to the system.</source>
         <translation>Starta BTestcoin automatiskt vid inloggning.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start SHROOMS on system login</source>
+        <source>&amp;Start TORUS on system login</source>
         <translation>&amp;Starta BTestcoin vid inloggning</translation>
     </message>
     <message>
@@ -1171,8 +1171,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the SHROOMS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt SHROOMS klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är aktiverat.</translation>
+        <source>Automatically open the TORUS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna automatiskt TORUS klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är aktiverat.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1181,8 +1181,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the SHROOMS network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Anslut till SHROOMS nätverket via en SOCKS proxy (t.ex. när du ansluter genom Tor).</translation>
+        <source>Connect to the TORUS network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Anslut till TORUS nätverket via en SOCKS proxy (t.ex. när du ansluter genom Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1256,8 +1256,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting SHROOMS.</source>
-        <translation>Användargränssnittets språk kan ställas in här. Inställningen börjar gälla efter omstart av SHROOMS.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting TORUS.</source>
+        <translation>Användargränssnittets språk kan ställas in här. Inställningen börjar gälla efter omstart av TORUS.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1271,8 +1271,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show SHROOMS addresses in the transaction list or not.</source>
-        <translation>Om SHROOMS adresser skall visas i transaktionslistan eller inte.</translation>
+        <source>Whether to show TORUS addresses in the transaction list or not.</source>
+        <translation>Om TORUS adresser skall visas i transaktionslistan eller inte.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1318,8 +1318,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting SHROOMS.</source>
-        <translation>Inställningen börjar gälla efter omstart av SHROOMS.</translation>
+        <source>This setting will take effect after restarting TORUS.</source>
+        <translation>Inställningen börjar gälla efter omstart av TORUS.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1337,8 +1337,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location line="+33"/>
         <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SHROOMS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den visade informationen kan vara gammal. Din plånbok synkroniseras automatiskt med SHROOMS nätverket efter att en anslutning skapats, men denna process är inte klar än.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TORUS network after a connection is established, but this process has not completed yet.</source>
+        <translation>Den visade informationen kan vara gammal. Din plånbok synkroniseras automatiskt med TORUS nätverket efter att en anslutning skapats, men denna process är inte klar än.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -1553,8 +1553,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the SHROOMS-Qt help message to get a list with possible SHROOMS command-line options.</source>
-        <translation>Visa SHROOMS-Qt hjälp meddelandet för att få en lista över möjliga SHROOMS kommandoradsalternativ.</translation>
+        <source>Show the TORUS-Qt help message to get a list with possible TORUS command-line options.</source>
+        <translation>Visa TORUS-Qt hjälp meddelandet för att få en lista över möjliga TORUS kommandoradsalternativ.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1573,13 +1573,13 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>SHROOMS - Debug window</source>
-        <translation>SHROOMS - Felsökningsfönster</translation>
+        <source>TORUS - Debug window</source>
+        <translation>TORUS - Felsökningsfönster</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>SHROOMS Core</source>
-        <translation>SHROOMS Core</translation>
+        <source>TORUS Core</source>
+        <translation>TORUS Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1588,8 +1588,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the SHROOMS debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Öppna SHROOMS felsöknings-loggfilen från nuvarande data mapp. Detta kan kan ta ett par minuter för stora log filer.</translation>
+        <source>Open the TORUS debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Öppna TORUS felsöknings-loggfilen från nuvarande data mapp. Detta kan kan ta ett par minuter för stora log filer.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1598,8 +1598,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the SHROOMS RPC console.</source>
-        <translation>Välkommen till SHROOMS RPC konsoll.</translation>
+        <source>Welcome to the TORUS RPC console.</source>
+        <translation>Välkommen till TORUS RPC konsoll.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1757,8 +1757,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Fyll i en SHROOMS adress (t.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Fyll i en TORUS adress (t.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1857,8 +1857,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid SHROOMS address</source>
-        <translation>VARNING: Ogiltig SHROOMS adress</translation>
+        <source>WARNING: Invalid TORUS address</source>
+        <translation>VARNING: Ogiltig TORUS adress</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1901,8 +1901,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Adressen att skicka betalningen till  (t.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address to send the payment to  (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Adressen att skicka betalningen till  (t.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1931,8 +1931,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Fyll i en SHROOMS adress (t.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Fyll i en TORUS adress (t.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
 </context>
 <context>
@@ -1955,8 +1955,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Adressen att signera meddelandet med (t.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address to sign the message with (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Adressen att signera meddelandet med (t.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1992,8 +1992,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this SHROOMS address</source>
-        <translation>Signera meddelandet för att verifiera att du äger denna SHROOMS adressen</translation>
+        <source>Sign the message to prove you own this TORUS address</source>
+        <translation>Signera meddelandet för att verifiera att du äger denna TORUS adressen</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2019,13 +2019,13 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Adressen meddelandet var signerad med (t.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address the message was signed with (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Adressen meddelandet var signerad med (t.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified SHROOMS address</source>
-        <translation>Verifiera meddelandet för att vara säker på att det var signerat med den angivna SHROOMS adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified TORUS address</source>
+        <translation>Verifiera meddelandet för att vara säker på att det var signerat med den angivna TORUS adressen</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2035,8 +2035,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Fyll i en SHROOMS adress (t.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Fyll i en TORUS adress (t.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2045,8 +2045,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter SHROOMS signature</source>
-        <translation>Fyll i SHROOMS signatur</translation>
+        <source>Enter TORUS signature</source>
+        <translation>Fyll i TORUS signatur</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2616,8 +2616,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>SHROOMS version</source>
-        <translation>SHROOMS version</translation>
+        <source>TORUS version</source>
+        <translation>TORUS version</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2626,8 +2626,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or SHROOMSd</source>
-        <translation>Skicka kommando till -server eller SHROOMSd</translation>
+        <source>Send command to -server or TORUSd</source>
+        <translation>Skicka kommando till -server eller TORUSd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2646,13 +2646,13 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: SHROOMS.conf)</source>
-        <translation>Ange konfigurationsfilen (standard: SHROOMS.conf)</translation>
+        <source>Specify configuration file (default: TORUS.conf)</source>
+        <translation>Ange konfigurationsfilen (standard: TORUS.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: SHROOMSd.pid)</source>
-        <translation>Ange pid filen (standard SHROOMSd.pid)</translation>
+        <source>Specify pid file (default: TORUSd.pid)</source>
+        <translation>Ange pid filen (standard TORUSd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2801,7 +2801,7 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SHROOMS will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong TORUS will not work properly.</source>
         <translation>Varning: Kolla att din dators tid och datum är rätt. BTestcoin kan inte fungera ordentligt om tiden i datorn är fel.</translation>
     </message>
     <message>
@@ -2991,24 +2991,24 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=SHROOMSrpc
+rpcuser=TORUSrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;TORUS Alert&quot; admin@foo.com
 </source>
         <translation>%s, du måste sätta rpcpassword i konfigurationsfilen:
  %s
 Det är rekommenderat att du använder följande slumpmässiga lösenord:
-rpcuser=SHROOMSrpc
+rpcuser=TORUSrpc
 rpcpassword=%s
 (du behöver inte komma ihåg detta lösenord)
 Användarnamnet och lösenordet FÅR INTE vara samma.
 Om filen inte finns, skapa den med endast ägarrättigheter.
 Det är också rekommenderat att sätta alertnotify så du blir notifierad om problem;
-till exempel: alertnotify=echo %%s | mail -s &quot;SHROOMS Varning&quot; admin@foo.com
+till exempel: alertnotify=echo %%s | mail -s &quot;TORUS Varning&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -3133,13 +3133,13 @@ till exempel: alertnotify=echo %%s | mail -s &quot;SHROOMS Varning&quot; admin@f
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  SHROOMS is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s.  TORUS is probably already running.</source>
         <translation>Kan inte låsa datan i mappen %s. BTestcoin är kanske redan startad.</translation>
     </message>
     <message>
         <location line="-98"/>
-        <source>SHROOMS</source>
-        <translation>SHROOMS</translation>
+        <source>TORUS</source>
+        <translation>TORUS</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -3173,12 +3173,12 @@ till exempel: alertnotify=echo %%s | mail -s &quot;SHROOMS Varning&quot; admin@f
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of SHROOMS</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of TORUS</source>
         <translation>Kunde inte ladda wallet.dat: En nyare version av BTestcoin krävs</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart SHROOMS to complete</source>
+        <source>Wallet needed to be rewritten: restart TORUS to complete</source>
         <translation>Plånboken måste skrivas om: Starta om BTestcoin för att slutföra</translation>
     </message>
     <message>
@@ -3248,7 +3248,7 @@ till exempel: alertnotify=echo %%s | mail -s &quot;SHROOMS Varning&quot; admin@f
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. SHROOMS is probably already running.</source>
+        <source>Unable to bind to %s on this computer. TORUS is probably already running.</source>
         <translation>Kan inte binda till %s på denna dator. BTestcoin är sannolikt redan startad.</translation>
     </message>
     <message>

@@ -3,13 +3,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About SHROOMS</source>
-        <translation>Sobre SHROOMS</translation>
+        <source>About TORUS</source>
+        <translation>Sobre TORUS</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;SHROOMS&lt;/b&gt; version</source>
-        <translation>versió &lt;b&gt;SHROOMS&lt;/b&gt;</translation>
+        <source>&lt;b&gt;TORUS&lt;/b&gt; version</source>
+        <translation>versió &lt;b&gt;TORUS&lt;/b&gt;</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -60,8 +60,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your SHROOMS addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Aquestes són les teves adreces de SHROOMS per rebre els pagaments. És possible que vulgueu donar una diferent a cada remitent per a poder realitzar un seguiment de qui li está pagant.</translation>
+        <source>These are your TORUS addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Aquestes són les teves adreces de TORUS per rebre els pagaments. És possible que vulgueu donar una diferent a cada remitent per a poder realitzar un seguiment de qui li está pagant.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -75,8 +75,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a SHROOMS address</source>
-        <translation>Signar un missatge per demostrar que és propietari d&apos;una adreça SHROOMS</translation>
+        <source>Sign a message to prove you own a TORUS address</source>
+        <translation>Signar un missatge per demostrar que és propietari d&apos;una adreça TORUS</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -90,8 +90,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified SHROOMS address</source>
-        <translation>Comproveu el missatge per assegurar-se que es va signar amb una adreça SHROOMS especificada.</translation>
+        <source>Verify a message to ensure it was signed with a specified TORUS address</source>
+        <translation>Comproveu el missatge per assegurar-se que es va signar amb una adreça TORUS especificada.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -258,8 +258,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-58"/>
-        <source>SHROOMS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>SHROOMS tancarà ara per acabar el procés de xifrat. Recordeu que l&apos;encriptació del seu moneder no pot protegir completament les seves monedes de ser robades pel malware que pugui infectar al seu equip.</translation>
+        <source>TORUS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>TORUS tancarà ara per acabar el procés de xifrat. Recordeu que l&apos;encriptació del seu moneder no pot protegir completament les seves monedes de ser robades pel malware que pugui infectar al seu equip.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -372,8 +372,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about SHROOMS</source>
-        <translation>Mostra informació sobre SHROOMS</translation>
+        <source>Show information about TORUS</source>
+        <translation>Mostra informació sobre TORUS</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -422,13 +422,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-62"/>
-        <source>Send coins to a SHROOMS address</source>
-        <translation>Enviar monedes a una adreça SHROOMS</translation>
+        <source>Send coins to a TORUS address</source>
+        <translation>Enviar monedes a una adreça TORUS</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for SHROOMS</source>
-        <translation>Modificar les opcions de configuració per a SHROOMS</translation>
+        <source>Modify configuration options for TORUS</source>
+        <translation>Modificar les opcions de configuració per a TORUS</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -467,8 +467,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-200"/>
-        <source>SHROOMS</source>
-        <translation>SHROOMS</translation>
+        <source>TORUS</source>
+        <translation>TORUS</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -477,8 +477,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+178"/>
-        <source>&amp;About SHROOMS</source>
-        <translation>&amp;Sobre SHROOMS</translation>
+        <source>&amp;About TORUS</source>
+        <translation>&amp;Sobre TORUS</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -534,13 +534,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>SHROOMS client</source>
-        <translation>Client SHROOMS</translation>
+        <source>TORUS client</source>
+        <translation>Client TORUS</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to SHROOMS network</source>
-        <translation><numerusform>%n conexió activa a la xarxa SHROOMS</numerusform><numerusform>%n conexions actives a la xarxa SHROOMS</numerusform></translation>
+        <source>%n active connection(s) to TORUS network</source>
+        <translation><numerusform>%n conexió activa a la xarxa TORUS</numerusform><numerusform>%n conexions actives a la xarxa TORUS</numerusform></translation>
     </message>
     <message>
         <location line="+40"/>
@@ -650,8 +650,8 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid SHROOMS address or malformed URI parameters.</source>
-        <translation>l&apos;URI no es pot analitzar! Això pot ser causat per una adreça SHROOMS no vàlida o paràmetres URI malformats.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid TORUS address or malformed URI parameters.</source>
+        <translation>l&apos;URI no es pot analitzar! Això pot ser causat per una adreça TORUS no vàlida o paràmetres URI malformats.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -710,8 +710,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. SHROOMS can no longer continue safely and will quit.</source>
-        <translation>S&apos;ha produït un error fatal. SHROOMS ja no pot continuar de forma segura i es tancarà.</translation>
+        <source>A fatal error occurred. TORUS can no longer continue safely and will quit.</source>
+        <translation>S&apos;ha produït un error fatal. TORUS ja no pot continuar de forma segura i es tancarà.</translation>
     </message>
 </context>
 <context>
@@ -1044,8 +1044,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid SHROOMS address.</source>
-        <translation>La direcció introduïda &quot;%1&quot; no és una adreça SHROOMS vàlida.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid TORUS address.</source>
+        <translation>La direcció introduïda &quot;%1&quot; no és una adreça TORUS vàlida.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1063,8 +1063,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>SHROOMS-Qt</source>
-        <translation>SHROOMS-Qt</translation>
+        <source>TORUS-Qt</source>
+        <translation>TORUS-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1136,13 +1136,13 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start SHROOMS after logging in to the system.</source>
-        <translation>Inicia automàticament SHROOMS després d&apos;entrar en el sistema.</translation>
+        <source>Automatically start TORUS after logging in to the system.</source>
+        <translation>Inicia automàticament TORUS després d&apos;entrar en el sistema.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start SHROOMS on system login</source>
-        <translation>&amp;Iniciar SHROOMS amb l&apos;inici de sessió</translation>
+        <source>&amp;Start TORUS on system login</source>
+        <translation>&amp;Iniciar TORUS amb l&apos;inici de sessió</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1161,8 +1161,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the SHROOMS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Obrir automàticament el port de client SHROOMS en el router. Això només funciona quan el router és compatible amb UPnP i està habilitat.</translation>
+        <source>Automatically open the TORUS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Obrir automàticament el port de client TORUS en el router. Això només funciona quan el router és compatible amb UPnP i està habilitat.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1171,8 +1171,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the SHROOMS network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connecteu-vos a la xarxa SHROOMS través d&apos;un proxy SOCKS (per exemple, quan es connecta a través de Tor).</translation>
+        <source>Connect to the TORUS network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connecteu-vos a la xarxa TORUS través d&apos;un proxy SOCKS (per exemple, quan es connecta a través de Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1246,8 +1246,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting SHROOMS.</source>
-        <translation>L&apos;idioma de la interfície d&apos;usuari es pot configurar aquí. Aquesta configuració s&apos;aplicarà després de reiniciar SHROOMS.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting TORUS.</source>
+        <translation>L&apos;idioma de la interfície d&apos;usuari es pot configurar aquí. Aquesta configuració s&apos;aplicarà després de reiniciar TORUS.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1261,8 +1261,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show SHROOMS addresses in the transaction list or not.</source>
-        <translation>Per mostrar SHROOMS adreces a la llista de transaccions o no.</translation>
+        <source>Whether to show TORUS addresses in the transaction list or not.</source>
+        <translation>Per mostrar TORUS adreces a la llista de transaccions o no.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1308,8 +1308,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting SHROOMS.</source>
-        <translation>Aquesta configuració s&apos;aplicarà després de reiniciar SHROOMS.</translation>
+        <source>This setting will take effect after restarting TORUS.</source>
+        <translation>Aquesta configuració s&apos;aplicarà després de reiniciar TORUS.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1327,8 +1327,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     <message>
         <location line="+33"/>
         <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SHROOMS network after a connection is established, but this process has not completed yet.</source>
-        <translation>La informació mostrada pot estar fora de data. El seu moneder es sincronitza automàticament amb la xarxa SHROOMS després d&apos;establir una connexió, però aquest procés no s&apos;ha completat encara.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TORUS network after a connection is established, but this process has not completed yet.</source>
+        <translation>La informació mostrada pot estar fora de data. El seu moneder es sincronitza automàticament amb la xarxa TORUS després d&apos;establir una connexió, però aquest procés no s&apos;ha completat encara.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -1543,8 +1543,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the SHROOMS-Qt help message to get a list with possible SHROOMS command-line options.</source>
-        <translation>Mostra el missatge d&apos;ajuda de SHROOMS-Qt per obtenir una llista amb les possibles opcions de línia d&apos;ordres SHROOMS.</translation>
+        <source>Show the TORUS-Qt help message to get a list with possible TORUS command-line options.</source>
+        <translation>Mostra el missatge d&apos;ajuda de TORUS-Qt per obtenir una llista amb les possibles opcions de línia d&apos;ordres TORUS.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1563,13 +1563,13 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>SHROOMS - Debug window</source>
-        <translation>SHROOMS - Finestra Depuració</translation>
+        <source>TORUS - Debug window</source>
+        <translation>TORUS - Finestra Depuració</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>SHROOMS Core</source>
-        <translation>Nucli SHROOMS</translation>
+        <source>TORUS Core</source>
+        <translation>Nucli TORUS</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1578,8 +1578,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the SHROOMS debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Obriu el fitxer de registre de depuració SHROOMS des del directori de dades actual. Això pot trigar uns segons en els arxius de registre de grans dimensions.</translation>
+        <source>Open the TORUS debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Obriu el fitxer de registre de depuració TORUS des del directori de dades actual. Això pot trigar uns segons en els arxius de registre de grans dimensions.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1588,8 +1588,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the SHROOMS RPC console.</source>
-        <translation>Benvingut a la consola RPC de SHROOMS.</translation>
+        <source>Welcome to the TORUS RPC console.</source>
+        <translation>Benvingut a la consola RPC de TORUS.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1747,8 +1747,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Introdueix una adreça SHROOMS (p.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Introdueix una adreça TORUS (p.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1847,8 +1847,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid SHROOMS address</source>
-        <translation>ADVERTÈNCIA: Direcció SHROOMS invàlida</translation>
+        <source>WARNING: Invalid TORUS address</source>
+        <translation>ADVERTÈNCIA: Direcció TORUS invàlida</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1891,8 +1891,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>L&apos;adreça per a enviar el pagament (per exemple: XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address to send the payment to  (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>L&apos;adreça per a enviar el pagament (per exemple: TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1921,8 +1921,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Introdueix una adreça SHROOMS (p.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Introdueix una adreça TORUS (p.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
 </context>
 <context>
@@ -1945,8 +1945,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>L&apos;adreça per a signar el missatge (per exemple XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address to sign the message with (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>L&apos;adreça per a signar el missatge (per exemple TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1982,8 +1982,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this SHROOMS address</source>
-        <translation>Signar un missatge per demostrar que és propietari d&apos;aquesta adreça SHROOMS</translation>
+        <source>Sign the message to prove you own this TORUS address</source>
+        <translation>Signar un missatge per demostrar que és propietari d&apos;aquesta adreça TORUS</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2009,13 +2009,13 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>La direcció que va ser signada amb un missatge (per exemple XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address the message was signed with (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>La direcció que va ser signada amb un missatge (per exemple TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified SHROOMS address</source>
-        <translation>Comproveu el missatge per assegurar-se que es va signar amb l&apos;adreça SHROOMS especificada.</translation>
+        <source>Verify the message to ensure it was signed with the specified TORUS address</source>
+        <translation>Comproveu el missatge per assegurar-se que es va signar amb l&apos;adreça TORUS especificada.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2025,8 +2025,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Introdueix una adreça SHROOMS (p.ex. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Introdueix una adreça TORUS (p.ex. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2035,8 +2035,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter SHROOMS signature</source>
-        <translation>Introduïu la signatura SHROOMS</translation>
+        <source>Enter TORUS signature</source>
+        <translation>Introduïu la signatura TORUS</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2606,8 +2606,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>SHROOMS version</source>
-        <translation>versió SHROOMS</translation>
+        <source>TORUS version</source>
+        <translation>versió TORUS</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2616,8 +2616,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or SHROOMSd</source>
-        <translation>Enviar comandes a -server o SHROOMSd</translation>
+        <source>Send command to -server or TORUSd</source>
+        <translation>Enviar comandes a -server o TORUSd</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2636,13 +2636,13 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: SHROOMS.conf)</source>
-        <translation>Especifiqueu el fitxer de configuració (per defecte: SHROOMS.conf)</translation>
+        <source>Specify configuration file (default: TORUS.conf)</source>
+        <translation>Especifiqueu el fitxer de configuració (per defecte: TORUS.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: SHROOMSd.pid)</source>
-        <translation>Especificar arxiu pid (per defecte: SHROOMSd.pid)</translation>
+        <source>Specify pid file (default: TORUSd.pid)</source>
+        <translation>Especificar arxiu pid (per defecte: TORUSd.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2791,8 +2791,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SHROOMS will not work properly.</source>
-        <translation>Avís: Comproveu que la data i hora de l&apos;equip siguin correctes! Si el seu rellotge és erroni SHROOMS no funcionarà correctament.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong TORUS will not work properly.</source>
+        <translation>Avís: Comproveu que la data i hora de l&apos;equip siguin correctes! Si el seu rellotge és erroni TORUS no funcionarà correctament.</translation>
     </message>
     <message>
         <location line="-31"/>
@@ -2981,24 +2981,24 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=SHROOMSrpc
+rpcuser=TORUSrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;TORUS Alert&quot; admin@foo.com
 </source>
         <translation>%s, ha d&apos;establir un rpcpassword al fitxer de configuració:
 %s
 Es recomana utilitzar la següent contrasenya aleatòria:
-rpcuser=SHROOMSrpc
+rpcuser=TORUSrpc
 rpcpassword=%s
 (No cal recordar aquesta contrasenya)
 El nom d&apos;usuari i contrasenya NO HA DE SER el mateix.
 Si no hi ha l&apos;arxiu, s&apos;ha de crear amb els permisos de només lectura per al propietari.
 També es recomana establir alertnotify per a que se li notifiquin els problemes;
-per exemple: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.com
+per exemple: alertnotify=echo %%s | mail -s &quot;TORUS Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -3124,13 +3124,13 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  SHROOMS is probably already running.</source>
-        <translation>No es pot obtenir un bloqueig en el directori de dades %s. SHROOMS probablement ja estigui en funcionament.</translation>
+        <source>Cannot obtain a lock on data directory %s.  TORUS is probably already running.</source>
+        <translation>No es pot obtenir un bloqueig en el directori de dades %s. TORUS probablement ja estigui en funcionament.</translation>
     </message>
     <message>
         <location line="-98"/>
-        <source>SHROOMS</source>
-        <translation>SHROOMS</translation>
+        <source>TORUS</source>
+        <translation>TORUS</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -3164,13 +3164,13 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of SHROOMS</source>
-        <translation>Error en carregar wallet.dat: El moneder requereix la versió més recent de SHROOMS</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of TORUS</source>
+        <translation>Error en carregar wallet.dat: El moneder requereix la versió més recent de TORUS</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart SHROOMS to complete</source>
-        <translation>El moneder necessita ser reescrita: reiniciar SHROOMS per completar</translation>
+        <source>Wallet needed to be rewritten: restart TORUS to complete</source>
+        <translation>El moneder necessita ser reescrita: reiniciar TORUS per completar</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3239,8 +3239,8 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. SHROOMS is probably already running.</source>
-        <translation>No es pot enllaçar a %s en aquest equip. SHROOMS probablement ja estigui en funcionament.</translation>
+        <source>Unable to bind to %s on this computer. TORUS is probably already running.</source>
+        <translation>No es pot enllaçar a %s en aquest equip. TORUS probablement ja estigui en funcionament.</translation>
     </message>
     <message>
         <location line="-97"/>

@@ -453,7 +453,7 @@ void ThreadNtpSamples(void* parg) {
     vnThreadsRunning[THREAD_NTP]++;
 
     // Make this thread recognisable as time synchronization thread
-    RenameThread("clickcoin-ntp-samples");
+    RenameThread("thread-ntp-samples");
 
     CMedianFilter<int64_t> vTimeOffsets(200,0);
 

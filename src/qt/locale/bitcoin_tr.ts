@@ -3,13 +3,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About SHROOMS</source>
-        <translation>SHROOMS Hakkında</translation>
+        <source>About TORUS</source>
+        <translation>TORUS Hakkında</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;SHROOMS&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;SHROOMS&lt;/b&gt; versiyonu</translation>
+        <source>&lt;b&gt;TORUS&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;TORUS&lt;/b&gt; versiyonu</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -63,8 +63,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your SHROOMS addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Bunlar, ödeme almak için SHROOMS adreslerinizdir. Her bir göndericiye farklı birini verebilir, böylece size kimin ödeme yaptığını takip edebilirsiniz.</translation>
+        <source>These are your TORUS addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Bunlar, ödeme almak için TORUS adreslerinizdir. Her bir göndericiye farklı birini verebilir, böylece size kimin ödeme yaptığını takip edebilirsiniz.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -78,8 +78,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a SHROOMS address</source>
-        <translation>Bir SHROOMS adresine sahip olduğunu ispatlamak için bir mesaj imzala</translation>
+        <source>Sign a message to prove you own a TORUS address</source>
+        <translation>Bir TORUS adresine sahip olduğunu ispatlamak için bir mesaj imzala</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -93,8 +93,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified SHROOMS address</source>
-        <translation>Mesajın, belirli bir SHROOMS adresiyle imzalandığından emin olmak için onu doğrula</translation>
+        <source>Verify a message to ensure it was signed with a specified TORUS address</source>
+        <translation>Mesajın, belirli bir TORUS adresiyle imzalandığından emin olmak için onu doğrula</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -261,8 +261,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-58"/>
-        <source>SHROOMS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>SHROOMS, şifreleme işlemini tamamlamak için şimdi kapatılacak. Cüzdanınızı şifrelemenin; coinlerinizin, bilgisayarınızı etkileyen zararlı yazılımlar tarafından çalınmasını bütünüyle engelleyemeyebileceğini unutmayınız.</translation>
+        <source>TORUS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>TORUS, şifreleme işlemini tamamlamak için şimdi kapatılacak. Cüzdanınızı şifrelemenin; coinlerinizin, bilgisayarınızı etkileyen zararlı yazılımlar tarafından çalınmasını bütünüyle engelleyemeyebileceğini unutmayınız.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -375,8 +375,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about SHROOMS</source>
-        <translation>SHROOMS hakkındaki bilgiyi göster</translation>
+        <source>Show information about TORUS</source>
+        <translation>TORUS hakkındaki bilgiyi göster</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -425,13 +425,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-62"/>
-        <source>Send coins to a SHROOMS address</source>
-        <translation>Bir SHROOMS adresine coin gönder</translation>
+        <source>Send coins to a TORUS address</source>
+        <translation>Bir TORUS adresine coin gönder</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for SHROOMS</source>
-        <translation>SHROOMS yapılandırma seçeneklerini değiştir</translation>
+        <source>Modify configuration options for TORUS</source>
+        <translation>TORUS yapılandırma seçeneklerini değiştir</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -470,8 +470,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-200"/>
-        <source>SHROOMS</source>
-        <translation>SHROOMS</translation>
+        <source>TORUS</source>
+        <translation>TORUS</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -480,8 +480,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+178"/>
-        <source>&amp;About SHROOMS</source>
-        <translation>SHROOMS &amp;Hakkında</translation>
+        <source>&amp;About TORUS</source>
+        <translation>TORUS &amp;Hakkında</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -537,13 +537,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>SHROOMS client</source>
-        <translation>SHROOMS istemcisi</translation>
+        <source>TORUS client</source>
+        <translation>TORUS istemcisi</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to SHROOMS network</source>
-        <translation><numerusform>SHROOMS ağına %n etkin bağlantı</numerusform><numerusform>SHROOMS ağına %n etkin bağlantı</numerusform></translation>
+        <source>%n active connection(s) to TORUS network</source>
+        <translation><numerusform>TORUS ağına %n etkin bağlantı</numerusform><numerusform>TORUS ağına %n etkin bağlantı</numerusform></translation>
     </message>
     <message>
         <location line="+40"/>
@@ -657,8 +657,8 @@ Adres: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid SHROOMS address or malformed URI parameters.</source>
-        <translation>URI ayrıştırılamadı! Bu, geçersiz bir SHROOMS adresi veya hatalı URI parametreleri nedeniyle olabilir.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid TORUS address or malformed URI parameters.</source>
+        <translation>URI ayrıştırılamadı! Bu, geçersiz bir TORUS adresi veya hatalı URI parametreleri nedeniyle olabilir.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -717,8 +717,8 @@ Adres: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. SHROOMS can no longer continue safely and will quit.</source>
-        <translation>Önemli bir hata oluştu. SHROOMS artık güvenli bir şekilde devam edemez ve şimdi kapatılacak.</translation>
+        <source>A fatal error occurred. TORUS can no longer continue safely and will quit.</source>
+        <translation>Önemli bir hata oluştu. TORUS artık güvenli bir şekilde devam edemez ve şimdi kapatılacak.</translation>
     </message>
 </context>
 <context>
@@ -1051,8 +1051,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid SHROOMS address.</source>
-        <translation>Girilen %1 adresi, geçerli bir SHROOMS adresi değildir.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid TORUS address.</source>
+        <translation>Girilen %1 adresi, geçerli bir TORUS adresi değildir.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1070,8 +1070,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>SHROOMS-Qt</source>
-        <translation>SHROOMS-Qt</translation>
+        <source>TORUS-Qt</source>
+        <translation>TORUS-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1143,13 +1143,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start SHROOMS after logging in to the system.</source>
-        <translation>Sisteme giriş yaptıktan sonra SHROOMS&apos;i otomatik olarak başlat</translation>
+        <source>Automatically start TORUS after logging in to the system.</source>
+        <translation>Sisteme giriş yaptıktan sonra TORUS&apos;i otomatik olarak başlat</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start SHROOMS on system login</source>
-        <translation>Sisteme girişte SHROOMS&apos;i &amp;başlat</translation>
+        <source>&amp;Start TORUS on system login</source>
+        <translation>Sisteme girişte TORUS&apos;i &amp;başlat</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1168,8 +1168,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the SHROOMS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Yönelticide SHROOMS istemci portunu otomatik olarak aç. Bu, sadece yönelticiniz UPnP&apos;i desteklediğinde ve etkin olduğunda çalışır.</translation>
+        <source>Automatically open the TORUS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Yönelticide TORUS istemci portunu otomatik olarak aç. Bu, sadece yönelticiniz UPnP&apos;i desteklediğinde ve etkin olduğunda çalışır.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1178,8 +1178,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the SHROOMS network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>SHROOMS ağına bir SOCKS vekil sunucusu yoluyla bağlan (örn. Tor yoluyla bağlanıldığında)</translation>
+        <source>Connect to the TORUS network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>TORUS ağına bir SOCKS vekil sunucusu yoluyla bağlan (örn. Tor yoluyla bağlanıldığında)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1253,8 +1253,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting SHROOMS.</source>
-        <translation>Kullanıcı arabirimi dili buradan ayarlanabilir. Ayar, SHROOMS yeniden başlatıldığında etkin olacaktır.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting TORUS.</source>
+        <translation>Kullanıcı arabirimi dili buradan ayarlanabilir. Ayar, TORUS yeniden başlatıldığında etkin olacaktır.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1268,8 +1268,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show SHROOMS addresses in the transaction list or not.</source>
-        <translation>SHROOMS adresinin işlem listesinde gösterilmesi veya gösterilmemesi</translation>
+        <source>Whether to show TORUS addresses in the transaction list or not.</source>
+        <translation>TORUS adresinin işlem listesinde gösterilmesi veya gösterilmemesi</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1315,8 +1315,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting SHROOMS.</source>
-        <translation>Bu ayar, SHROOMS&apos;i yeniden başlattıktan sonra etkin olacaktır.</translation>
+        <source>This setting will take effect after restarting TORUS.</source>
+        <translation>Bu ayar, TORUS&apos;i yeniden başlattıktan sonra etkin olacaktır.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1334,8 +1334,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+33"/>
         <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SHROOMS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilginin tarihi geçmiş olabilir. Cüzdanınız, bağlantı kurulduktan sonra otomatik olarak SHROOMS ağı ile senkronize olur ancak bu süreç, henüz tamamlanmamıştır.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TORUS network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilginin tarihi geçmiş olabilir. Cüzdanınız, bağlantı kurulduktan sonra otomatik olarak TORUS ağı ile senkronize olur ancak bu süreç, henüz tamamlanmamıştır.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -1550,8 +1550,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the SHROOMS-Qt help message to get a list with possible SHROOMS command-line options.</source>
-        <translation>Muhtemel SHROOMS komut satırı seçeneklerinin bir listesini getirmek için SHROOMS-Qt yardım mesajını göster</translation>
+        <source>Show the TORUS-Qt help message to get a list with possible TORUS command-line options.</source>
+        <translation>Muhtemel TORUS komut satırı seçeneklerinin bir listesini getirmek için TORUS-Qt yardım mesajını göster</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1570,13 +1570,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-104"/>
-        <source>SHROOMS - Debug window</source>
-        <translation>SHROOMS - Hata ayıklama penceresi</translation>
+        <source>TORUS - Debug window</source>
+        <translation>TORUS - Hata ayıklama penceresi</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>SHROOMS Core</source>
-        <translation>SHROOMS Core</translation>
+        <source>TORUS Core</source>
+        <translation>TORUS Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1585,8 +1585,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the SHROOMS debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>SHROOMS hata ayıklama günlük kütüğü dosyasını, mevcut veri klasöründen aç. Bu işlem, büyük günlük kütüğü dosyaları için birkaç saniye sürebilir.</translation>
+        <source>Open the TORUS debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>TORUS hata ayıklama günlük kütüğü dosyasını, mevcut veri klasöründen aç. Bu işlem, büyük günlük kütüğü dosyaları için birkaç saniye sürebilir.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1595,8 +1595,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the SHROOMS RPC console.</source>
-        <translation>SHROOMS RPC konsoluna hoş geldiniz.</translation>
+        <source>Welcome to the TORUS RPC console.</source>
+        <translation>TORUS RPC konsoluna hoş geldiniz.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1754,8 +1754,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Bir SHROOMS adresi gir (örn: XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Bir TORUS adresi gir (örn: TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1854,8 +1854,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid SHROOMS address</source>
-        <translation>UYARI: Geçersiz SHROOMS adresi</translation>
+        <source>WARNING: Invalid TORUS address</source>
+        <translation>UYARI: Geçersiz TORUS adresi</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1898,8 +1898,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Ödemenin gönderileceği adres (örn: XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address to send the payment to  (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Ödemenin gönderileceği adres (örn: TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1928,8 +1928,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Bir SHROOMS adresi girin (örn: XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Bir TORUS adresi girin (örn: TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
 </context>
 <context>
@@ -1952,8 +1952,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Mesajın imzalanacağı adres (örn: XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address to sign the message with (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Mesajın imzalanacağı adres (örn: TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1989,8 +1989,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this SHROOMS address</source>
-        <translation>Bu SHROOMS adresine sahip olduğunuzu ispatlamak için mesajı imzala</translation>
+        <source>Sign the message to prove you own this TORUS address</source>
+        <translation>Bu TORUS adresine sahip olduğunuzu ispatlamak için mesajı imzala</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2016,13 +2016,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Mesajın imzalandığı adres (örn: XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>The address the message was signed with (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Mesajın imzalandığı adres (örn: TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified SHROOMS address</source>
-        <translation>Mesajın, belirtilen SHROOMS adresiyle imzalandığından emin olmak için onu doğrula</translation>
+        <source>Verify the message to ensure it was signed with the specified TORUS address</source>
+        <translation>Mesajın, belirtilen TORUS adresiyle imzalandığından emin olmak için onu doğrula</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2032,8 +2032,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</source>
-        <translation>Bir SHROOMS adresi girin (örn: XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)</translation>
+        <source>Enter a TORUS address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</source>
+        <translation>Bir TORUS adresi girin (örn: TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2042,8 +2042,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter SHROOMS signature</source>
-        <translation>SHROOMS imzası gir</translation>
+        <source>Enter TORUS signature</source>
+        <translation>TORUS imzası gir</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2613,8 +2613,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>SHROOMS version</source>
-        <translation>SHROOMS versiyonu</translation>
+        <source>TORUS version</source>
+        <translation>TORUS versiyonu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2623,8 +2623,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or SHROOMSd</source>
-        <translation>-sunucu veya SHROOMSd&apos;ye komut gönder</translation>
+        <source>Send command to -server or TORUSd</source>
+        <translation>-sunucu veya TORUSd&apos;ye komut gönder</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2643,13 +2643,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: SHROOMS.conf)</source>
-        <translation>Konfigürasyon dosyasını belirt (varsayılan: SHROOMS.conf)</translation>
+        <source>Specify configuration file (default: TORUS.conf)</source>
+        <translation>Konfigürasyon dosyasını belirt (varsayılan: TORUS.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: SHROOMSd.pid)</source>
-        <translation>pid dosyasını belirt (varsayılan: SHROOMS.pid)</translation>
+        <source>Specify pid file (default: TORUSd.pid)</source>
+        <translation>pid dosyasını belirt (varsayılan: TORUS.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2798,8 +2798,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SHROOMS will not work properly.</source>
-        <translation>Uyarı: Lütfen bilgisayarınızın tarih ve saatinin doğru olduğunu kontrol ediniz! Saatiniz yanlış ise, SHROOMS düzgün çalışmayacaktır.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong TORUS will not work properly.</source>
+        <translation>Uyarı: Lütfen bilgisayarınızın tarih ve saatinin doğru olduğunu kontrol ediniz! Saatiniz yanlış ise, TORUS düzgün çalışmayacaktır.</translation>
     </message>
     <message>
         <location line="-31"/>
@@ -2988,24 +2988,24 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=SHROOMSrpc
+rpcuser=TORUSrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;SHROOMS Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;TORUS Alert&quot; admin@foo.com
 </source>
         <translation>%s, konfigürasyon dosyasında bir rpcpassword belirlemelisiniz:
  %s
 Aşağıdaki rastgele parolayı kullanmanız tavsiye edilir:
-rpcuser=SHROOMSrpc
+rpcuser=TORUSrpc
 rpcpassword=%s
 (bu parolayı hatırlamanız gerekmemektedir)
 Kullanıcı adı ve parola aynı OLMAMALIDIR.
 Dosya mevcut değilse, dosyayı sadece-kullanıcı-okuyabilir dosya izniyle yaratınız.
 alertnotify ayarlamanız da ayrıca tavsiye edilir böylece sorunlar, size bildirilir;
-örneğin: alertnotify=echo %%s | mail -s &quot;SHROOMS Uyarısı&quot; admin@foo.com
+örneğin: alertnotify=echo %%s | mail -s &quot;TORUS Uyarısı&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -3130,12 +3130,12 @@ alertnotify ayarlamanız da ayrıca tavsiye edilir böylece sorunlar, size bildi
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  SHROOMS is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s.  TORUS is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="-98"/>
-        <source>SHROOMS</source>
+        <source>TORUS</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3170,12 +3170,12 @@ alertnotify ayarlamanız da ayrıca tavsiye edilir böylece sorunlar, size bildi
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of SHROOMS</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of TORUS</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart SHROOMS to complete</source>
+        <source>Wallet needed to be rewritten: restart TORUS to complete</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3245,7 +3245,7 @@ alertnotify ayarlamanız da ayrıca tavsiye edilir böylece sorunlar, size bildi
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. SHROOMS is probably already running.</source>
+        <source>Unable to bind to %s on this computer. TORUS is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>

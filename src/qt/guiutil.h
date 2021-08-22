@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QMessageBox>
 
-extern bool fUseShroomsTheme;
+extern bool fUseCustomTheme;
 
 QT_BEGIN_NAMESPACE
 class QFont;
@@ -32,7 +32,7 @@ namespace GUIUtil
     void setupAddressWidget(QLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "SHROOMS:" URI into recipient object, return true on successful parsing
+    // Parse "TORUS:" URI into recipient object, return true on successful parsing
     // See Bitcoin URI definition discussion here: https://bitcointalk.org/index.php?topic=33490.0
     bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseBitcoinURI(QString uri, SendCoinsRecipient *out);

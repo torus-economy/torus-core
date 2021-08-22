@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Send Shrooms</string>
+   <string>Send</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0">
    <property name="bottomMargin">
@@ -669,7 +669,7 @@
              <bool>false</bool> 
             </property> 
             <property name="text"> 
-             <string>0.00 SHRM</string> 
+             <string>0.00 TRS</string> 
             </property>
            </widget> 
            </item>

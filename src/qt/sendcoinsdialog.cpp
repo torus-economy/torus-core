@@ -37,7 +37,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
 
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)"));
+    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter an address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)"));
     ui->splitBlockLineEdit->setPlaceholderText(tr("# of Blocks to Make"));
 #endif
 
@@ -188,13 +188,13 @@ void SendCoinsDialog::on_sendButton_clicked()
 		else 
 		{ 
 #if QT_VERSION < 0x050000 
-        formatted.append(tr("<b>%1</b> in %4 blocks of %5 SHRM each to %2 (%3)?").arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, rcp.amount),  
+        formatted.append(tr("<b>%1</b> in %4 blocks of %5 TRS each to %2 (%3)?").arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, rcp.amount),  
 			Qt::escape(rcp.label),  
 			rcp.address,  
 			QString::number(nSplitBlock),  
 			BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, rcp.amount / nSplitBlock)));
 #else 
-        formatted.append(tr("<b>%1</b> in %4 blocks of %5 SHRM each to %2 (%3)?").arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, rcp.amount),  
+        formatted.append(tr("<b>%1</b> in %4 blocks of %5 TRS each to %2 (%3)?").arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, rcp.amount),  
 			rcp.label.toHtmlEscaped(),  
 			rcp.address,  
 			QString::number(nSplitBlock),  
@@ -205,7 +205,7 @@ void SendCoinsDialog::on_sendButton_clicked()
 
     fNewRecipientAllowed = false;
 
-    QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm send shrooms"),
+    QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm send"),
                           tr("Are you sure you want to send %1?").arg(formatted.join(tr(" and "))),
           QMessageBox::Yes|QMessageBox::Cancel,
           QMessageBox::Cancel);
@@ -232,38 +232,38 @@ void SendCoinsDialog::on_sendButton_clicked()
     switch(sendstatus.status)
     {
     case WalletModel::InvalidAddress:
-        QMessageBox::warning(this, tr("Send Shrooms"),
+        QMessageBox::warning(this, tr("Send"),
             tr("The recipient address is not valid, please recheck."),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::InvalidAmount:
-        QMessageBox::warning(this, tr("Send Shrooms"),
+        QMessageBox::warning(this, tr("Send"),
             tr("The amount to pay must be larger than 0."),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::AmountExceedsBalance:
-        QMessageBox::warning(this, tr("Send Shrooms"),
+        QMessageBox::warning(this, tr("Send"),
             tr("The amount exceeds your balance."),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::AmountWithFeeExceedsBalance:
-        QMessageBox::warning(this, tr("Send Shrooms"),
+        QMessageBox::warning(this, tr("Send"),
             tr("The total exceeds your balance when the %1 transaction fee is included.").
             arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, sendstatus.fee)),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::DuplicateAddress:
-        QMessageBox::warning(this, tr("Send Shrooms"),
+        QMessageBox::warning(this, tr("Send"),
             tr("Duplicate address found, can only send to each address once per send operation."),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::TransactionCreationFailed:
-        QMessageBox::warning(this, tr("Send Shrooms"),
+        QMessageBox::warning(this, tr("Send"),
             tr("Error: Transaction creation failed."),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::TransactionCommitFailed:
-        QMessageBox::warning(this, tr("Send Shrooms"),
+        QMessageBox::warning(this, tr("Send"),
             tr("Error: The transaction was rejected. This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here."),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
@@ -550,7 +550,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString & text)
         else if (!CBitcoinAddress(text.toStdString()).IsValid())
         {
             ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
-            ui->labelCoinControlChangeLabel->setText(tr("WARNING: Invalid SHROOMS address"));
+            ui->labelCoinControlChangeLabel->setText(tr("WARNING: Invalid address"));
         }
         else
         {

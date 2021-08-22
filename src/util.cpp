@@ -948,7 +948,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "SHROOMS";
+    const char* pszModule = "TORUS";
 #endif
     if (pex)
         return strprintf(
@@ -991,13 +991,9 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\SHROOMS
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\SHROOMS
-    // Mac: ~/Library/Application Support/SHROOMS
-    // Unix: ~/.SHROOMS
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "SHROOMS";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "TORUS";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1009,10 +1005,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "SHROOMS";
+    return pathRet / "TORUS";
 #else
     // Unix
-    return pathRet / ".SHROOMS";
+    return pathRet / ".TORUS";
 #endif
 #endif
 }
@@ -1054,7 +1050,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "SHROOMS.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "TORUS.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1085,7 +1081,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "SHROOMSd.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "TORUSd.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1253,10 +1249,10 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong SHROOMS will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong server will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
-                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("SHROOMS"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
+                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("TORUS"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
                 }
             }
         }

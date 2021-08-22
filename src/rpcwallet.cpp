@@ -157,7 +157,7 @@ Value getnewaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getnewaddress [account]\n"
-            "Returns a new SHROOMS address for receiving payments.  "
+            "Returns a new address for receiving payments.  "
             "If [account] is specified, it is added to the address book "
             "so payments received with the address will be credited to [account].");
 
@@ -224,7 +224,7 @@ Value getaccountaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccountaddress <account>\n"
-            "Returns the current SHROOMS address for receiving payments to this account.");
+            "Returns the current address for receiving payments to this account.");
 
     // Parse the account first so we don't generate a key if there's an error
     string strAccount = AccountFromValue(params[0]);
@@ -242,12 +242,12 @@ Value setaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "setaccount <SHROOMSaddress> <account>\n"
+            "setaccount <address> <account>\n"
             "Sets the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SHROOMS address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
 
 
     string strAccount;
@@ -272,12 +272,12 @@ Value getaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "getaccount <SHROOMSaddress>\n"
+            "getaccount <address>\n"
             "Returns the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SHROOMS address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
 
     string strAccount;
     map<CTxDestination, string>::iterator mi = pwalletMain->mapAddressBook.find(address.Get());
@@ -312,13 +312,13 @@ Value sendtoaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
-            "sendtoaddress <SHROOMSaddress> <amount> [comment] [comment-to]\n"
+            "sendtoaddress <address> <amount> [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
             + HelpRequiringPassphrase());
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SHROOMS address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
 
     // Amount
     int64_t nAmount = AmountFromValue(params[1]);
@@ -375,7 +375,7 @@ Value signmessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw runtime_error(
-            "signmessage <SHROOMSaddress> <message>\n"
+            "signmessage <address> <message>\n"
             "Sign a message with the private key of an address");
 
     EnsureWalletIsUnlocked();
@@ -410,7 +410,7 @@ Value verifymessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-            "verifymessage <SHROOMSaddress> <signature> <message>\n"
+            "verifymessage <address> <signature> <message>\n"
             "Verify a signed message");
 
     string strAddress  = params[0].get_str();
@@ -447,14 +447,14 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "getreceivedbyaddress <SHROOMSaddress> [minconf=1]\n"
-            "Returns the total amount received by <SHROOMSaddress> in transactions with at least [minconf] confirmations.");
+            "getreceivedbyaddress <address> [minconf=1]\n"
+            "Returns the total amount received by <address> in transactions with at least [minconf] confirmations.");
 
     // Bitcoin address
     CBitcoinAddress address = CBitcoinAddress(params[0].get_str());
     CScript scriptPubKey;
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SHROOMS address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
     scriptPubKey.SetDestination(address.Get());
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
@@ -675,14 +675,14 @@ Value sendfrom(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 3 || params.size() > 6)
         throw runtime_error(
-            "sendfrom <fromaccount> <toSHROOMSaddress> <amount> [minconf=1] [comment] [comment-to]\n"
+            "sendfrom <fromaccount> <toaddress> <amount> [minconf=1] [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
             + HelpRequiringPassphrase());
 
     string strAccount = AccountFromValue(params[0]);
     CBitcoinAddress address(params[1].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SHROOMS address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
     int64_t nAmount = AmountFromValue(params[2]);
 
     int nMinDepth = 1;
@@ -739,7 +739,7 @@ Value sendmany(const Array& params, bool fHelp)
     {
         CBitcoinAddress address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid SHROOMS address: ")+s.name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid address: ")+s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -783,7 +783,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     {
         string msg = "addmultisigaddress <nrequired> <'[\"key\",\"key\"]'> [account]\n"
             "Add a nrequired-to-sign multisignature address to the wallet\"\n"
-            "each key is a SHROOMS address or hex-encoded public key\n"
+            "each key is an address or hex-encoded public key\n"
             "If [account] is specified, assign address to [account].";
         throw runtime_error(msg);
     }
@@ -1386,7 +1386,7 @@ Value keypoolrefill(const Array& params, bool fHelp)
 void ThreadTopUpKeyPool(void* parg)
 {
     // Make this thread recognisable as the key-topping-up thread
-    RenameThread("SHROOMS-key-top");
+    RenameThread("thread-key-top");
 
     pwalletMain->TopUpKeyPool();
 }
@@ -1394,7 +1394,7 @@ void ThreadTopUpKeyPool(void* parg)
 void ThreadCleanWalletPassphrase(void* parg)
 {
     // Make this thread recognisable as the wallet relocking thread
-    RenameThread("SHROOMS-lock-wa");
+    RenameThread("thread-lock-wa");
 
     int64_t nMyWakeTime = GetTimeMillis() + *((int64_t*)parg) * 1000;
 
@@ -1565,7 +1565,7 @@ Value encryptwallet(const Array& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys. So:
     StartShutdown();
-    return "wallet encrypted; SHROOMS server stopping, restart to run with encrypted wallet.  The keypool has been flushed, you need to make a new backup.";
+    return "wallet encrypted; server stopping, restart to run with encrypted wallet.  The keypool has been flushed, you need to make a new backup.";
 }
 
 class DescribeAddressVisitor : public boost::static_visitor<Object>
@@ -1608,8 +1608,8 @@ Value validateaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "validateaddress <SHROOMSaddress>\n"
-            "Return information about <SHROOMSaddress>.");
+            "validateaddress <address>\n"
+            "Return information about <address>.");
 
     CBitcoinAddress address(params[0].get_str());
     bool isValid = address.IsValid();
@@ -1637,8 +1637,8 @@ Value validatepubkey(const Array& params, bool fHelp)
 {
     if (fHelp || !params.size() || params.size() > 2)
         throw runtime_error(
-            "validatepubkey <SHROOMSpubkey>\n"
-            "Return information about <SHROOMSpubkey>.");
+            "validatepubkey <pubkey>\n"
+            "Return information about <pubkey>.");
 
     std::vector<unsigned char> vchPubKey = ParseHex(params[0].get_str());
     CPubKey pubKey(vchPubKey);
@@ -1866,7 +1866,7 @@ Value getmoneysupply(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getmoneysupply [height]\n"
-            "Returns SHROOMS supply at certain block, current SHROOMS supply as default");
+            "Returns supply at certain block, current supply as default");
 	
     GetLastBlockIndex(pindexBest, false);
 	int nHeight = 0;
@@ -1887,17 +1887,17 @@ Value getmoneysupply(const Array& params, bool fHelp)
 		nMoneySupply = GetMoneySupply(nHeight);
 	}	
 	Object obj;
-	obj.push_back(Pair("SHROOMS supply", nMoneySupply));
+	obj.push_back(Pair("supply", nMoneySupply));
     return obj;
 }
 
-//SHROOMS Supply Information
-Value shroomssupply(const Array& params, bool fHelp)
+// Supply Information
+Value torussupply(const Array& params, bool fHelp)
 {
 	if (fHelp || params.size() != 0)
         throw runtime_error(
-            "shroomssupply\n"
-            "Show important SHROOMS supply variables.\n");
+            "supply\n"
+            "Show important supply variables.\n");
 	
 	// grab block index of last block
 	GetLastBlockIndex(pindexBest, false);
@@ -1910,15 +1910,15 @@ Value shroomssupply(const Array& params, bool fHelp)
 	
 	//print to console
 	Object obj;
-	obj.push_back(Pair("SHROOMS supply - present", GetMoneySupply(nHeight)));
+	obj.push_back(Pair("supply - present", GetMoneySupply(nHeight)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
-	obj.push_back(Pair("SHROOMS supply - 720 blocks ago", GetMoneySupply(n1Height)));
-	obj.push_back(Pair("SHROOMS supply - 5040 blocks ago", GetMoneySupply(n7Height)));
-	obj.push_back(Pair("SHROOMS supply - 21600 blocks ago", GetMoneySupply(n30Height)));
+	obj.push_back(Pair("supply - 720 blocks ago", GetMoneySupply(n1Height)));
+	obj.push_back(Pair("supply - 5040 blocks ago", GetMoneySupply(n7Height)));
+	obj.push_back(Pair("supply - 21600 blocks ago", GetMoneySupply(n30Height)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
-	obj.push_back(Pair("SHROOMS germinated(last 720 blocks)", GetSupplyChange(nHeight, n1Height)));
-	obj.push_back(Pair("SHROOMS germinated(last 5040 blocks)", GetSupplyChange(nHeight, n7Height)));
-	obj.push_back(Pair("SHROOMS germinated(last 21600 blocks)", GetSupplyChange(nHeight, n30Height)));
+	obj.push_back(Pair("germinated(last 720 blocks)", GetSupplyChange(nHeight, n1Height)));
+	obj.push_back(Pair("germinated(last 5040 blocks)", GetSupplyChange(nHeight, n7Height)));
+	obj.push_back(Pair("germinated(last 21600 blocks)", GetSupplyChange(nHeight, n30Height)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
 	obj.push_back(Pair("time change over 720 blocks, days", GetBlockSpeed(nHeight, n1Height)));
 	obj.push_back(Pair("time change over 5040 blocks, days", GetBlockSpeed(nHeight, n7Height)));
@@ -1928,9 +1928,9 @@ Value shroomssupply(const Array& params, bool fHelp)
 	obj.push_back(Pair("avg daily growth rate (last 5040 blocks)", GetRate(nHeight, n7Height)));
 	obj.push_back(Pair("avg daily growth rate (last 21600 blocks)", GetRate(nHeight, n30Height)));
 	obj.push_back(Pair("------------------------------", "------------------------------"));
-	obj.push_back(Pair("projected SHROOMS supply 1 day from now (daily compound)", PredictFutureSupply(nHeight, n1Height, 1)));
-	obj.push_back(Pair("projected SHROOMS supply 7 days from now (daily compound)", PredictFutureSupply(nHeight, n7Height, 7)));
-	obj.push_back(Pair("projected SHROOMS supply 30 days from now (daily compound)", PredictFutureSupply(nHeight, n30Height, 30)));
+	obj.push_back(Pair("projected supply 1 day from now (daily compound)", PredictFutureSupply(nHeight, n1Height, 1)));
+	obj.push_back(Pair("projected supply 7 days from now (daily compound)", PredictFutureSupply(nHeight, n7Height, 7)));
+	obj.push_back(Pair("projected supply 30 days from now (daily compound)", PredictFutureSupply(nHeight, n30Height, 30)));
 
 	return obj;
 }

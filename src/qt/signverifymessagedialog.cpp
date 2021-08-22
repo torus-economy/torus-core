@@ -24,11 +24,11 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 
 #if (QT_VERSION >= 0x040700)
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter an address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a SHROOMS address (e.g. XVELjVkYHiMqxvLXGBjnEFpjrHmV8Eos5B)"));
-    ui->signatureIn_VM->setPlaceholderText(tr("Enter SHROOMS signature"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter an address (e.g. TZjJvcPiVCn2TPP1ZjwCha89MSeUJ43yQx)"));
+    ui->signatureIn_VM->setPlaceholderText(tr("Enter signature"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);
