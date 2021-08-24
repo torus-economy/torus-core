@@ -307,7 +307,6 @@ static const CRPCCommand vRPCCommands[] =
     { "makekeypair",            &makekeypair,            false,  true  },
     { "sendalert",              &sendalert,              false,  false },
     { "combinedust",            &combinedust,            false,  false },
-    { "torussupply",          	&torussupply,          	 true,   false },
     { "getmoneysupply",         &getmoneysupply,         true,   false },
 };
 
