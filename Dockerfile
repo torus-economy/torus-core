@@ -1,4 +1,6 @@
-FROM ubuntu:16.04 as torus-core
+ARG UBUNTU_VERSION=16.04
+
+FROM ubuntu:${UBUNTU_VERSION} as base
 
 LABEL maintainer="Sven Skender (@sskender)"
 
@@ -44,7 +46,12 @@ WORKDIR /opt
 RUN rm ${BERKELEYDB_VERSION}.tar.gz
 RUN rm -r ${BERKELEYDB_VERSION}
 
-# headless daemon
+
+
+FROM base as torusd-unix
+
+LABEL maintainer="Sven Skender (@sskender)"
+
 WORKDIR /opt/torus-core
 COPY . .
 
@@ -61,3 +68,35 @@ EXPOSE 12411 22411 32411 42411
 VOLUME ["/root/.TORUS"]
 
 ENTRYPOINT ["./TORUSd"]
+
+
+
+FROM base as base-qt
+
+LABEL maintainer="Sven Skender (@sskender)"
+
+RUN apt-get install \
+    qt5-default \
+    qt5-qmake \
+    qtbase5-dev-tools \
+    qttools5-dev-tools \
+    -y
+
+
+
+FROM base-qt as torus-qt-unix
+
+LABEL maintainer="Sven Skender (@sskender)"
+
+WORKDIR /opt/torus-core
+COPY . .
+
+RUN qmake && \
+    make RELEASE=1 USE_QRCODE=1 USE_DBUS=1 -j$(nproc) && \
+    strip TORUS-qt
+
+WORKDIR /opt
+RUN mv torus-core/TORUS-qt TORUS-qt
+RUN rm -r torus-core
+
+ENTRYPOINT ["./TORUS-qt"]
