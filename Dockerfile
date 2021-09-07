@@ -105,4 +105,6 @@ WORKDIR /opt
 RUN mv torus-core/TORUS-qt TORUS-qt
 RUN rm -r torus-core
 
+VOLUME ["/root/.TORUS"]
+
 ENTRYPOINT ["./TORUS-qt"]
