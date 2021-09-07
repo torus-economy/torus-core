@@ -1,6 +1,12 @@
 ARG UBUNTU_VERSION=16.04
 
-FROM ubuntu:${UBUNTU_VERSION} as base
+FROM ubuntu:${UBUNTU_VERSION} as ubuntu
+
+LABEL maintainer="Sven Skender (@sskender)"
+
+
+
+FROM ubuntu as base
 
 LABEL maintainer="Sven Skender (@sskender)"
 
