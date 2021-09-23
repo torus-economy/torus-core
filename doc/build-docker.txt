@@ -16,4 +16,4 @@ Run torusd image:
 $ docker run -p 12411:12411 -p 22411:22411 -v /home/$USER/.TORUS:/root/.TORUS torusd
 
 Run torus-qt for unix image:
-$ docker run --network host -it -v /home/$USER/.Xauthority:/root/.Xauthority:rw -e DISPLAY=$DISPLAY torus-qt
+$ docker run --network host -v /home/$USER/.TORUS:/root/.TORUS -v /home/$USER/.Xauthority:/root/.Xauthority:rw -e DISPLAY=$DISPLAY torus-qt
