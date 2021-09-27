@@ -82,6 +82,9 @@ tags
 # Persistent undo
 [._]*.un~
 
+# ccsl
+.ccls-cache
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
