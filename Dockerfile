@@ -77,7 +77,7 @@ ENTRYPOINT ["./TORUSd"]
 
 
 
-FROM base as base-qt
+FROM base as torus-qt-unix
 
 LABEL maintainer="Sven Skender (@sskender)"
 
@@ -87,12 +87,6 @@ RUN apt-get install \
     qtbase5-dev-tools \
     qttools5-dev-tools \
     -y
-
-
-
-FROM base-qt as torus-qt-unix
-
-LABEL maintainer="Sven Skender (@sskender)"
 
 WORKDIR /opt/torus-core
 COPY . .
