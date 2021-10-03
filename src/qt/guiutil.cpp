@@ -423,7 +423,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
 {
     header = tr("TORUS command-line options") + "\n\n" +
         tr("Usage:") + "\n" +
-        "  TORUS-qt [" + tr("command-line options") + "]" + "\n" +
+        "  TORUS-Qt [" + tr("command-line options") + "]" + "\n" +
         tr("...............................................................................................................................................................................................................................") + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());

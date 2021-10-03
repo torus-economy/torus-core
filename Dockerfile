@@ -93,12 +93,12 @@ COPY . .
 
 RUN qmake && \
     make RELEASE=1 USE_QRCODE=1 USE_DBUS=1 -j$(nproc) && \
-    strip TORUS-qt
+    strip TORUS-Qt
 
 WORKDIR /opt
-RUN mv torus-core/TORUS-qt TORUS-qt
+RUN mv torus-core/TORUS-Qt TORUS-Qt
 RUN rm -r torus-core
 
 VOLUME ["/root/.TORUS"]
 
-ENTRYPOINT ["./TORUS-qt"]
+ENTRYPOINT ["./TORUS-Qt"]

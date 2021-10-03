@@ -1,4 +1,4 @@
-TORUS-qt: Qt5 GUI for TORUS
+TORUS-Qt: Qt5 GUI for TORUS
 ===============================
 
 Build instructions
