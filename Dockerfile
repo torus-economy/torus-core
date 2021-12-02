@@ -69,7 +69,7 @@ WORKDIR /opt
 RUN mv torus-core/src/TORUSd TORUSd
 RUN rm -r torus-core
 
-EXPOSE 12411 22411 32411 42411
+EXPOSE 24111 24112 24113 24114
 
 VOLUME ["/root/.TORUS"]
 
