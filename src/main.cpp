@@ -2437,7 +2437,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "The Guardian 09/Jun/2021 El Salvador becomes first country to adopt bitcoin as legal tender";
         CTransaction txNew;
-        txNew.nTime = 1627475269;
+        txNew.nTime = 1638617750;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2447,9 +2447,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1627475269;
+        block.nTime    = 1638617750;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = !fTestNet ? 150988 : 150988;
+        block.nNonce   = !fTestNet ? 627293 : 627293;
 
 
 // GEN ->
@@ -2478,7 +2478,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 // <- GEN
 
-        assert(block.hashMerkleRoot == uint256("0xda1c1110637ddfdb8fe5822424b5e4cc8724d92bc15e6aa5a8725e8f807010ea"));
+        assert(block.hashMerkleRoot == uint256("0xcdc376c01136ce03cbdf5c6faa1eeaaddaff9d2e40a4fdb2825b1cff8e123de6"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
 
@@ -3093,7 +3093,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         // Send the rest of the chain
         if (pindex)
             pindex = pindex->pnext;
-        int nLimit = 1251;
+        int nLimit = 150000;
         printf("getblocks %d to %s, limit %d\n", (pindex ? pindex->nHeight : -1), hashStop==uint256(0) ? "end" : hashStop.ToString().substr(0,20).c_str(), nLimit);
         for (; pindex; pindex = pindex->pnext)
         {
@@ -3237,7 +3237,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         uint256 hashBlock = block.GetHash();
         int nBlockHeight = block.GetBlockHeight();
 
-        if (nBlockHeight > (nBestHeight + 5000)) {
+        int nLimit = 150000;
+        if (nBlockHeight > (nBestHeight + nLimit)) {
             /* Discard this block because cannot verify it any time soon */
             printf("received and discarded distant block %s height %d\n",
               hashBlock.ToString().substr(0,20).c_str(), nBlockHeight);

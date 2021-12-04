@@ -36,10 +36,10 @@ RUN apt-get install \
     libzmq-dev \
     -y
 
-# BerkeleyDB v4.8.30.NC
+# BerkeleyDB v5.3.28
 WORKDIR /opt
 
-ENV BERKELEYDB_VERSION=db-4.8.30.NC
+ENV BERKELEYDB_VERSION=db-5.3.28
 RUN wget "http://download.oracle.com/berkeley-db/${BERKELEYDB_VERSION}.tar.gz"
 RUN tar -xvzf ${BERKELEYDB_VERSION}.tar.gz
 
@@ -69,7 +69,7 @@ WORKDIR /opt
 RUN mv torus-core/src/TORUSd TORUSd
 RUN rm -r torus-core
 
-EXPOSE 12411 22411 32411 42411
+EXPOSE 24111 24112 24113 24114
 
 VOLUME ["/root/.TORUS"]
 

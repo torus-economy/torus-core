@@ -39,7 +39,7 @@ static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 static const unsigned int MAX_INV_SZ = 50000;
 static const int64_t MIN_TX_FEE = 1000000;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
-static const int64_t MAX_MONEY = 120000000 * COIN;
+static const int64_t MAX_MONEY = 150000000 * COIN;
 static const int64_t COIN_YEAR_REWARD = 5 * CENT;
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
@@ -51,8 +51,8 @@ static const int fHaveUPnP = true;
 #else
 static const int fHaveUPnP = false;
 #endif
-static const uint256 hashGenesisBlock("0x0000000b50e8788a64fbd7e687724ec600e40890e1347fe5113eec9e1bc5fb38");
-static const uint256 hashGenesisBlockTestNet("0x0000000b50e8788a64fbd7e687724ec600e40890e1347fe5113eec9e1bc5fb38");
+static const uint256 hashGenesisBlock("0x000005a39de532e9f2546ad8c954a21f01e0064f3edc9fea108f39e0499a011d");
+static const uint256 hashGenesisBlockTestNet("0x000005a39de532e9f2546ad8c954a21f01e0064f3edc9fea108f39e0499a011d");
 
 inline int64_t PastDrift(int64_t nTime)
 {
