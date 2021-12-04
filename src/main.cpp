@@ -3093,7 +3093,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         // Send the rest of the chain
         if (pindex)
             pindex = pindex->pnext;
-        int nLimit = 1251;
+        int nLimit = 150000;
         printf("getblocks %d to %s, limit %d\n", (pindex ? pindex->nHeight : -1), hashStop==uint256(0) ? "end" : hashStop.ToString().substr(0,20).c_str(), nLimit);
         for (; pindex; pindex = pindex->pnext)
         {
@@ -3237,7 +3237,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         uint256 hashBlock = block.GetHash();
         int nBlockHeight = block.GetBlockHeight();
 
-        if (nBlockHeight > (nBestHeight + 5000)) {
+        int nLimit = 150000;
+        if (nBlockHeight > (nBestHeight + nLimit)) {
             /* Discard this block because cannot verify it any time soon */
             printf("received and discarded distant block %s height %d\n",
               hashBlock.ToString().substr(0,20).c_str(), nBlockHeight);
