@@ -2437,7 +2437,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "The Guardian 09/Jun/2021 El Salvador becomes first country to adopt bitcoin as legal tender";
         CTransaction txNew;
-        txNew.nTime = 1627475269;
+        txNew.nTime = 1638617750;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2447,9 +2447,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1627475269;
+        block.nTime    = 1638617750;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = !fTestNet ? 150988 : 150988;
+        block.nNonce   = !fTestNet ? 627293 : 627293;
 
 
 // GEN ->
@@ -2478,7 +2478,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 // <- GEN
 
-        assert(block.hashMerkleRoot == uint256("0xda1c1110637ddfdb8fe5822424b5e4cc8724d92bc15e6aa5a8725e8f807010ea"));
+        assert(block.hashMerkleRoot == uint256("0xcdc376c01136ce03cbdf5c6faa1eeaaddaff9d2e40a4fdb2825b1cff8e123de6"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
 
