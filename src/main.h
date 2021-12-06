@@ -29,7 +29,7 @@ class CInv;
 class CRequestTracker;
 class CNode;
 
-static const int LAST_POW_BLOCK = 20000;
+static const int LAST_POW_BLOCK = 2000;
 static const int MAX_TIME_SINCE_BEST_BLOCK = 10; // how many seconds to wait before sending next PushGetBlocks()
 
 static const unsigned int MAX_BLOCK_SIZE = 20000000;
