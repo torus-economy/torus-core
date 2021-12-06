@@ -1,4 +1,4 @@
-name: Docker torusd CI
+name: TORUSd CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  build:
+  build-docker:
 
     runs-on: ubuntu-latest
 
@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
-      - name: Build torusd latest
+      - name: Build TORUSd latest
         run: DOCKER_BUILDKIT=1 docker build --target torusd-unix --tag ghcr.io/torus-economy/torusd:latest .
 
       - name: Push to GitHub Container Registry
