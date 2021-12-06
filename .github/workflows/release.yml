@@ -1,0 +1,31 @@
+name: Release CI
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+
+  build-win:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build TORUS-Qt.exe
+        run: DOCKER_BUILDKIT=1 docker build --target torus-qt-win --tag torus-qt-win:latest .
+
+      - name: Copy artifacts
+        run: docker cp $(docker create --rm torus-qt-win):/opt/torus-core/release/TORUS-Qt.exe TORUS-Qt.exe
+
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: false
+          artifacts: "TORUS-Qt.exe"
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
