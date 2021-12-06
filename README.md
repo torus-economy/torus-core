@@ -20,12 +20,12 @@ docker pull ghcr.io/torus-economy/torusd:latest
 
 Run container:
 ```bash
-docker run -d -p 24111:24111 -v /home/$USER/.TORUS:/root/.TORUS ghcr.io/torus-economy/torusd:latest
+docker run -d -p 24111:24111 -v /home/$USER/.TORUS:/root/.TORUS --restart=always ghcr.io/torus-economy/torusd:latest
 ```
 
 or with RPC port enabled:
 ```bash
-docker run -d -p 24111:24111 -p 24112:24112 -v /home/$USER/.TORUS:/root/.TORUS ghcr.io/torus-economy/torusd:latest
+docker run -d -p 24111:24111 -p 24112:24112 -v /home/$USER/.TORUS:/root/.TORUS --restart=always ghcr.io/torus-economy/torusd:latest
 ```
 
 Make sure to have a valid `.TORUS.conf` file in `/home/$USER/.TORUS/TORUS.conf`. For more info see [example](TORUS.conf).
