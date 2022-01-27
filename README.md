@@ -5,6 +5,9 @@ Proof of Stake: 5% yearly rate \
 Min. stake age: 8 hours \
 Block time: 120 sec
 
+Burn address: [TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ](https://explorer.torus.cc/address/TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ) \
+[See](contrib/burn-address.py) for more.
+
 *****************************
 
 ## Run a node
