@@ -92,7 +92,7 @@ WORKDIR /opt/torus-core
 COPY . .
 
 RUN qmake && \
-    make RELEASE=1 USE_QRCODE=1 USE_DBUS=1 -j$(nproc) && \
+    make RELEASE=1 USE_QRCODE=1 USE_DBUS=1 USE_UPNP=1 -j$(nproc) && \
     strip TORUS-Qt
 
 WORKDIR /opt
