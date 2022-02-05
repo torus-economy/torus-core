@@ -1,5 +1,4 @@
-name: Dev CI
-description: Build development environment
+name: Dev env CI
 
 on:
   workflow_dispatch:
