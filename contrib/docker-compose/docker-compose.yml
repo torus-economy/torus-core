@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  torusd:
+    container_name: TORUSd
+    image: ghcr.io/torus-economy/torusd:latest
+    platform: "linux/amd64"
+    ports:
+      - "24111:24111"
+    restart: always
+    volumes:
+      - torus_data:/root/.TORUS
+      - ./TORUS.conf:/root/.TORUS/TORUS.conf:ro
+
+volumes:
+  torus_data:
