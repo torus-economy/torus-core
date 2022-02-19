@@ -6,7 +6,7 @@ Min. stake age: 8 hours \
 Block time: 120 sec
 
 Burn address: [TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ](https://explorer.torus.cc/address/TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ) \
-[See](contrib/burn-address.py) for more.
+[See](contrib/burn-address.py) for more details.
 
 *****************************
 
@@ -27,6 +27,7 @@ docker run \
     -d \
     -p 24111:24111 \
     -v /home/$USER/.TORUS:/root/.TORUS \
+    --name TORUSd \
     --restart=always \
     ghcr.io/torus-economy/torusd:latest
 ```
@@ -38,13 +39,34 @@ docker run \
     -p 24111:24111 \
     -p 24112:24112 \
     -v /home/$USER/.TORUS:/root/.TORUS \
+    --name TORUSd \
     --restart=always \
     ghcr.io/torus-economy/torusd:latest
 ```
 
-Make sure to have a valid `.TORUS.conf` file in `/home/$USER/.TORUS/TORUS.conf` or any other path that was specified.
-For more info see [example](TORUS.conf).
-Docker must have torusd process running in the foreground, so do not include `daemon=1` in `TORUS.conf` file when running a Docker container.
+Make sure to have a valid `TORUS.conf` file in `/home/$USER/.TORUS/TORUS.conf` or in any other path that was specified.
+For more information about configuration file see [example](TORUS.conf).
+Docker container must always have torusd process running in the foreground, so do not include `daemon=1` in `TORUS.conf` configuration file when running within Docker.
+In case `daemon=1` is included, the Docker process will exit immediately.
+
+Minimum `TORUS.conf` configuration file should include the following:
+
+```bash
+rpcuser=rpc
+rpcpassword=password123
+server=1
+listen=1
+```
+
+This could also be achived by running a docker-compose script.
+Preconfigured docker-compose script with corresponding `TORUS.conf` configuration file can be found in [contrib](contrib/docker-compose) folder.
+For security reasons, make sure to change `rpcuser` and `rpcpassword` default values.
+Afterwards, the script can be run:
+
+```bash
+cd contrib/docker-compose
+docker-compose up -d
+```
 
 ### Build from source
 
