@@ -58,6 +58,8 @@ server=1
 listen=1
 ```
 
+#### docker-compose
+
 This could also be achived by running a docker-compose script.
 Preconfigured docker-compose script with corresponding `TORUS.conf` configuration file can be found in [contrib](contrib/docker-compose) folder.
 For security reasons, make sure to change `rpcuser` and `rpcpassword` default values.
@@ -67,6 +69,20 @@ Afterwards, the script can be run:
 cd contrib/docker-compose
 docker-compose up -d
 ```
+
+#### Seed nodes
+
+Official seed nodes:
+
+- 185.150.117.203
+- 185.150.117.219
+- 84.32.188.71
+
+Official DNS seed servers:
+
+- dnsseed1.torus.cc
+- dnsseed2.torus.cc
+- dnsseed3.torus.cc
 
 ### Build from source
 
