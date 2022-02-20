@@ -1,4 +1,4 @@
-name: Dev env CI
+name: Dev ENV CI
 
 on:
   workflow_dispatch:
