@@ -36,6 +36,9 @@ RUN apt-get install \
     libzmq-dev \
     -y
 
+RUN apt-get clean && \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 # BerkeleyDB v5.3.28
 WORKDIR /opt
 
