@@ -87,3 +87,7 @@ Official DNS seed servers:
 ### Build from source
 
 In order to build from source, check out [docs](doc).
+
+## Release notes
+
+To see release notes check out this [file](doc/release-notes.md).
