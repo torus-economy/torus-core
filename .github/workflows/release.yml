@@ -54,17 +54,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Install zip tool
+        run: sudo apt-get install zip -y
+
       - name: Build TORUS-Qt.exe
         run: DOCKER_BUILDKIT=1 docker build --target torus-qt-win --tag torus-qt-win:latest .
 
       - name: Copy artifacts
         run: docker cp $(docker create --rm torus-qt-win):/opt/torus-core/release/TORUS-Qt.exe TORUS-Qt.exe
 
+      - name: Zip artifacts
+        run: zip torus-qt-win64.zip TORUS-Qt.exe
+
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: false
-          artifacts: "TORUS-Qt.exe"
+          artifacts: "torus-qt-win64.zip"
           draft: false
           prerelease: false
           token: ${{ secrets.GITHUB_TOKEN }}
