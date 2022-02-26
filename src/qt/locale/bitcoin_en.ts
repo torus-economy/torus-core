@@ -632,8 +632,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+10"/>
-        <source>Last received block was generated %1.</source>
-        <translation>Last received block was generated %1.</translation>
+        <source>Last received block was minted %1.</source>
+        <translation>Last received block was minted %1.</translation>
     </message>
     <message>
         <location line="+59"/>
@@ -2190,8 +2190,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+0"/>
-        <source>Generated</source>
-        <translation>Generated</translation>
+        <source>Minted</source>
+        <translation>Minted</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2274,8 +2274,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 110 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Generated coins must mature 110 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</translation>
+        <source>Minted coins must mature 110 blocks before they can be spent. When you minted this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>Minted coins must mature 110 blocks before they can be spent. When you minted this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2403,13 +2403,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated but not accepted</source>
-        <translation>Generated but not accepted</translation>
+        <source>Minted but not accepted</source>
+        <translation>Minted but not accepted</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Received with</source>
-        <translation>Received with</translation>
+        <source>Received</source>
+        <translation>Received</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2502,8 +2502,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+11"/>
-        <source>Received with</source>
-        <translation>Received with</translation>
+        <source>Received</source>
+        <translation>Received</translation>
     </message>
     <message>
         <location line="+2"/>

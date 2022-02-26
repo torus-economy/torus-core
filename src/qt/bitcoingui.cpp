@@ -367,7 +367,7 @@ void BitcoinGUI::setClientModel(ClientModel *clientModel)
 #endif
             if(trayIcon)
             {
-                trayIcon->setToolTip(tr("client") + QString(" ") + tr("[testnet]"));
+                trayIcon->setToolTip(tr("TORUS-Qt") + QString(" ") + tr("[testnet]"));
                 trayIcon->setIcon(QIcon(":/icons/toolbar_testnet"));
                 toggleHideAction->setIcon(QIcon(":/icons/toolbar_testnet"));
             }
@@ -427,7 +427,7 @@ void BitcoinGUI::createTrayIcon()
     trayIcon = new QSystemTrayIcon(this);
     trayIconMenu = new QMenu(this);
     trayIcon->setContextMenu(trayIconMenu);
-    trayIcon->setToolTip(tr("client"));
+    trayIcon->setToolTip(tr("TORUS-Qt"));
     trayIcon->setIcon(QIcon(":/icons/toolbar"));
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
@@ -594,7 +594,7 @@ void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
     if(!text.isEmpty())
     {
         tooltip += QString("<br>");
-        tooltip += tr("Last received block was generated %1.").arg(text);
+        tooltip += tr("Last received block was minted %1.").arg(text);
     }
 
     // Don't word-wrap this (fixed-width) tooltip

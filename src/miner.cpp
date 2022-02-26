@@ -463,7 +463,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("CheckWork() : generated block is stale");
+            return error("CheckWork() : mined block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -503,7 +503,7 @@ bool CheckStake(CBlock* pblock, CWallet& wallet)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("CheckStake() : generated block is stale");
+            return error("CheckStake() : minted block is stale");
 
         // Track how many getdata requests this block gets
         {
