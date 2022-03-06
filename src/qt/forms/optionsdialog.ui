@@ -380,13 +380,6 @@
         </layout>
        </item>
        <item>
-        <widget class="QCheckBox" name="useCustomTheme">
-         <property name="text">
-          <string>Use custom visual theme (requires restart)</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QCheckBox" name="displayAddresses">
          <property name="toolTip">
           <string>Whether to show addresses in the transaction list or not.</string>

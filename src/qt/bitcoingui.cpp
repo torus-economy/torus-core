@@ -991,9 +991,6 @@ void BitcoinGUI::updateStyleSlot()
 
 void BitcoinGUI::updateStyle()
 {
-    if (!fUseCustomTheme)
-        return;
-
     QString qssPath = QString::fromStdString( GetDataDir().string() ) + "/qssfile.qss";
 
     QFile f( qssPath );

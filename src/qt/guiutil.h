@@ -5,8 +5,6 @@
 #include <QObject>
 #include <QMessageBox>
 
-extern bool fUseCustomTheme;
-
 QT_BEGIN_NAMESPACE
 class QFont;
 class QLineEdit;
