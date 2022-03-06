@@ -54,7 +54,7 @@ void WalletTxToJSON(const CWalletTx& wtx, Object& entry)
     int confirms = wtx.GetDepthInMainChain();
     entry.push_back(Pair("confirmations", confirms));
     if (wtx.IsCoinBase() || wtx.IsCoinStake())
-        entry.push_back(Pair("generated", true));
+        entry.push_back(Pair("minted", true));
     if (confirms > 0)
     {
         entry.push_back(Pair("blockhash", wtx.hashBlock.GetHex()));

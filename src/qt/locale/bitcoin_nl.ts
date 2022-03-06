@@ -614,7 +614,7 @@ Dit product bevat software ontwikkeld door het OpenSSL Project voor gebruik in d
     </message>
     <message>
         <location line="+10"/>
-        <source>Last received block was generated %1.</source>
+        <source>Last received block was minted %1.</source>
         <translation>Laatst ontvangen blok is gegenereerd op %1.</translation>
     </message>
     <message>
@@ -2168,7 +2168,7 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Generated</source>
+        <source>Minted</source>
         <translation>Gegenereerd</translation>
     </message>
     <message>
@@ -2249,7 +2249,7 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 110 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <source>Minted coins must mature 60 blocks before they can be spent. When you minted this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
         <translation>Gegenereerd munten moeten 510 blokken maturen voordat ze kunnen worden besteed. Wanneer je een blok genereerd, het naar het netwerk is verzonden en toegevoegd aan de blokketen, zal de status veranderen naar &quot;niet geaccepteerd&quot;and kan het niet uitgegeven worden.  Dit kan soms gebeuren als een ander knooppunt genereert een blok binnen een paar seconden na jou.</translation>
     </message>
     <message>
@@ -2375,12 +2375,12 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated but not accepted</source>
+        <source>Minted but not accepted</source>
         <translation>Gegenereerd maar niet geaccepteerd</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Ontvangen met</translation>
     </message>
     <message>
@@ -2474,7 +2474,7 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Ontvangen met</translation>
     </message>
     <message>

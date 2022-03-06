@@ -614,7 +614,7 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="+10"/>
-        <source>Last received block was generated %1.</source>
+        <source>Last received block was minted %1.</source>
         <translation>Sidst modtagne blok blev genereret %1.</translation>
     </message>
     <message>
@@ -2168,7 +2168,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Generated</source>
+        <source>Minted</source>
         <translation>Genereret</translation>
     </message>
     <message>
@@ -2249,7 +2249,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 110 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <source>Minted coins must mature 60 blocks before they can be spent. When you minted this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
         <translation>Generet mønter skal modne 510 blokke, før de kan blive brugt. Når du genererede denne blok blev det transmitteret til netværket, der tilføjes til blokkæden. Hvis det mislykkes at komme ind i kæden, vil dens tilstand ændres til &quot;ikke godkendt&quot;, og det vil ikke være brugbar. Dette kan lejlighedsvis ske, hvis en anden node genererer en blok et par sekunder efter din.</translation>
     </message>
     <message>
@@ -2375,12 +2375,12 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated but not accepted</source>
+        <source>Minted but not accepted</source>
         <translation>Genereret, men ikke accepteret</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Modtaget med</translation>
     </message>
     <message>
@@ -2474,7 +2474,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Modtaget med</translation>
     </message>
     <message>

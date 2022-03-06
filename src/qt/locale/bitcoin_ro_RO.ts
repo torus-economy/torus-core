@@ -614,7 +614,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+10"/>
-        <source>Last received block was generated %1.</source>
+        <source>Last received block was minted %1.</source>
         <translation>Ultimul bloc primit a fost generat %1.</translation>
     </message>
     <message>
@@ -2168,7 +2168,7 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Generated</source>
+        <source>Minted</source>
         <translation>Generat</translation>
     </message>
     <message>
@@ -2249,7 +2249,7 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 110 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <source>Minted coins must mature 60 blocks before they can be spent. When you minted this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
         <translation>Monedele generate trebuie să se maturizeze 510 blocuri înainte de a fi cheltuite. Când ați generat acest bloc,  a fost trimis la rețea pentru a fi adăugat la lanțul de blocuri. În cazul în care nu reușește să intre în lanț, starea sa se ​​va schimba in &quot;nu a fost acceptat&quot;, și nu va putea fi cheltuit. Acest lucru se poate întâmpla din când în când, dacă un alt nod generează un bloc cu câteva secunde inaintea blocului tau.</translation>
     </message>
     <message>
@@ -2375,12 +2375,12 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated but not accepted</source>
+        <source>Minted but not accepted</source>
         <translation>Generat dar neacceptat</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Recepționat cu</translation>
     </message>
     <message>
@@ -2474,7 +2474,7 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Recepționat cu</translation>
     </message>
     <message>

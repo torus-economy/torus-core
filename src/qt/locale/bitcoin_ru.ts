@@ -614,7 +614,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+10"/>
-        <source>Last received block was generated %1.</source>
+        <source>Last received block was minted %1.</source>
         <translation>Последний полученный блок был сгенерирован %1.</translation>
     </message>
     <message>
@@ -2154,7 +2154,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+0"/>
-        <source>Generated</source>
+        <source>Minted</source>
         <translation>Сгенерировано</translation>
     </message>
     <message>
@@ -2235,7 +2235,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 110 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <source>Minted coins must mature 60 blocks before they can be spent. When you minted this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
         <translation>Сгенерированные монеты должны подождать 510 блоков, прежде чем они могут быть потрачены. Когда Вы сгенерировали этот блок, он был отправлен в сеть для добавления в цепочку блоков. Если данная процедура не удастся, статус изменится на «не подтверждено», и монеты будут недействительны. Это иногда происходит в случае, если другой узел сгенерирует блок на несколько секунд раньше вас.</translation>
     </message>
     <message>
@@ -2361,12 +2361,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated but not accepted</source>
+        <source>Minted but not accepted</source>
         <translation>Сгенерировано, но не принято</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Получено</translation>
     </message>
     <message>
@@ -2460,7 +2460,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+11"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Получено на</translation>
     </message>
     <message>

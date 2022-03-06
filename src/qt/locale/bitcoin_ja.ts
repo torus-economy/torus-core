@@ -614,7 +614,7 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     </message>
     <message>
         <location line="+10"/>
-        <source>Last received block was generated %1.</source>
+        <source>Last received block was minted %1.</source>
         <translation>最新ブロックは%1に生成されました。</translation>
     </message>
     <message>
@@ -2167,7 +2167,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+0"/>
-        <source>Generated</source>
+        <source>Minted</source>
         <translation>生成された</translation>
     </message>
     <message>
@@ -2248,7 +2248,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 110 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <source>Minted coins must mature 60 blocks before they can be spent. When you minted this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
         <translation>コインを費やす前に発現されたコインは510ブロック間成熟しなければなりません。このブロックを発現させたときに、ブロックチェインに足すためにネットワークへ放送しました。ブロックチェインに追加失敗したばい、レベルは「受け入られていない」に変わって、費やせられない状況になります。自分のノードと他のノードと同時に新しいブロックを発現させたときに、時折に起こること。</translation>
     </message>
     <message>
@@ -2374,12 +2374,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated but not accepted</source>
+        <source>Minted but not accepted</source>
         <translation>生成されましたが承認されませんでした</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>受信元</translation>
     </message>
     <message>
@@ -2473,7 +2473,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+11"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>送り主</translation>
     </message>
     <message>

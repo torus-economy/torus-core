@@ -613,7 +613,7 @@ Tämä tuote sisältää OpenSSL-projektin kehittämää ohjelmistoa OpenSSL-ty�
     </message>
     <message>
         <location line="+10"/>
-        <source>Last received block was generated %1.</source>
+        <source>Last received block was minted %1.</source>
         <translation>Viimeinen vastaanotettu lohko generoitu %1.</translation>
     </message>
     <message>
@@ -2166,7 +2166,7 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Generated</source>
+        <source>Minted</source>
         <translation>Generoitu</translation>
     </message>
     <message>
@@ -2247,7 +2247,7 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 110 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <source>Minted coins must mature 60 blocks before they can be spent. When you minted this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
         <translation>Luotujen kolikoiden on eräännyttävä 510 lohkon ajan ennenkuin niitä voidaan käyttää. Kun loit tämän lohkon, se oli lähetetty verkkoon lohkoketjuun lisättäväksi. Jos lohkon siirtyminen ketjuun epäonnistuu, tilaksi muuttuu &quot;ei hyväksytty&quot; ja sillon sitä ei voida käyttää. Tämä voi tapahtua joskus jos toinen verkon noodi luo lohkon muutaman sekunnin sisällä luodusta lohkostasi.</translation>
     </message>
     <message>
@@ -2373,12 +2373,12 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated but not accepted</source>
+        <source>Minted but not accepted</source>
         <translation>Generoitu mutta ei hyväksytty</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Vastaanotettu osoitteella</translation>
     </message>
     <message>
@@ -2472,7 +2472,7 @@ Tämä tarkoittaa, että ainakin %2 rahansiirtopalkkio tarvitaan.</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Received with</source>
+        <source>Received</source>
         <translation>Vastaanotettu osoitteella</translation>
     </message>
     <message>

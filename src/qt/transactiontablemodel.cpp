@@ -307,7 +307,7 @@ QString TransactionTableModel::formatTxStatus(const TransactionRecord *wtx) cons
         status = tr("This block was not received by any other nodes and will probably not be accepted!");
         break;
     case TransactionStatus::NotAccepted:
-        status = tr("Generated but not accepted");
+        status = tr("Minted but not accepted");
         break;
     }
 
@@ -349,7 +349,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord *wtx) const
     switch(wtx->type)
     {
     case TransactionRecord::RecvWithAddress:
-        return tr("Received with");
+        return tr("Received");
     case TransactionRecord::RecvFromOther:
         return tr("Received from");
     case TransactionRecord::SendToAddress:
@@ -358,7 +358,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord *wtx) const
     case TransactionRecord::SendToSelf:
         return tr("Payment to yourself");
     case TransactionRecord::Generated:
-        return tr("Generated reward");
+        return tr("Minted");
     default:
         return QString();
     }
