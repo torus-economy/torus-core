@@ -7,7 +7,6 @@
 #include "guiutil.h"
 
 // shared UI settings in guiutil.h
-bool fUseCustomTheme;
 
 OptionsModel::OptionsModel(QObject *parent) :
     QAbstractListModel(parent)
@@ -45,9 +44,8 @@ void OptionsModel::Init()
     nDisplayUnit = settings.value("nDisplayUnit", BitcoinUnits::BTC).toInt();
     bDisplayAddresses = settings.value("bDisplayAddresses", false).toBool();
     fMinimizeToTray = settings.value("fMinimizeToTray", false).toBool();
-    fMinimizeOnClose = settings.value("fMinimizeOnClose", false).toBool();
+    fMinimizeOnClose = settings.value("fMinimizeOnClose", true).toBool();
     fCoinControlFeatures = settings.value("fCoinControlFeatures", true).toBool();
-    fUseCustomTheme = settings.value("fUseCustomTheme", false).toBool();
     nTransactionFee = settings.value("nTransactionFee").toLongLong();
     nReserveBalance = settings.value("nReserveBalance").toLongLong();
     language = settings.value("language", "").toString();
@@ -118,8 +116,6 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return settings.value("language", "");
         case CoinControlFeatures:
             return QVariant(fCoinControlFeatures);
-        case UseCustomTheme:
-            return QVariant(fUseCustomTheme);
         default:
             return QVariant();
         }
@@ -219,10 +215,6 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
             settings.setValue("fCoinControlFeatures", fCoinControlFeatures);
             emit coinControlFeaturesChanged(fCoinControlFeatures);
             }
-            break;
-        case UseCustomTheme:
-            fUseCustomTheme = value.toBool();
-            settings.setValue("fUseCustomTheme", fUseCustomTheme);
             break;
         default:
             break;
