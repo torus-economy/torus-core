@@ -108,7 +108,7 @@ ENTRYPOINT ["./TORUS-Qt"]
 
 
 
-FROM sskender/altcoin-mxe:latest as torus-qt-win
+FROM sskender/altcoin-mxe:lts as torus-qt-win
 
 LABEL maintainer="Sven Skender (@sskender)"
 
