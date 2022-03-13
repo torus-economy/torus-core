@@ -118,6 +118,7 @@ COPY . .
 RUN i686-w64-mingw32.static-qmake-qt5 \
 	RELEASE=1 \
 	USE_UPNP=1 \
+	USE_QRCODE=1 \
 	USE_DBUS=1 \
 	BOOST_LIB_SUFFIX=-mt \
 	BOOST_THREAD_LIB_SUFFIX=_win32-mt \
@@ -129,6 +130,8 @@ RUN i686-w64-mingw32.static-qmake-qt5 \
 	BDB_LIB_PATH=$MXE_LIB_PATH \
 	MINIUPNPC_INCLUDE_PATH=$MXE_INCLUDE_PATH \
 	MINIUPNPC_LIB_PATH=$MXE_LIB_PATH \
+	QRENCODE_INCLUDE_PATH=$MXE_INCLUDE_PATH/qrencode \
+	QRENCODE_LIB_PATH=$MXE_LIB_PATH \
 	QMAKE_LRELEASE=/build/mxe/usr/i686-w64-mingw32.static/qt/bin/lrelease torus.pro
 
 RUN make -f Makefile.Release
