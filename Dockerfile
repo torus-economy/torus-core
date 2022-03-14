@@ -57,7 +57,7 @@ RUN rm -r ${BERKELEYDB_VERSION}
 
 
 
-FROM base as torusd-unix
+FROM sskender/altcoin-mxe:headless-lts as torusd-unix
 
 LABEL maintainer="Sven Skender (@sskender)"
 
