@@ -86,7 +86,7 @@ Official DNS seed servers:
 
 ### Build from source
 
-In order to build from source, check out [docs](doc).
+In order to build from source, check out [docs](doc). Specific dependencies can be found [here](doc/dependencies.md).
 
 ## Release notes
 
