@@ -2,7 +2,7 @@
 
 *****************************
 
-## Release [v1.0.2](https://github.com/torus-economy/torus-core/releases/tag/v1.0.2) - X X 2022
+## Release [v1.0.2](https://github.com/torus-economy/torus-core/releases/tag/v1.0.2) - X Mar 2022
 
 #### Added
 
