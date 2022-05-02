@@ -70,7 +70,7 @@ cd contrib/docker-compose
 docker-compose up -d
 ```
 
-#### Daemon commands in Docker
+#### daemon commands in Docker
 
 If TORUSd is running in Docker, daemon commands can be run in the following way:
 ```bash
