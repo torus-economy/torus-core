@@ -5,6 +5,8 @@ Proof of Stake: 5% yearly rate \
 Min. stake age: 8 hours \
 Block time: 120 sec
 
+Official block explorer: [explorer.torus.cc](https://explorer.torus.cc/)
+
 Burn address: [TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ](https://explorer.torus.cc/address/TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ) \
 [See](contrib/burn-address.py) for more details.
 
@@ -68,6 +70,19 @@ Afterwards, the script can be run:
 ```bash
 cd contrib/docker-compose
 docker-compose up -d
+```
+
+#### TORUSd daemon commands in Docker
+
+If TORUSd is running in Docker, daemon commands can be run in the following way:
+```bash
+docker exec TORUSd ./TORUSd <command> <params>
+```
+
+For example, to get basic info and staking info:
+```bash
+docker exec TORUSd ./TORUSd getinfo
+docker exec TORUSd ./TORUSd getstakinginfo
 ```
 
 #### Seed nodes
