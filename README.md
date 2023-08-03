@@ -7,10 +7,11 @@ Block time: 120 sec
 
 Official block explorer: [explorer.torus.cc](https://explorer.torus.cc/)
 
-Burn address: [TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ](https://explorer.torus.cc/address/TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ) \
-[See](contrib/burn-address.py) for more details.
+- Burn address: [TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ](https://explorer.torus.cc/address/TEuWjbJPZiuzbhuS6YFE5v4gGzkkt26HDJ) \
+  [See](contrib/burn-address.py) for more details.
+- UBI Pool address: [TRRCa4hwjA4GhBCGLajVwpapC853S1dtbM](https://explorer.torus.cc/address/TRRCa4hwjA4GhBCGLajVwpapC853S1dtbM)
 
-*****************************
+---
 
 ## Run a node
 
@@ -19,11 +20,13 @@ Image tagged as `latest` will always match the master branch.
 If you want to run a stable release, use the image tag that corresponds to the official release - e.g. `torusd:1.0.0`.
 
 Pull image:
+
 ```bash
 docker pull ghcr.io/torus-economy/torusd:latest
 ```
 
 Run container:
+
 ```bash
 docker run \
     -d \
@@ -35,6 +38,7 @@ docker run \
 ```
 
 or with RPC port enabled:
+
 ```bash
 docker run \
     -d \
@@ -60,7 +64,7 @@ server=1
 listen=1
 ```
 
-#### docker-compose
+### docker-compose
 
 This could also be achived by running a docker-compose script.
 Preconfigured docker-compose script with corresponding `TORUS.conf` configuration file can be found in [contrib](contrib/docker-compose) folder.
@@ -75,11 +79,13 @@ docker-compose up -d
 #### TORUSd daemon commands in Docker
 
 If TORUSd is running in Docker, daemon commands can be run in the following way:
+
 ```bash
 docker exec TORUSd ./TORUSd <command> <params>
 ```
 
 For example, to get basic info and staking info:
+
 ```bash
 docker exec TORUSd ./TORUSd getinfo
 docker exec TORUSd ./TORUSd getstakinginfo
@@ -89,6 +95,9 @@ docker exec TORUSd ./TORUSd getstakinginfo
 
 Official seed nodes:
 
+- 154.56.63.68
+- 154.56.63.66
+- 153.92.223.18
 - 185.150.117.203
 - 185.150.117.219
 - 84.32.188.71
