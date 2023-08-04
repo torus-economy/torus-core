@@ -2,6 +2,27 @@
 
 *****************************
 
+## Release [v1.0.3](https://github.com/torus-economy/torus-core/releases/tag/v1.0.3) - 04 Aug 2023
+
+#### Added
+
+- Updated docs and seed nodes
+    - [`#fb48326`](https://github.com/torus-economy/torus-core/commit/fb4832653cabe38bc8d436589ad5547bca3ae1ea)
+    - [`#f1eed2d`](https://github.com/torus-economy/torus-core/commit/f1eed2d6dc2d5ac8f6b8c9a97f59e3794621fa0b)
+- Added Burn address and UBI Pool address
+    - [`#64a524d`](https://github.com/torus-economy/torus-core/commit/64a524dce71cb22056e3160452fb5bf9364992c5)
+- Added new block checkpoints
+    - [`#228b4a7`](https://github.com/torus-economy/torus-core/commit/228b4a7c87225f0387538854769d69c1e5254f64)
+- Added TORUS-Qt wallet for Unix
+    - [`#d7fe1c4`](https://github.com/torus-economy/torus-core/commit/d7fe1c41bf346cf58031ef190ee8ceff83380a87)
+
+#### Changed
+
+- Improved initial block synchronisation
+    - [`#4b0b069`](https://github.com/torus-economy/torus-core/commit/4b0b069d3371ea9e8e218c61066b250a61c49a03)
+
+*****************************
+
 ## Release [v1.0.2](https://github.com/torus-economy/torus-core/releases/tag/v1.0.2) - 26 Mar 2022
 
 #### Added
