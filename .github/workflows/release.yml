@@ -3,12 +3,14 @@ name: Release CI
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
+
+permissions:
+  contents: write
+  packages: write
 
 jobs:
-
   build-docker:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +30,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -47,7 +49,6 @@ jobs:
           file: Dockerfile
 
   build-win:
-
     runs-on: ubuntu-latest
 
     steps:
