@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   build-docker:
+    name: Build Docker image with TORUSd daemon
     runs-on: ubuntu-latest
 
     steps:
@@ -48,7 +49,37 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           file: Dockerfile
 
+  build-unix:
+    name: Build TORUS-Qt wallet for Unix systems
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install zip tool
+        run: sudo apt-get install zip -y
+
+      - name: Build TORUS-Qt
+        run: DOCKER_BUILDKIT=1 docker build --target torus-qt-unix --tag torus-qt-unix:latest .
+
+      - name: Copy artifacts
+        run: docker cp $(docker create --rm torus-qt-unix):/opt/TORUS-Qt TORUS-Qt
+
+      - name: Zip artifacts
+        run: zip torus-qt-unix.zip TORUS-Qt
+
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: false
+          artifacts: "torus-qt-unix.zip"
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
   build-win:
+    name: Build TORUS-Qt wallet for Windows systems
     runs-on: ubuntu-latest
 
     steps:
