@@ -84,6 +84,7 @@ FROM base as torus-qt-unix
 
 LABEL maintainer="Sven Skender (@sskender)"
 
+RUN apt-get update
 RUN apt-get install \
     qt5-default \
     qt5-qmake \
