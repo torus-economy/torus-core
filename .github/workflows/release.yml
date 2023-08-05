@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Docker meta
         id: meta
@@ -55,7 +55,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install zip tool
         run: sudo apt-get install zip -y
@@ -72,7 +72,7 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          allowUpdates: false
+          allowUpdates: true
           artifacts: "torus-qt-unix.zip"
           draft: false
           prerelease: false
@@ -84,7 +84,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install zip tool
         run: sudo apt-get install zip -y
@@ -101,7 +101,7 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          allowUpdates: false
+          allowUpdates: true
           artifacts: "torus-qt-win64.zip"
           draft: false
           prerelease: false
